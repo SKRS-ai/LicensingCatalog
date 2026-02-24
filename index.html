@@ -24,18 +24,40 @@
 
         /* Cinematic Hero Section */
         header {
-            height: 70vh;
+            padding: 100px 20px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Industry-related background: Professional Studio/Cinema theme */
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
                         url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             border-bottom: 3px solid var(--gold);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .main-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .media-group-tag {
+            color: var(--gold);
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin: 15px 0 0;
+            text-indent: 12px; /* Centers the text visually due to letter spacing */
         }
 
         .pitch-banner {
@@ -91,16 +113,30 @@
             padding: 35px;
             margin-bottom: 30px;
             border: 1px solid #222;
-            background-image: linear-gradient(to right, #111, #080808);
         }
 
         .song-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
             margin-top: 20px;
+        }
+
+        .song-link {
             color: var(--text-gray);
-            font-size: 0.95rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 12px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .song-link:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+            background: #111;
         }
 
         .site-link {
@@ -111,21 +147,17 @@
             font-weight: bold;
             font-size: 0.8rem;
             text-transform: uppercase;
-            border: 1px solid var(--gold);
-            padding: 10px 20px;
-            transition: 0.3s;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
         }
 
-        .site-link:hover { background: var(--gold); color: black; }
-
-        /* CONTACT FORM SECTION */
+        /* CONTACT FORM */
         .contact-box {
             max-width: 800px;
             margin: auto;
             background: #000;
             padding: 50px;
             border: 1px solid var(--gold);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
         }
 
         input, textarea {
@@ -136,9 +168,8 @@
             border: 1px solid #333;
             color: white;
             box-sizing: border-box;
+            font-size: 1rem;
         }
-
-        input:focus, textarea:focus { outline: 1px solid var(--gold); }
 
         .submit-btn {
             background: var(--gold);
@@ -150,19 +181,18 @@
             cursor: pointer;
             text-transform: uppercase;
             font-size: 1rem;
-            transition: 0.3s;
         }
 
-        .submit-btn:hover { background: #fff; letter-spacing: 2px; }
-
-        footer { text-align: center; padding: 60px; color: #444; font-size: 0.8rem; background: #000; }
+        footer { text-align: center; padding: 60px; color: #444; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 style="font-size: 4rem; margin: 0; letter-spacing: 5px;">SOLOMON KIN RECORDS</h1>
-        <p style="color: var(--gold); letter-spacing: 8px; font-weight: 300; margin-top: 10px;">LLC MEDIA GROUP</p>
+        <div class="logo-container">
+            <img src="SKRMG.png" alt="Solomon Kin Records Logo" class="main-logo">
+            <p class="media-group-tag">Media Group</p>
+        </div>
     </header>
 
     <div class="pitch-banner">
@@ -171,94 +201,90 @@
 
     <section id="movies" class="section">
         <h2>REALM Pictures | Movie Treatments</h2>
-        <p style="margin-bottom: 40px; color: var(--text-gray); max-width: 800px;">
-            Providing high-concept intellectual property for film and television studios. Our treatments are developed for immediate acquisition and development.
-        </p>
-        
         <div class="treatment-grid">
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" class="btn-treatment">
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" target="_blank" rel="noopener" class="btn-treatment">
                 <span class="status-now">Available Now</span> Mother’s Mercy
             </a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" class="btn-treatment">
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" target="_blank" rel="noopener" class="btn-treatment">
                 <span class="status-now">Available Now</span> Obsidian: The Black Box
             </a>
-
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> DEADHEAD</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> Global Citizen Joe</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> O Americano Perido</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> Masthead off the Record</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Ghosts in the Console</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Gorgon Protocol</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> Flag</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> Sovereign Mind</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Architecture of Failure</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Excellence Tax</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Silent Echo</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> God is an Idiot</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Purchase Pilot</a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-treatment"><span class="status-soon">Coming Soon</span> Tier Alpha</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> DEADHEAD</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> Global Citizen Joe</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> O Americano Perido</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> Masthead off the Record</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Ghosts in the Console</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Gorgon Protocol</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> Flag</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> Sovereign Mind</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Architecture of Failure</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Excellence Tax</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Silent Echo</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> God is an Idiot</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> The Purchase Pilot</a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" rel="noopener" class="btn-treatment"><span class="status-soon">Coming Soon</span> Tier Alpha</a>
         </div>
     </section>
 
     <section id="music" class="section" style="background: #080808;">
-        <h2>Music Licensing Catalog</h2>
+        <h2>Artist Licensing Catalog</h2>
         
         <div class="artist-card">
-            <h3 style="font-size: 1.8rem; margin: 0;">DJ M3</h3>
-            <p style="color: var(--gold);">Cyberpunk & Industrial Soundscapes</p>
+            <h3>DJ M3</h3>
             <div class="song-grid">
-                <span>• Ransomware</span> <span>• Encryption</span>
-                <span>• Zero-day</span> <span>• Firewall</span>
+                <a href="https://music.apple.com/pl/song/ransomware/1656120423" target="_blank" rel="noopener" class="song-link">Ransomware</a>
+                <a href="https://music.apple.com/pl/song/encryption/1656120424" target="_blank" rel="noopener" class="song-link">Encryption</a>
+                <a href="https://music.apple.com/pl/song/zero-day/1656120426" target="_blank" rel="noopener" class="song-link">Zero-day</a>
+                <a href="https://music.apple.com/pl/song/firewall/1656120428" target="_blank" rel="noopener" class="song-link">Firewall</a>
             </div>
-            <a href="https://music.apple.com/pl/album/hackathon-cyberpunk-2021-ep/1656120422" class="site-link">View Licensing Profile</a>
+            <a href="https://brneo059.wixsite.com/dj-m3" target="_blank" rel="noopener" class="site-link">Artist Website</a>
         </div>
 
         <div class="artist-card">
-            <h3 style="font-size: 1.8rem; margin: 0;">3dayz ahead</h3>
-            <p style="color: var(--gold);">Global Disruption Series</p>
+            <h3>3dayz ahead aka RDA disruption</h3>
             <div class="song-grid">
-                <span>• Dextera Dei et Sinister Manus</span> <span>• Red Devil Alien</span>
-                <span>• Global Citizen Joe</span> <span>• Welcome to Carnahan</span>
-                <span>• Blood and Gold</span> <span>• Song of Desire</span>
+                <a href="https://music.apple.com/pl/album/dextera-dei-et-sinister-manus-single/1655121881" target="_blank" rel="noopener" class="song-link">Dextera Dei et Sinister Manus</a>
+                <a href="https://music.apple.com/ru/artist/rda-disruption/1603338000" target="_blank" rel="noopener" class="song-link">Red Devil Alien</a>
+                <a href="https://music.apple.com/ca/album/global-citizen-joe-feat-eric-castiglia-the-algorhythm/1538189792" target="_blank" rel="noopener" class="song-link">Global Citizen Joe</a>
+                <a href="https://music.apple.com/ca/album/welcome-to-carnahan-feat-eric-castiglia-the/1548186034" target="_blank" rel="noopener" class="song-link">Welcome to Carnahan</a>
+                <a href="https://music.apple.com/es/album/blood-gold-single/1654864279" target="_blank" rel="noopener" class="song-link">Blood and Gold</a>
+                <a href="https://music.apple.com/es/album/song-of-desire-single/1657920973" target="_blank" rel="noopener" class="song-link">Song of Desire</a>
             </div>
-            <a href="https://music.apple.com/us/artist/rda-disruption/1613019550" class="site-link">View Licensing Profile</a>
+            <a href="https://brneo059.wixsite.com/rda-disruption" target="_blank" rel="noopener" class="site-link">Artist Website</a>
         </div>
 
         <div class="artist-card">
-            <h3 style="font-size: 1.8rem; margin: 0;">Yungbro</h3>
-            <p style="color: var(--gold);">Contemporary Solo Licensing</p>
+            <h3>Yungbro</h3>
             <div class="song-grid">
-                <span>• One Night Again (Featured Single)</span>
+                <a href="https://music.apple.com/ca/album/one-night-again-single/1657744162" target="_blank" rel="noopener" class="song-link">One Night Again</a>
             </div>
-            <a href="https://music.apple.com/ca/artist/yungbro/1657659844" class="site-link">View Licensing Profile</a>
+            <a href="https://brneo059.wixsite.com/yungbro" target="_blank" rel="noopener" class="site-link">Artist Website</a>
         </div>
 
         <div class="artist-card">
-            <h3 style="font-size: 1.8rem; margin: 0;">Prince Raz</h3>
-            <p style="color: var(--gold);">Pop & Performance Assets</p>
+            <h3>Prince Raz</h3>
             <div class="song-grid">
-                <span>• Twerk Work</span> <span>• Joy Inside</span> <span>• Eyes On You</span>
+                <a href="https://music.apple.com/us/album/twerk-work-single/1656091164" target="_blank" rel="noopener" class="song-link">Twerk Work</a>
+                <a href="https://music.apple.com/us/album/joy-inside-single/1655861942" target="_blank" rel="noopener" class="song-link">Joy Inside</a>
+                <a href="https://music.apple.com/us/album/eyes-on-you-single/1542287080" target="_blank" rel="noopener" class="song-link">Eyes On You</a>
             </div>
-            <a href="https://music.apple.com/us/artist/prince-raz/1542286668" class="site-link">View Licensing Profile</a>
+            <a href="https://brneo059.wixsite.com/prince-raz" target="_blank" rel="noopener" class="site-link">Artist Website</a>
         </div>
     </section>
 
     <section class="section">
         <h2>Division: Cast Ai Stars</h2>
-        <p>Proprietary AI and Synthetic Human talent for modern media production.</p>
-        <a href="http://www.castaistars.com" class="btn-treatment" style="width: 250px;">Enter AI Portal</a>
+        <p>AI & Synthetic Human Division. Pioneers in virtual influencer talent.</p>
+        <a href="http://castaistars.com" target="_blank" rel="noopener" class="btn-treatment" style="width: 200px;">Enter Portal</a>
     </section>
 
     <section id="contact" class="section" style="background: #000;">
         <div class="contact-box">
             <h2 style="border: none; text-align: center; padding: 0;">Studio Inquiry</h2>
-            <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px;">Request licensing terms or treatment scripts</p>
-            
             <form action="mailto:nehemiah.brown@solomonkinrecords.com" method="post" enctype="text/plain">
                 <input type="text" name="name" placeholder="Full Name / Studio Name" required>
                 <input type="email" name="email" placeholder="Professional Email" required>
-                <textarea name="message" rows="6" placeholder="Identify the Movie Treatment or Music Project of interest..." required></textarea>
-                <button type="submit" class="submit-btn">Submit Inquiry</button>
+                <textarea name="message" rows="6" placeholder="Identify the Movie Treatment or Music Project for licensing review..." required></textarea>
+                <button type="submit" class="submit-btn">Submit Request</button>
             </form>
         </div>
     </section>
