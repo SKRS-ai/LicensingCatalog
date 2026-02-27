@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREATOR ENGINE | CastAiStars Dashboard</title>
+    <title>CREATOR ENGINE | Solomon Kin Records LLC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* SLIM FIXED HEADER - 80px */
+        /* HEADER: Locked 80px Height */
         .supreme-header {
             background-color: #000;
             position: sticky;
@@ -36,16 +36,16 @@
             pointer-events: none;
         }
 
-        /* DASHBOARD WORKSPACE: Tan Linen */
+        /* WORKSPACE: Tan Linen */
         .dashboard-workspace {
             background-color: #F5F5DC; 
-            padding: 160px 2rem 60px 2rem; 
+            padding: 180px 2rem 80px 2rem; 
             min-height: 100vh;
         }
 
-        /* LEGIBILITY REFINEMENT: Dark text for light background */
-        .linen-text { color: #1a1a1a !important; }
-        .linen-sub { color: #555 !important; }
+        /* TYPOGRAPHY RULES */
+        .linen-text { color: #000 !important; }
+        .linen-sub { color: #444 !important; }
 
         /* STUDIO CARD UI */
         .studio-card { 
@@ -54,18 +54,29 @@
             border: 1px solid #e2e2c7; 
             padding: 2.5rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            transition: 0.3s;
         }
-        .studio-card:hover { border-color: #00e5ff; transform: translateY(-5px); }
 
-        /* BUTTONS */
+        /* BUTTONS - FIXED HOVER LOGIC */
         .btn-cyan { background: #00e5ff; color: #000; font-weight: 900; border-radius: 4px; transition: 0.3s; }
-        .btn-cyan:hover { background: #000; color: #fff; box-shadow: 0 0 20px rgba(0,229,255,0.4); }
+        .btn-cyan:hover { background: #000; color: #00e5ff; box-shadow: 0 0 20px rgba(0,229,255,0.4); }
 
         .btn-dark { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; }
         .btn-dark:hover { background: #00e5ff; color: #000; }
 
-        /* PROGRESS BARS */
+        /* THE FIX: Verify Rights Agreement Button */
+        .btn-rights-agreement { 
+            border: 2px solid #000; 
+            background: transparent; 
+            color: #000; 
+            font-weight: 900; 
+            border-radius: 4px; 
+            transition: all 0.3s ease;
+        }
+        .btn-rights-agreement:hover { 
+            background: #000; 
+            color: #00e5ff !important; /* Forces font to Cyan when background goes Black */
+        }
+
         .vssn-box { font-family: monospace; background: #000; color: #00e5ff; padding: 10px 15px; border-radius: 6px; letter-spacing: 2px; }
         
         /* BLACK ZONE TEXT FIX */
@@ -86,7 +97,7 @@
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase tracking-widest text-cyan-400 animate-pulse italic">System: Online</span>
+            <span class="text-[9px] font-black uppercase tracking-widest text-cyan-400 animate-pulse italic">Engine: Active</span>
             <div class="h-8 w-8 rounded-full bg-cyan-500 border-2 border-white/20"></div>
         </div>
     </nav>
@@ -96,12 +107,12 @@
             
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-black/10 pb-10">
                 <div>
-                    <h2 class="text-[11px] font-black uppercase tracking-[0.6em] linen-sub mb-4">Creator Console // v2.6</h2>
-                    <h1 class="text-7xl font-black tracking-tighter linen-text leading-none uppercase">Studio <span class="italic text-gray-400">Engine.</span></h1>
+                    <h2 class="text-[11px] font-black uppercase tracking-[0.6em] linen-sub mb-4 italic">Solomon Kin Media Group // Creator Console</h2>
+                    <h1 class="text-7xl font-black tracking-tighter linen-text leading-none uppercase">Creator <span class="italic text-gray-400">Terminal.</span></h1>
                 </div>
-                <div class="text-right mt-6 md:mt-0">
-                    <p class="text-[10px] font-black uppercase tracking-widest linen-sub mb-2">Blockchain Status:</p>
-                    <div class="bg-black text-cyan-400 text-[9px] font-black px-5 py-2.5 rounded shadow-xl uppercase">0x774...Verified On-Chain</div>
+                <div class="text-right">
+                    <p class="text-[10px] font-black uppercase tracking-widest linen-sub mb-2">Registry Ledger:</p>
+                    <div class="bg-black text-cyan-400 text-[9px] font-black px-5 py-2.5 rounded shadow-xl uppercase">vSSN Pair Verified On-Chain</div>
                 </div>
             </div>
 
@@ -110,16 +121,17 @@
                 <div class="studio-card">
                     <h3 class="text-[10px] font-black uppercase tracking-widest linen-sub mb-8 underline decoration-2">Identity & Records</h3>
                     <div class="mb-8">
-                        <label class="text-[9px] font-bold linen-sub block uppercase mb-1">Active Star</label>
+                        <label class="text-[9px] font-bold linen-sub block uppercase mb-1">Active Synthetic Star</label>
                         <p class="text-2xl font-black linen-text uppercase tracking-tighter italic">Vester Neo</p>
                     </div>
                     <div class="mb-10">
-                        <label class="text-[9px] font-bold linen-sub block uppercase mb-1">vSSN Credentials</label>
+                        <label class="text-[9px] font-bold linen-sub block uppercase mb-1">Authenticated vSSN</label>
                         <span class="vssn-box text-xs">774-XX-2026</span>
                     </div>
                     <div class="space-y-3">
                         <button class="btn-dark w-full py-4 text-[10px] uppercase tracking-widest">Download Birth Certificate</button>
-                        <button class="border-2 border-black w-full py-4 text-[10px] font-black uppercase tracking-widest linen-text hover:bg-black hover:text-white transition">Verify Rights Agreement</button>
+                        
+                        <button class="btn-rights-agreement w-full py-4 text-[10px] uppercase tracking-widest">Verify Rights Agreement</button>
                     </div>
                 </div>
 
@@ -128,59 +140,59 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div class="space-y-6">
-                            <h4 class="text-xs font-black linen-text uppercase tracking-widest">Vocal DNA Tuning</h4>
+                            <h4 class="text-xs font-black linen-text uppercase tracking-widest italic">Vocal DNA Tuning</h4>
                             <div class="space-y-4">
                                 <div>
-                                    <div class="flex justify-between text-[9px] font-black uppercase mb-1"><span>Frequency (Grit)</span><span>88%</span></div>
+                                    <div class="flex justify-between text-[9px] font-black uppercase mb-1 linen-text"><span>Frequency (Grit)</span><span>88%</span></div>
                                     <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden"><div class="bg-cyan-500 h-full w-[88%]"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between text-[9px] font-black uppercase mb-1"><span>Resonance (Baritone)</span><span>94%</span></div>
+                                    <div class="flex justify-between text-[9px] font-black uppercase mb-1 linen-text"><span>Resonance (Baritone)</span><span>94%</span></div>
                                     <div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden"><div class="bg-black h-full w-[94%]"></div></div>
                                 </div>
                             </div>
-                            <button class="btn-cyan w-full py-3 text-[9px] uppercase tracking-widest">Re-Sync Vocal DNA</button>
+                            <button class="btn-cyan w-full py-3 text-[9px] uppercase tracking-widest">Sync New Audio Stems</button>
                         </div>
 
                         <div class="space-y-6">
-                            <h4 class="text-xs font-black linen-text uppercase tracking-widest">Asset Management</h4>
+                            <h4 class="text-xs font-black linen-text uppercase tracking-widest italic">Likeness Repository</h4>
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="aspect-square bg-gray-50 border-2 border-dashed border-gray-200 rounded-lg flex items-center justify-center">
-                                    <span class="text-[9px] font-black uppercase text-gray-400">Photo Reel</span>
+                                    <span class="text-[9px] font-black uppercase text-gray-300">Video Reels</span>
                                 </div>
                                 <div class="aspect-square bg-gray-50 border-2 border-dashed border-gray-200 rounded-lg flex items-center justify-center">
-                                    <span class="text-[9px] font-black uppercase text-gray-400">Video Reel</span>
+                                    <span class="text-[9px] font-black uppercase text-gray-300">Photo Stills</span>
                                 </div>
                             </div>
-                            <button class="btn-dark w-full py-3 text-[9px] uppercase tracking-widest">Update 3D Assets</button>
+                            <button class="btn-dark w-full py-3 text-[9px] uppercase tracking-widest">Update Visual Assets</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-3 bg-black rounded-[2rem] p-12 mt-10">
+                <div class="lg:col-span-3 bg-black rounded-[2.5rem] p-12 mt-10 border border-white/5">
                     <div class="flex justify-between items-center mb-10">
                         <div>
-                            <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-cyan-400 mb-2">Live Registry Pulse</h3>
-                            <h4 class="text-3xl font-black dark-zone-text tracking-tighter">Active Casting <span class="italic text-gray-500">Briefs.</span></h4>
+                            <h3 class="text-[10px] font-black uppercase tracking-[0.5em] text-cyan-400 mb-2">Marketplace Connectivity</h3>
+                            <h4 class="text-4xl font-black dark-zone-text tracking-tighter">Active <span class="italic text-gray-500">Casting Briefs.</span></h4>
                         </div>
-                        <button class="border border-white/20 text-white text-[9px] font-black uppercase tracking-widest px-8 py-3 rounded hover:bg-white hover:text-black transition">Explore All</button>
+                        <button class="border border-white/20 text-white text-[9px] font-black uppercase tracking-widest px-8 py-3 rounded hover:bg-white hover:text-black transition">Full Dashboard Registry</button>
                     </div>
 
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center bg-[#0a0a0a] p-8 rounded-2xl border border-white/5 hover:border-cyan-500 transition">
+                        <div class="flex justify-between items-center bg-[#0d0d0d] p-8 rounded-2xl border border-white/5 hover:border-cyan-500 transition duration-500">
                             <div>
-                                <h5 class="text-white font-black uppercase text-lg tracking-tight">Lead Antagonist // Feature Film</h5>
-                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Solomon Kin Media Group | Direct Booking</p>
+                                <h5 class="text-white font-black uppercase text-lg tracking-tight">Lead Character // Cinema Feature</h5>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1 italic">Solomon Kin Records LLC | Media Group Production</p>
                             </div>
-                            <a href="#" class="text-cyan-400 font-black text-[11px] uppercase tracking-widest border-b border-cyan-400 pb-1">Pitch Vester Neo →</a>
+                            <a href="#" class="text-cyan-400 font-black text-[11px] uppercase tracking-widest border-b border-cyan-400 pb-1">Submit Persona →</a>
                         </div>
                         
-                        <div class="flex justify-between items-center bg-[#0a0a0a] p-8 rounded-2xl border border-white/5 hover:border-cyan-500 transition">
+                        <div class="flex justify-between items-center bg-[#0d0d0d] p-8 rounded-2xl border border-white/5 hover:border-cyan-500 transition duration-500">
                             <div>
-                                <h5 class="text-white font-black uppercase text-lg tracking-tight">Luxury Apparel // Virtual Influencer</h5>
-                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Branded Content | Global Exposure</p>
+                                <h5 class="text-white font-black uppercase text-lg tracking-tight">Global Influencer // Luxury Tech</h5>
+                                <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1 italic">Social Media Campaign | Licensing Opp</p>
                             </div>
-                            <a href="#" class="text-cyan-400 font-black text-[11px] uppercase tracking-widest border-b border-cyan-400 pb-1">Pitch Vester Neo →</a>
+                            <a href="#" class="text-cyan-400 font-black text-[11px] uppercase tracking-widest border-b border-cyan-400 pb-1">Submit Persona →</a>
                         </div>
                     </div>
                 </div>
@@ -191,7 +203,7 @@
 
     <footer class="py-40 bg-black text-center border-t border-white/5">
         <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale hover:grayscale-0 transition-all duration-1000">
-        <p class="text-[12px] text-gray-800 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
+        <p class="text-[12px] text-gray-800 uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
 </body>
