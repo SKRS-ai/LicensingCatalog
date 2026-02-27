@@ -3,94 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Portal | CASTAISTARS Enterprise</title>
+    <title>STUDIO PORTAL | Solomon Kin Records LLC Executive Access</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Explicitly forcing the black background */
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #000000 !important; 
-            color: white; 
-            margin: 0; 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* SUPREME HEADER: Locked 80px */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
         }
-        .studio-gradient {
-            background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+
+        .supreme-logo {
+            height: 300px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
         }
-        .b2b-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+
+        /* EXECUTIVE WORKSPACE: Tan Linen */
+        .studio-workspace {
+            background-color: #F5F5DC; 
+            color: #000;
+            padding: 160px 2rem 100px 2rem; 
         }
-        .b2b-card:hover { 
-            border-color: #00e5ff; 
-            background: rgba(0, 229, 255, 0.02);
+
+        /* POSTING FORM CARD */
+        .brief-card {
+            background: #fff;
+            border: 1px solid #e2e2c7;
+            border-radius: 16px;
+            padding: 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
         }
+
+        .input-group { margin-bottom: 1.5rem; }
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 8px; display: block; }
+        .input-field { 
+            width: 100%; padding: 1.1rem; border: 2px solid #eee; border-radius: 4px; 
+            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000;
+        }
+        .input-field:focus { border-color: #00e5ff; background: #fff; }
+
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.4rem; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; }
+        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-2px); }
+
+        /* OPEN CALLS: Cinematic Black */
+        .open-calls-section {
+            background-color: #000;
+            padding: 100px 2rem;
+            color: #fff;
+        }
+
+        .call-item {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .call-item:hover { border-color: #00e5ff; transform: scale(1.01); }
     </style>
 </head>
-<body class="min-h-screen studio-gradient">
+<body>
 
-    <nav class="p-8 flex justify-between items-center border-b border-white/5 bg-black/80 backdrop-blur-xl sticky top-0 z-50">
-        <div class="flex items-center gap-6">
-            <img src="castaistars.png" alt="CASTAISTARS" class="h-8">
-            <div class="h-6 w-px bg-white/20"></div>
-            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-cyan-400">Studio & Production Portal</span>
+    <nav class="supreme-header">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="backlot.html" class="hover:text-white transition">Backlot</a>
+                <a href="compliance.html" class="hover:text-white transition">vSSN Hub</a>
+            </div>
         </div>
-        <div class="flex gap-6 items-center">
-            <a href="compliance.html" class="text-[9px] font-black uppercase tracking-widest text-gray-500 hover:text-white transition">Legal Docs</a>
-            <button class="bg-white text-black px-6 py-2 rounded-lg font-black text-[9px] uppercase tracking-widest hover:bg-cyan-400 transition">Enterprise Login</button>
+        <div class="flex items-center gap-6">
+            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic">Studio Access Level 4</span>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-6 py-20">
-        
-        <header class="max-w-3xl mb-20">
-            <p class="text-cyan-400 text-[10px] font-black uppercase tracking-[0.5em] mb-4">B2B Solutions for 2026</p>
-            <h1 class="text-5xl font-black uppercase tracking-tighter mb-6 leading-none">Cast the Future of <br><span class="text-white">Motion Pictures.</span></h1>
-            <p class="text-gray-500 text-lg font-light leading-relaxed">Access production-ready synthetic talent with verified **Vocal DNA** and full IP compliance for global cinematic distribution.</p>
-        </header>
+    <section class="studio-workspace">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.6em] mb-4 italic">Production Assets Required</h3>
+            <h2 class="text-7xl font-black tracking-tighter mb-4 text-black uppercase">Post a <span class="italic text-gray-400">Brief.</span></h2>
+            <p class="text-lg font-bold text-black uppercase tracking-widest">Connect with Solomon Kin Verified Creators Instantly.</p>
+        </div>
 
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            <div class="b2b-card p-8 rounded-3xl">
-                <h3 class="text-white text-xs font-black uppercase tracking-widest mb-4">A-List Scouting</h3>
-                <p class="text-gray-500 text-xs leading-relaxed mb-6">Filter by vocal texture, emotional resonance, and high-fidelity persona history.</p>
-                <button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Launch Talent Search</button>
-            </div>
-            
-            <div class="b2b-card p-8 rounded-3xl">
-                <h3 class="text-white text-xs font-black uppercase tracking-widest mb-4">Project Briefs</h3>
-                <p class="text-gray-500 text-xs leading-relaxed mb-6">Upload your script. Our AI scouts will return a curated roster in 24 hours.</p>
-                <button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Submit Treatment</button>
-            </div>
-
-            <div class="b2b-card p-8 rounded-3xl">
-                <h3 class="text-white text-xs font-black uppercase tracking-widest mb-4">Licensing & ROI</h3>
-                <p class="text-gray-500 text-xs leading-relaxed mb-6">Calculate fees for feature films, pilots, and digital replicas instantly.</p>
-                <button class="w-full py-4 bg-white/5 border border-white/10 rounded-xl text-[9px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition">Rate Calculator</button>
-            </div>
-        </section>
-
-        <section class="b2b-card p-12 rounded-[3rem] border-cyan-500/20 bg-white/[0.02]">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12">
-                <div class="max-w-md">
-                    <span class="text-cyan-400 text-[9px] font-black uppercase tracking-widest mb-4 block">Exclusive Feature</span>
-                    <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">The Virtual Screening Room</h2>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Request access to unreleased talent and experimental "vocal DNA" profiles not available in the public Backlot.</p>
-                    <a href="contact.html" class="inline-block bg-cyan-500 text-black px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-white transition">Request Access</a>
+        <div class="brief-card">
+            <form action="#">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="input-group">
+                        <label class="input-label">Project Title</label>
+                        <input type="text" placeholder="e.g. Untitled Noir Thriller" class="input-field" required>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Studio / Production Co.</label>
+                        <input type="text" placeholder="Legal Entity Name" class="input-field" required>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 w-full md:w-auto opacity-40">
-                    <div class="h-32 w-32 bg-white/5 rounded-2xl border border-white/10"></div>
-                    <div class="h-32 w-32 bg-white/5 rounded-2xl border border-white/10"></div>
-                    <div class="h-32 w-32 bg-white/5 rounded-2xl border border-white/10"></div>
-                    <div class="h-32 w-32 bg-white/5 rounded-2xl border border-white/10"></div>
+
+                <div class="input-group">
+                    <label class="input-label">Character Archetype & Description</label>
+                    <textarea placeholder="Describe the visual and personality traits required for the star..." class="input-field h-32" required></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="input-group">
+                        <label class="input-label">Required Vocal DNA Pairing</label>
+                        <select class="input-field">
+                            <option>Any Vocal Range</option>
+                            <option>Deep Baritone (Grit-Focus)</option>
+                            <option>Sharp Tenor (Sonic-Sharp)</option>
+                            <option>Velvet Soprano</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Project Category</label>
+                        <select class="input-field">
+                            <option>Cinema Feature</option>
+                            <option>Branded Influencer Campaign</option>
+                            <option>Virtual Identity Ambassadorship</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-black">Broadcast Casting Brief</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="open-calls-section">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h3 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.6em] mb-4 underline">The Board</h3>
+                    <h4 class="text-5xl font-black tracking-tighter uppercase">Active <span class="italic text-gray-500">Casting Calls.</span></h4>
+                </div>
+                <p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest italic">Updated: Real-Time // 2026</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="call-item">
+                    <div>
+                        <h5 class="text-2xl font-black uppercase italic tracking-tight mb-1">Global Fragrance Brand</h5>
+                        <p class="text-[11px] text-gray-500 uppercase tracking-widest mb-4">Role: Virtual Ambassador // Soprano Vocal Required</p>
+                        <div class="flex gap-4">
+                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Influencer</span>
+                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Verified vSSN Only</span>
+                        </div>
+                    </div>
+                    <button class="text-cyan-400 font-black uppercase text-[10px] tracking-widest border border-cyan-400/30 px-8 py-4 rounded hover:bg-cyan-400 hover:text-black transition">View Details</button>
+                </div>
+
+                <div class="call-item">
+                    <div>
+                        <h5 class="text-2xl font-black uppercase italic tracking-tight mb-1">Noir Action Feature</h5>
+                        <p class="text-[11px] text-gray-500 uppercase tracking-widest mb-4">Role: Lead Antagonist // Baritone Grit-B Pairing</p>
+                        <div class="flex gap-4">
+                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Cinema</span>
+                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Genesis Record Required</span>
+                        </div>
+                    </div>
+                    <button class="text-cyan-400 font-black uppercase text-[10px] tracking-widest border border-cyan-400/30 px-8 py-4 rounded hover:bg-cyan-400 hover:text-black transition">View Details</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-
-    <footer class="p-20 text-center border-t border-white/5">
-        <p class="text-[9px] font-black uppercase tracking-[1em] text-gray-800">Enterprise Solutions &bull; Solomon Kin Records LLC</p>
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
+        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
 </body>
