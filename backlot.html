@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE REGISTRY | CastAiStars Synthetic Backlot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* SUPREME HEADER: Locked 80px */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
+        }
+
+        .supreme-logo {
+            height: 300px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
+        }
+
+        /* FILTERS BAR - Professional Linen Work Zone */
+        .filter-strip {
+            background-color: #F5F5DC;
+            padding: 160px 2rem 2rem 2rem; /* Clear massive logo */
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            border-bottom: 1px solid #e2e2c7;
+        }
+
+        .filter-select {
+            background: #fff;
+            border: 1px solid #d4d4b8;
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        /* THE GALLERY GRID */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            padding: 5rem 2rem;
+            max-width: 1900px;
+            margin: 0 auto;
+        }
+
+        .star-card {
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .star-card:hover {
+            border-color: #00e5ff;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,229,255,0.1);
+        }
+
+        .vssn-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+            padding: 4px 10px;
+            font-size: 8px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-cyan { background: #00e5ff; color: #000; font-weight: 900; border-radius: 4px; transition: 0.3s; }
+        .btn-cyan:hover { background: #fff; color: #000; }
+    </style>
+</head>
+<body>
+
+    <nav class="supreme-header">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="compliance.html" class="hover:text-white transition">vSSN Hub</a>
+                <a href="accounts.html" class="hover:text-white transition">Join Registry</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="dashboard.html" class="btn-cyan text-[9px] uppercase tracking-widest px-8 py-3.5">Creator Login</a>
+        </div>
+    </nav>
+
+    <section class="filter-strip">
+        <select class="filter-select">
+            <option>Voice Type: All</option>
+            <option>Baritone DNA</option>
+            <option>Soprano DNA</option>
+            <option>Grit-Texture</option>
+        </select>
+        <select class="filter-select">
+            <option>Category: Feature Film</option>
+            <option>Virtual Influencer</option>
+            <option>Branded Media</option>
+            <option>AI Radio Pod</option>
+        </select>
+        <select class="filter-select">
+            <option>vSSN Verified Only</option>
+            <option>Blockchain Genesis Only</option>
+        </select>
+    </section>
+
+    <section class="gallery-grid">
+        
+        <div class="star-card group">
+            <div class="vssn-badge">vSSN-774 VERIFIED</div>
+            <div class="h-[450px] bg-zinc-900 overflow-hidden">
+                <img src="vesper_neo.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 group-hover:scale-105">
+            </div>
+            <div class="p-10 border-t border-white/5">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-3xl font-black uppercase tracking-tighter italic">Vester Neo</h4>
+                    <span class="text-[9px] font-black text-cyan-400 uppercase tracking-widest">Available</span>
+                </div>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] mb-8 italic">DNA Pairing: Baritone / 88.4 kHz Grit</p>
+                <div class="flex gap-4">
+                    <button class="btn-cyan flex-1 py-4 text-[10px] uppercase tracking-widest">Book Persona</button>
+                    <button class="border border-white/20 px-6 hover:bg-white hover:text-black transition">
+                        <span class="text-lg">✉</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="star-card group">
+            <div class="vssn-badge">vSSN-102 VERIFIED</div>
+            <div class="h-[450px] bg-zinc-900 overflow-hidden">
+                <img src="3days ahead.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 group-hover:scale-105">
+            </div>
+            <div class="p-10 border-t border-white/5">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-3xl font-black uppercase tracking-tighter italic">RDA Disruption</h4>
+                    <span class="text-[9px] font-black text-cyan-400 uppercase tracking-widest">On Contract</span>
+                </div>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] mb-8 italic">DNA Pairing: Multi-Frequency / Electronic</p>
+                <div class="flex gap-4">
+                    <button class="btn-cyan flex-1 py-4 text-[10px] uppercase tracking-widest">View Credentials</button>
+                    <button class="border border-white/20 px-6 hover:bg-white hover:text-black transition">
+                        <span class="text-lg">✉</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="star-card group">
+            <div class="vssn-badge">vSSN-889 VERIFIED</div>
+            <div class="h-[450px] bg-zinc-900 overflow-hidden">
+                <img src="Hackathon.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 group-hover:scale-105">
+            </div>
+            <div class="p-10 border-t border-white/5">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-3xl font-black uppercase tracking-tighter italic">M3 Persona</h4>
+                    <span class="text-[9px] font-black text-cyan-400 uppercase tracking-widest">Available</span>
+                </div>
+                <p class="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] mb-8 italic">DNA Pairing: Tenor / Sonic Sharp</p>
+                <div class="flex gap-4">
+                    <button class="btn-cyan flex-1 py-4 text-[10px] uppercase tracking-widest">Book Persona</button>
+                    <button class="border border-white/20 px-6 hover:bg-white hover:text-black transition">
+                        <span class="text-lg">✉</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
+        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
+    </footer>
+
+</body>
+</html>
