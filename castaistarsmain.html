@@ -10,35 +10,39 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* THE SUPREME STICKY HEADER - All Black */
+        /* SLIM FIXED HEADER - Locked height to prevent stretching */
         .supreme-header {
             background-color: #000;
             position: sticky;
             top: 0;
             z-index: 10000;
-            border-bottom: 1px solid #222;
-            padding: 1rem 2rem;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 80px; /* Locked slim height */
         }
 
-        /* LOGO - Locked in Black Bar, 300px and Legible */
+        /* OVERFLOW LOGO - 300px height without affecting header width/height */
         .supreme-logo {
             height: 300px;
             width: auto;
-            /* Negative margin to keep header slim while logo stays massive */
-            margin-top: -20px;
-            margin-bottom: -20px;
-            filter: drop-shadow(0 10px 20px rgba(0,229,255,0.2));
-            transition: transform 0.3s ease;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
         }
 
-        /* HYBRID SECTION 1: THE BUSINESS PORTALS (Linen/Professional) */
+        /* HYBRID SECTION 1: THE BUSINESS PORTALS (Tan Linen) */
         .portal-workspace {
-            background-color: #F5F5DC; /* Tan Linen */
+            background-color: #F5F5DC; 
             color: #111;
-            padding: 160px 2rem 100px 2rem; /* Buffer for the massive logo */
+            padding: 180px 2rem 100px 2rem; /* Large buffer to clear the 300px logo */
+            position: relative;
         }
 
         /* HYBRID SECTION 2: THE STAR GALLERY (Cinematic Black) */
@@ -46,6 +50,7 @@
             background-color: #000;
             padding: 100px 2rem;
             color: #fff;
+            border-top: 1px solid #1a1a1a;
         }
 
         /* SUPREME UI ELEMENTS */
@@ -55,19 +60,19 @@
         .portal-card { 
             background: #fff; 
             border: 1px solid #e2e2c7;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
         }
 
         .talent-card {
-            background: #0a0a0a;
+            background: #080808;
             border: 1px solid #1a1a1a;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             transition: 0.5s ease;
         }
-        .talent-card:hover { border-color: #00e5ff; transform: scale(1.02); }
+        .talent-card:hover { border-color: #00e5ff; }
 
         html { scroll-behavior: smooth; }
     </style>
@@ -75,12 +80,12 @@
 <body>
 
     <nav class="supreme-header">
-        <div class="flex items-center gap-12">
-            <a href="index.html">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
                 <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
             </a>
 
-            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 ml-10">
+            <div class="hidden xl:flex gap-12 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
                 <a href="backlot.html" class="hover:text-cyan-400 transition">Registry</a>
                 <a href="#directors" class="hover:text-cyan-400 transition">Book Talent</a>
                 <a href="#creators" class="hover:text-cyan-400 transition">For Creators</a>
@@ -88,38 +93,38 @@
             </div>
         </div>
 
-        <div class="flex items-center gap-8">
-            <div class="hidden lg:block text-right leading-tight">
-                <p class="text-[8px] font-black uppercase text-gray-500 tracking-widest">Division of</p>
+        <div class="flex items-center gap-10">
+            <div class="hidden lg:block text-right leading-none">
+                <p class="text-[8px] font-black uppercase text-gray-600 tracking-[0.3em] mb-1">Division of</p>
                 <p class="text-[10px] font-black text-white tracking-tighter uppercase">Solomon Kin Records LLC</p>
             </div>
             <div class="flex gap-4">
-                <a href="accounts.html" class="border border-white/20 text-white text-[9px] font-black uppercase tracking-widest px-6 py-2.5 rounded hover:bg-white hover:text-black transition">Join</a>
-                <a href="dashboard.html" class="btn-cyan text-[9px] uppercase tracking-widest px-8 py-3">Login</a>
+                <a href="accounts.html" class="border border-white/20 text-white text-[9px] font-black uppercase tracking-widest px-7 py-3 rounded hover:bg-white hover:text-black transition">Join</a>
+                <a href="dashboard.html" class="btn-cyan text-[9px] uppercase tracking-widest px-9 py-3.5">Login</a>
             </div>
         </div>
     </nav>
 
     <section class="portal-workspace">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             <div id="creators" class="portal-card">
                 <h3 class="text-[10px] font-black text-cyan-600 uppercase tracking-[0.5em] mb-4">Creator Identity</h3>
-                <h2 class="text-4xl font-black tracking-tighter mb-6 leading-none">Birth your Star. <br>Secure the Legacy.</h2>
+                <h2 class="text-4xl font-black tracking-tighter mb-6 leading-none text-black">Birth your Star. <br>Secure the Legacy.</h2>
                 <p class="text-sm text-gray-600 mb-8 leading-relaxed">
-                    Upload your 3D assets and AI characters. Link your visuals to unique **Vocal DNA** and mint a **vSSN** to ensure authorship and licensing protection.
+                    Upload your 3D assets and AI characters. Link visuals to **Vocal DNA** and mint a **vSSN** to ensure authorship and licensing protection via Solomon Kin Records LLC.
                 </p>
                 <a href="accounts.html" class="bg-black text-white w-full py-5 text-center inline-block text-[11px] font-black uppercase tracking-[0.3em] rounded hover:bg-cyan-500 hover:text-black transition">Join the Backlot</a>
             </div>
 
             <div id="directors" class="portal-card">
                 <h3 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.5em] mb-4">Production Portal</h3>
-                <h2 class="text-4xl font-black tracking-tighter mb-6 leading-none">Source and <br>Book Talent.</h2>
+                <h2 class="text-4xl font-black tracking-tighter mb-6 leading-none text-black">Source and <br>Book Talent.</h2>
                 <p class="text-sm text-gray-600 mb-8 leading-relaxed">
-                    Post specific character briefs and communicate directly with creators. The industry's first secure marketplace for synthetic star licensing.
+                    Post character briefs and communicate directly with creators. The only marketplace with 100% Master/Publishing cleared music and synthetic talent.
                 </p>
-                <div class="space-y-4 mb-8">
-                    <input type="text" placeholder="Required Character Archetype..." class="w-full p-4 rounded border-gray-200 border text-sm outline-none bg-gray-50">
+                <div class="space-y-4">
+                    <input type="text" placeholder="Required Archetype..." class="w-full p-4 rounded border-gray-200 border text-sm outline-none bg-gray-50 focus:border-cyan-400">
                     <a href="accounts.html" class="btn-cyan w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.3em]">Request Casting Call</a>
                 </div>
             </div>
@@ -130,60 +135,53 @@
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-16">
                 <div>
-                    <h2 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.5em] mb-4 underline">Featured Synthetic Stars</h2>
-                    <h3 class="text-5xl font-black tracking-tighter">Current <span class="text-cyan-400 italic">Registry.</span></h3>
+                    <h2 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.5em] mb-4 underline">The Registry</h2>
+                    <h3 class="text-5xl font-black tracking-tighter">Synthetic <span class="text-white italic">Stars.</span></h3>
                 </div>
-                <a href="backlot.html" class="text-[11px] font-black uppercase tracking-widest text-gray-500 hover:text-white transition">View All 10,000+ Assets →</a>
+                <a href="backlot.html" class="text-[11px] font-black uppercase tracking-widest text-gray-600 border-b border-gray-800 pb-2 hover:text-white hover:border-white transition">Full Agency Roster</a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="talent-card">
-                    <div class="h-80 bg-gray-900 overflow-hidden">
+                    <div class="h-80 bg-[#0a0a0a] overflow-hidden">
                         <img src="vesper_neo.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                     <div class="p-8">
                         <h4 class="text-xl font-black uppercase mb-2">Vester Neo</h4>
-                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest">vSSN-774 Verified</p>
+                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-774 Verified</p>
                     </div>
                 </div>
                 <div class="talent-card">
-                    <div class="h-80 bg-gray-900 overflow-hidden">
+                    <div class="h-80 bg-[#0a0a0a] overflow-hidden">
                         <img src="3days ahead.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                     <div class="p-8">
                         <h4 class="text-xl font-black uppercase mb-2">RDA Disruption</h4>
-                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest">vSSN-102 Verified</p>
+                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-102 Verified</p>
                     </div>
                 </div>
                 <div class="talent-card">
-                    <div class="h-80 bg-gray-900 overflow-hidden">
+                    <div class="h-80 bg-[#0a0a0a] overflow-hidden">
                         <img src="Hackathon.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                     <div class="p-8">
                         <h4 class="text-xl font-black uppercase mb-2">M3 Persona</h4>
-                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest">vSSN-889 Verified</p>
+                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-889 Verified</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 bg-black border-t border-white/5 text-center px-10">
-        <h3 class="text-[11px] font-black uppercase tracking-[0.5em] text-gray-500 mb-12 italic">Presentation / Solomon Kin Media</h3>
-        <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-
     <footer class="py-40 bg-black text-center border-t border-white/5">
-        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale hover:grayscale-0 transition-all duration-1000">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-90 grayscale hover:grayscale-0 transition-all duration-1000">
         <div class="flex justify-center gap-16 text-[10px] font-black uppercase tracking-[0.5em] text-gray-700 mb-16">
             <a href="pricing.html" class="hover:text-cyan-400 transition">Pricing</a>
             <a href="studio-portal.html" class="hover:text-cyan-400 transition">Studios</a>
             <a href="compliance.html" class="hover:text-cyan-400 transition">Compliance</a>
             <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
         </div>
-        <p class="text-[11px] text-gray-900 uppercase tracking-[1.5em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group Division</p>
+        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
 </body>
