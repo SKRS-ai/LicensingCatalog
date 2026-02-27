@@ -1,0 +1,33 @@
+# 🎭 CASTAISTARS.COM 
+### Cinema's First Synthetic Talent Agency
+**A Division of Solomon Kin Records LLC**
+
+Cast Ai Stars is the premier 2026 infrastructure for "The Crossover"—the bridge between human-authored AI personas and professional motion picture licensing.
+
+---
+
+## 🛡️ The Identity Lock: vSSN
+We recognize that in the age of synthetic media, **Voice is Identity**. 
+- **vSSN (Voice-Based Digital Social Security Number):** Every character birthed on our platform is anchored by a unique vocal fingerprint.
+- **Protection:** This prevents unauthorized digital replicas and ensures the "Sculptor" (Creator) maintains legal ownership of the persona’s sonic soul.
+
+[Image of a voice-based identity and protection system diagram]
+
+## 🛠️ The Powerhouse Ecosystem
+This repository folder contains the full functional stack for the agency:
+
+| Component | File | Purpose |
+| :--- | :--- | :--- |
+| **Front Door** | `index.html` | High-conversion landing & YouTube Manifesto. |
+| **The Birthplace** | `onboard.html` | Creator onboarding & Vocal DNA capture. |
+| **Command Center** | `dashboard.html` | Talent management & Stardom Analytics. |
+| **The Safe** | `ip-vault.html` | Proving "Significant Human Authorship." |
+| **The Registry** | `backlot.html` | Public-facing talent marketplace. |
+| **B2B Gateway** | `studio-portal.html` | Executive licensing & Studio tools. |
+
+---
+
+## 💰 The Agency Model
+**Solomon Kin Records LLC** operates on a professional 80/20 split:
+- **80% to the Creator:** We believe the "Sculptor" should own the majority of their creation's success.
+- **20% to the Agency:** Covers
