@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASTAISTARS | The New Era of Synthetic Cinema</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: white; scroll-behavior: smooth; }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-[100] bg-black/90 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="hover:opacity-80 transition">
+                    <img src="castaistars.png" alt="CASTAISTARS" class="h-8">
+                </a>
+                <div class="hidden lg:block h-4 w-px bg-white/10"></div>
+                <span class="hidden lg:block text-[8px] font-black uppercase tracking-[0.4em] text-gray-500 italic">
+                    Solomon Kin Records LLC
+                </span>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="backlot.html" class="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition">The Backlot</a>
+                <a href="success.html" class="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition">Success Stories</a>
+                <a href="community.html" class="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition">Community</a>
+                <a href="pricing.html" class="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition">Pricing</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="studio-portal.html" class="hidden sm:block text-[9px] font-black uppercase tracking-widest text-cyan-400 hover:text-white transition border border-cyan-400/20 px-4 py-2 rounded-lg">Studio Portal</a>
+                <a href="dashboard.html" class="bg-white text-black px-5 py-2 rounded-full font-black text-[9px] uppercase tracking-widest hover:bg-cyan-500 transition-all">My Studio</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 px-6 hero-glow min-h-[90vh] flex flex-col items-center justify-center text-center">
+        <div class="max-w-4xl">
+            <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter mb-8 leading-none">
+                Cinema's First <br><span class="text-cyan-400">Synthetic Agency.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 uppercase tracking-[0.3em] leading-relaxed">
+                Empowering creators to birth, protect, and license AI characters for global film & media.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="onboard.html" class="px-10 py-5 bg-cyan-500 text-black font-black uppercase tracking-widest rounded-2xl hover:bg-white transition-all transform hover:scale-105">Birth a Persona</a>
+                <a href="backlot.html" class="px-10 py-5 glass-panel text-white font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">Registry</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative py-20 px-6 bg-black border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-gray-500 tracking-[0.5em] uppercase text-[10px] mb-4">Official Presentation</h2>
+                <div class="h-px w-20 bg-cyan-500 mx-auto mb-8"></div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-10 group-hover:opacity-30 transition duration-1000"></div>
+                <div class="relative bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <div class="aspect-video w-full">
+                        <iframe 
+                            class="w-full h-full"
+                            src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0&modestbranding=1" 
+                            title="Cast Ai Stars Promotion" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-gray-400 font-light tracking-widest text-[10px] uppercase italic">
+                    "The New Era of Cinema: Casting Your AI Characters"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="p-8 glass-panel rounded-3xl">
+                <h3 class="text-cyan-400 font-black uppercase tracking-widest text-[10px] mb-4">The IP Vault</h3>
+                <p class="text-sm text-gray-400 mb-6">Securing the **Voice-Based Digital Social Security Number (vSSN)** for every birthed persona.</p>
+                <a href="ip-vault.html" class="text-[9px] font-black uppercase tracking-widest border-b border-cyan-500 pb-1">Enter Vault</a>
+            </div>
+            <div class="p-8 glass-panel rounded-3xl">
+                <h3 class="text-cyan-400 font-black uppercase tracking-widest text-[10px] mb-4">Success Proof</h3>
+                <p class="text-sm text-gray-400 mb-6">See how **M3** and **RDA Disruption** are crossing over into mainstream media.</p>
+                <a href="success.html" class="text-[9px] font-black uppercase tracking-widest border-b border-cyan-500 pb-1">View Case Studies</a>
+            </div>
+            <div class="p-8 glass-panel rounded-3xl">
+                <h3 class="text-cyan-400 font-black uppercase tracking-widest text-[10px] mb-4">Community</h3>
+                <p class="text-sm text-gray-400 mb-6">Connect with fellow sculptors to collaborate on the next A-list synthetic star.</p>
+                <a href="community.html" class="text-[9px] font-black uppercase tracking-widest border-b border-cyan-500 pb-1">Join the Lab</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="castaistars.png" alt="CASTAISTARS" class="h-6 mx-auto mb-10 opacity-30">
+            <div class="flex flex-wrap justify-center gap-10 text-[9px] font-black uppercase tracking-[0.2em] text-gray-600">
+                <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                <a href="studio-portal.html" class="hover:text-white transition">Studio Access</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+                <a href="compliance.html" class="hover:text-white transition">Legal & Ethics</a>
+            </div>
+            <p class="mt-12 text-[8px] text-gray-800 uppercase tracking-[0.8em]">
+                &copy; 2026 Solomon Kin Records LLC
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
