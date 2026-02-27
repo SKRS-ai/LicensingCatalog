@@ -9,13 +9,13 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; scroll-behavior: smooth; }
         
-        /* LOGO REDUCED BY 2X - Professional Titan Scale */
-        .brand-logo-titan { height: 200px; width: auto; transition: transform 0.3s ease; }
+        /* BRAND LOGO - Locked on Black */
+        .brand-logo-titan { height: 160px; width: auto; transition: transform 0.3s ease; }
         
         /* THE TAN LINEN WORKSPACE */
         .tan-linen-bg { background-color: #F5F5DC; border-top: 1px solid #e2e2c7; border-bottom: 1px solid #e2e2c7; }
         
-        /* Backstage Style Design Language */
+        /* UI Components */
         .btn-black { background-color: #000; color: #fff; font-weight: 800; border-radius: 4px; transition: all 0.2s; }
         .btn-black:hover { background-color: #00e5ff; color: #000; }
         
@@ -23,32 +23,31 @@
         .btn-cyan:hover { background-color: #000; color: #00e5ff; }
 
         .nav-sticky { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 1px solid #eee; }
-        .card-white { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2.5rem; }
+        .card-white { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2.5rem; color: #111; }
     </style>
 </head>
 <body>
 
-    <div class="bg-black text-white text-[9px] font-black uppercase tracking-[0.3em] py-3 px-10 flex justify-between items-center relative z-[101]">
-        <div>Solomon Kin Records LLC | Media Group</div>
-        <div class="flex gap-8">
-            <span class="text-cyan-400">vSSN Identity Verified</span>
-            <a href="compliance.html" class="hover:text-cyan-400 transition">Licensing Hub</a>
-        </div>
-    </div>
-
-    <header class="bg-white py-6 px-12 border-b border-gray-100">
+    <header class="bg-black py-8 px-12 border-b border-white/10">
         <div class="max-w-[1900px] mx-auto flex items-center justify-between">
-            <a href="index.html">
-                <img src="castaistars.png" alt="CASTAISTARS" class="brand-logo-titan">
-            </a>
+            <div class="flex items-center gap-12">
+                <a href="index.html">
+                    <img src="castaistars.png" alt="CASTAISTARS" class="brand-logo-titan">
+                </a>
+                <div class="h-20 w-px bg-white/20 hidden md:block"></div>
+                <div class="hidden md:flex flex-col">
+                    <span class="text-white text-xs font-black uppercase tracking-[0.5em] mb-1">Solomon Kin Records LLC</span>
+                    <span class="text-cyan-400 text-[10px] font-bold uppercase tracking-[0.4em]">Media Group Division</span>
+                </div>
+            </div>
             <div class="flex flex-col text-right">
-                <h2 class="text-2xl font-black uppercase tracking-tighter italic leading-none mb-1">Cinema <span class="text-cyan-500">Reborn.</span></h2>
-                <p class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.4em]">Synthetic Talent Agency</p>
+                <span class="text-cyan-400 text-[10px] font-black uppercase tracking-widest mb-1">vSSN Identity Verified</span>
+                <h2 class="text-white text-xl font-black uppercase tracking-tighter italic leading-none">Cinema <span class="text-cyan-500">Reborn.</span></h2>
             </div>
         </div>
     </header>
 
-    <nav class="nav-sticky py-4">
+    <nav class="nav-sticky py-4 shadow-sm">
         <div class="max-w-7xl mx-auto px-10 flex justify-between items-center">
             <div class="flex gap-10 text-[11px] font-black uppercase tracking-widest text-gray-500">
                 <a href="backlot.html" class="text-black border-b-2 border-cyan-400 pb-1">Registry</a>
@@ -57,7 +56,7 @@
                 <a href="#agents" class="hover:text-cyan-500 transition border-b-2 border-transparent hover:border-cyan-400 pb-1">For Agents</a>
             </div>
             <div class="flex gap-4">
-                <a href="accounts.html" class="text-[10px] font-black uppercase tracking-widest py-2.5 px-6 border-2 border-black rounded hover:bg-black hover:text-white transition">Join Now</a>
+                <a href="accounts.html" class="text-[10px] font-black uppercase tracking-widest py-2.5 px-6 border-2 border-black rounded hover:bg-black hover:text-white transition text-black">Join</a>
                 <a href="dashboard.html" class="btn-cyan text-[10px] uppercase tracking-widest px-8 py-3">Login</a>
             </div>
         </div>
@@ -68,24 +67,24 @@
             
             <div id="creators">
                 <h3 class="text-xs font-black text-cyan-600 uppercase tracking-[0.4em] mb-4">Get Discovered. Get Cast.</h3>
-                <h1 class="text-5xl font-black tracking-tighter mb-6 leading-tight">Unlock thousands of <br><span class="text-black">synthetic roles.</span></h1>
-                <p class="text-base text-gray-600 mb-8 leading-relaxed max-w-lg">Birth your persona, secure their vSSN, and start applying for movie roles and branded content today.</p>
+                <h1 class="text-5xl font-black tracking-tighter mb-6 leading-tight text-black">Unlock thousands of <br>synthetic roles.</h1>
+                <p class="text-base text-gray-700 mb-8 leading-relaxed max-w-lg">Birth your persona, secure their vSSN, and start applying for movie roles and branded content today.</p>
                 <div class="flex gap-4">
                     <a href="accounts.html" class="btn-black px-12 py-5 text-xs uppercase tracking-widest shadow-xl">Start Applying Now</a>
                 </div>
             </div>
 
-            <div id="directors" class="bg-white/60 p-10 rounded-xl border border-white/80 shadow-sm">
+            <div id="directors" class="bg-white p-10 rounded-xl border border-gray-200 shadow-md">
                 <h3 class="text-xs font-black text-gray-400 uppercase tracking-[0.3em] mb-4">Directors & Studios</h3>
-                <h4 class="text-2xl font-black tracking-tight mb-6 italic text-gray-800 border-b border-gray-200 pb-2">Post Specifications</h4>
+                <h4 class="text-2xl font-black tracking-tight mb-6 italic text-gray-800 border-b border-gray-100 pb-2">Post Specifications</h4>
                 <div class="space-y-4">
                     <div class="flex flex-col">
                         <label class="text-[9px] font-black uppercase text-gray-400 mb-2">Character Concept</label>
-                        <input type="text" placeholder="e.g. Hero, Villain, ASMR" class="w-full p-4 rounded-md border-gray-200 border text-sm focus:border-cyan-400 outline-none bg-white">
+                        <input type="text" placeholder="e.g. Hero, Villain, ASMR" class="w-full p-4 rounded-md border-gray-200 border text-sm focus:border-cyan-400 outline-none text-black">
                     </div>
                     <div class="flex flex-col">
                         <label class="text-[9px] font-black uppercase text-gray-400 mb-2">Vocal Profile</label>
-                        <input type="text" placeholder="e.g. Philly Grit, Baritone" class="w-full p-4 rounded-md border-gray-200 border text-sm focus:border-cyan-400 outline-none bg-white">
+                        <input type="text" placeholder="e.g. Philly Grit, Baritone" class="w-full p-4 rounded-md border-gray-200 border text-sm focus:border-cyan-400 outline-none text-black">
                     </div>
                     <a href="accounts.html" class="btn-cyan w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.2em]">Find Matching Talent</a>
                 </div>
@@ -101,40 +100,40 @@
     </section>
 
     <section id="agents" class="py-24 border-t border-gray-100 bg-gray-50 px-10">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="mb-16">
-                <h2 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.4em] mb-4">Agency Management Suite</h2>
-                <h3 class="text-4xl font-black tracking-tight">Represent your synthetic roster with confidence.</h3>
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 text-center">
+                <h2 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.4em] mb-4">Management Infrastructure</h2>
+                <h3 class="text-4xl font-black tracking-tight text-black">Represent your roster with confidence.</h3>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                <div class="card-white hover:shadow-lg transition">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-white hover:border-cyan-400 transition">
                     <div class="text-cyan-500 font-black text-2xl mb-4">01</div>
                     <h4 class="font-bold text-lg mb-3">Onboard Roster</h4>
-                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Set up your agency in clicks. Add clients and manage profiles for success.</p>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Add clients and manage profiles for cinema-ready success.</p>
                 </div>
-                <div class="card-white hover:shadow-lg transition">
+                <div class="card-white hover:border-cyan-400 transition">
                     <div class="text-cyan-500 font-black text-2xl mb-4">02</div>
                     <h4 class="font-bold text-lg mb-3">Submissions</h4>
-                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Search the marketplace for everything from feature films to branding.</p>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Search for feature films and global branded content.</p>
                 </div>
-                <div class="card-white hover:shadow-lg transition">
+                <div class="card-white hover:border-cyan-400 transition">
                     <div class="text-cyan-500 font-black text-2xl mb-4">03</div>
-                    <h4 class="font-bold text-lg mb-3">Global Booking</h4>
-                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Thousands of roles. Build credits and gain exposure for your stars.</p>
+                    <h4 class="font-bold text-lg mb-3">Booking</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Build credits and gain massive exposure for your creations.</p>
                 </div>
-                <div class="card-white hover:shadow-lg transition">
+                <div class="card-white hover:border-cyan-400 transition">
                     <div class="text-cyan-500 font-black text-2xl mb-4">04</div>
-                    <h4 class="font-bold text-lg mb-3">Recognition</h4>
-                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Connect with producers and build recognition for your brand.</p>
+                    <h4 class="font-bold text-lg mb-3">Reputation</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Connect with producers and build industry recognition.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 bg-black text-center">
-        <img src="castaistars.png" alt="CASTAISTARS" class="h-16 mx-auto mb-10 opacity-30 grayscale">
-        <div class="flex justify-center gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-gray-600 mb-8">
+    <footer class="py-16 bg-black text-center border-t border-white/10">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-16 mx-auto mb-10 opacity-50 grayscale">
+        <div class="flex justify-center gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mb-8">
             <a href="pricing.html" class="hover:text-white transition">Pricing</a>
             <a href="studio-portal.html" class="hover:text-white transition">Studios</a>
             <a href="compliance.html" class="hover:text-white transition">Legal Hub</a>
