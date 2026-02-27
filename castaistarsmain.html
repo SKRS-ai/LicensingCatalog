@@ -3,113 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTAISTARS | Global Synthetic Talent Network</title>
+    <title>CASTAISTARS | Supreme Synthetic Talent Marketplace</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; scroll-behavior: smooth; }
-        
-        /* OVERFLOW LOGO TECHNIQUE */
-        .brand-overflow { 
-            height: 300px; /* Massive Legibility */
-            width: auto; 
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1010;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
-            transition: transform 0.3s ease; 
-        }
-        .brand-overflow:hover { transform: translateY(-52%) scale(1.02); }
-        
-        /* THE TAN LINEN WORKSPACE */
-        .tan-linen-bg { background-color: #F5F5DC; border-top: 1px solid #e2e2c7; border-bottom: 1px solid #e2e2c7; }
-        
-        /* UI Components */
-        .btn-cyan { background-color: #00e5ff; color: #000; font-weight: 800; border-radius: 4px; transition: all 0.2s; }
-        .btn-cyan:hover { background-color: #fff; color: #000; }
-        
-        .btn-white-outline { border: 1.5px solid rgba(255,255,255,0.4); color: #fff; font-weight: 800; border-radius: 4px; transition: all 0.2s; }
-        .btn-white-outline:hover { background: #fff; color: #000; border-color: #fff; }
+        /* Base Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; overflow-x: hidden; }
 
-        /* ULTRA-SLIM NAV BAR */
-        .nav-sticky { position: sticky; top: 0; z-index: 1000; background: #000; height: 70px; display: flex; align-items: center; border-bottom: 1px solid #222; }
-        .portal-card { background: white; border: 1px solid #e2e2c7; border-radius: 12px; padding: 2.5rem; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        /* THE SUPREME OVERFLOW LOGO - Fixed Visibility */
+        .supreme-logo {
+            height: 300px; /* Massive Scale */
+            width: auto;
+            position: absolute;
+            left: 2rem;
+            top: 0; /* Align to the very top of the black bar */
+            z-index: 9999; /* Force it above everything */
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+            pointer-events: auto;
+        }
+
+        /* SLIM COMMAND STRIP - Exactly as requested */
+        .command-strip {
+            background-color: #000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 44px; /* Sits exactly under the promo bar */
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        /* TAN LINEN ENGINE ROOM */
+        .tan-linen-section {
+            background-color: #F5F5DC;
+            border-top: 1px solid #e2e2c7;
+            border-bottom: 1px solid #e2e2c7;
+            padding: 120px 0 80px 0; /* Extra top padding to clear the 300px logo */
+        }
+
+        /* SUPREME UI ELEMENTS */
+        .btn-cyan { background: #00e5ff; color: #000; font-weight: 900; border-radius: 4px; transition: 0.3s; }
+        .btn-cyan:hover { background: #fff; box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+        
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(10px);
+            border: 1px solid #e2e2c7;
+            border-radius: 16px;
+            padding: 3rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover { transform: translateY(-10px); border-color: #00e5ff; }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
 
-    <div class="bg-[#111] text-white py-3 px-10 border-b border-white/5">
-        <div class="max-w-[1900px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="bg-[#111] text-white py-3 px-10 border-b border-white/5 relative z-[1001]">
+        <div class="max-w-[1900px] mx-auto flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center gap-4">
-                <span class="bg-cyan-500 text-black text-[9px] font-black px-3 py-1 rounded uppercase tracking-tighter">PROMO</span>
-                <p class="text-[12px] font-bold tracking-wide italic text-gray-300">"The technology is the scaffold; your creativity is the skyscraper."</p>
+                <span class="bg-cyan-500 text-black text-[9px] font-black px-3 py-1 rounded uppercase">Creator Alert</span>
+                <p class="text-[12px] font-bold italic tracking-wide text-gray-300">
+                    "Technology is the scaffold; your creativity is the skyscraper." — Upload your 3D/AI assets now.
+                </p>
             </div>
             <a href="accounts.html" class="text-cyan-400 text-[10px] font-black uppercase tracking-widest hover:text-white transition underline underline-offset-8">
-                Register Your Character →
+                Register Character →
             </a>
         </div>
     </div>
 
-    <nav class="nav-sticky px-10">
-        <div class="max-w-[1900px] mx-auto w-full flex justify-between items-center relative">
+    <nav class="command-strip">
+        <div class="max-w-[1900px] w-full mx-auto px-10 flex justify-between items-center relative">
             
-            <div class="flex items-center">
-                <a href="index.html" class="relative">
-                    <img src="castaistars.png" alt="CASTAISTARS" class="brand-overflow">
-                </a>
-                <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500 ml-[350px]">
-                    <a href="backlot.html" class="hover:text-cyan-400 transition">Registry</a>
-                    <a href="#book-talent" class="hover:text-cyan-400 transition">Book Talent</a>
-                    <a href="#creators" class="hover:text-cyan-400 transition">Creators</a>
-                    <a href="compliance.html" class="hover:text-cyan-400 transition">vSSN</a>
-                </div>
+            <a href="index.html">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+
+            <div class="hidden xl:flex gap-12 ml-[380px] text-[10px] font-black uppercase tracking-[0.4em] text-gray-500">
+                <a href="backlot.html" class="hover:text-cyan-400 transition">Registry</a>
+                <a href="#directors" class="hover:text-cyan-400 transition">Book Talent</a>
+                <a href="#creators" class="hover:text-cyan-400 transition">For Creators</a>
+                <a href="compliance.html" class="hover:text-cyan-400 transition">vSSN</a>
             </div>
 
             <div class="flex items-center gap-6">
-                <div class="hidden lg:block text-right mr-6">
-                    <p class="text-[8px] font-black uppercase tracking-widest text-gray-500 italic">Division of</p>
-                    <p class="text-[10px] font-black uppercase tracking-tighter text-white uppercase">Solomon Kin Records LLC</p>
+                <div class="hidden lg:block text-right mr-4 leading-tight">
+                    <p class="text-[8px] font-black uppercase text-gray-500 tracking-widest">Division of</p>
+                    <p class="text-[10px] font-black text-white tracking-tighter uppercase">Solomon Kin Records LLC</p>
                 </div>
-                <div class="flex items-center gap-3">
-                    <a href="accounts.html" class="btn-white-outline text-[9px] uppercase tracking-widest px-6 py-2">Join</a>
-                    <a href="dashboard.html" class="btn-cyan text-[9px] uppercase tracking-widest px-7 py-2.5 shadow-[0_0_15px_rgba(0,229,255,0.2)]">Login</a>
+                <div class="flex gap-3">
+                    <a href="accounts.html" class="border border-white/30 text-white text-[9px] font-black uppercase tracking-widest px-6 py-2.5 rounded hover:bg-white hover:text-black transition">Join</a>
+                    <a href="dashboard.html" class="btn-cyan text-[9px] uppercase tracking-widest px-8 py-3">Login</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="tan-linen-bg py-24 px-10 mt-20"> <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section class="tan-linen-section">
+        <div class="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
             
-            <div id="creators" class="portal-card">
-                <h3 class="text-[10px] font-black text-cyan-600 uppercase tracking-[0.4em] mb-4">Sculptors & Artists</h3>
-                <h2 class="text-4xl font-black tracking-tighter mb-6 text-black">Unleash Your <br>3D & AI Stars.</h2>
-                <p class="text-sm text-gray-600 mb-8 leading-relaxed italic">The industry is waiting for your characters. Pair your visuals with Vocal DNA and secure your legacy with a vSSN.</p>
-                <a href="accounts.html" class="bg-black text-white w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.3em] rounded hover:bg-cyan-500 hover:text-black transition">Submit Your Creation</a>
+            <div id="creators" class="glass-card">
+                <h3 class="text-[10px] font-black text-cyan-600 uppercase tracking-[0.5em] mb-4 italic underline">The Sculptor's Path</h3>
+                <h2 class="text-5xl font-black tracking-tighter mb-8 text-black leading-none">Submit your <br>3D Assets.</h2>
+                <p class="text-sm text-gray-600 mb-8 leading-relaxed font-medium">
+                    Bridge the gap between 3D artistry and cinematic stardom. Pair your synthetic visuals with **Vocal DNA** and mint your character's identity via **vSSN**.
+                </p>
+                <a href="accounts.html" class="bg-black text-white w-full py-6 text-center inline-block text-[11px] font-black uppercase tracking-[0.3em] rounded hover:bg-cyan-500 hover:text-black transition">Enter Global Registry</a>
             </div>
 
-            <div id="book-talent" class="portal-card">
-                <h3 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] mb-4">Directors & Studios</h3>
-                <h2 class="text-4xl font-black tracking-tighter mb-6 text-black">Source, Select, <br>and Book Talent.</h2>
-                <p class="text-sm text-gray-600 mb-8 leading-relaxed italic">Directly communicate with creators, post specific project briefs, and license synthetic stars for film, music, and media.</p>
+            <div id="directors" class="glass-card">
+                <h3 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.5em] mb-4 italic underline">Executive Portal</h3>
+                <h2 class="text-5xl font-black tracking-tighter mb-8 text-black leading-none">Source and <br>Book Talent.</h2>
+                <p class="text-sm text-gray-600 mb-8 leading-relaxed font-medium">
+                    Post your character briefs and communicate directly with creators. Select the perfect synthetic star for feature films, music videos, and virtual productions.
+                </p>
                 <div class="space-y-4 mb-8">
-                    <input type="text" placeholder="Character Specification (e.g. Gritty Hero)" class="w-full p-4 rounded border-gray-200 border text-sm outline-none bg-gray-50 focus:border-cyan-400">
-                    <a href="accounts.html" class="btn-cyan w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.3em] rounded hover:bg-black hover:text-white transition">Book Talent Now</a>
+                    <input type="text" placeholder="Character Brief (e.g. Gritty Noir Villain)" class="w-full p-4 rounded border-gray-300 border text-sm focus:ring-2 focus:ring-cyan-400 outline-none bg-white">
+                    <a href="accounts.html" class="btn-cyan w-full py-6 text-center inline-block text-[11px] uppercase tracking-[0.3em]">Request Talent Match</a>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <section class="py-24 max-w-5xl mx-auto px-10 text-center">
-        <h3 class="text-[11px] font-black uppercase tracking-[0.5em] text-gray-400 mb-10 italic">Official Presentation</h3>
-        <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-black">
-            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0" frameborder="0" allowfullscreen></iframe>
+    <section class="py-32 max-w-6xl mx-auto px-10">
+        <div class="text-center mb-16">
+            <h3 class="text-[12px] font-black uppercase tracking-[1em] text-gray-400 mb-4">Official Manifesto</h3>
+            <div class="h-px w-24 bg-cyan-400 mx-auto"></div>
+        </div>
+        <div class="rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.15)] border border-gray-100 bg-black p-2">
+            <iframe class="w-full aspect-video rounded-[2.5rem]" src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
-    <footer class="py-32 bg-black text-center border-t border-white/5 relative">
+    <footer class="py-40 bg-black text-center relative border-t border-white/5">
         <div class="max-w-7xl mx-auto px-10">
-            <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-16 opacity-90 grayscale hover:grayscale-0 transition duration-500">
+            <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-90 grayscale hover:grayscale-0 transition-all duration-1000">
+            
+            <div class="flex flex-wrap justify-center gap-16 text-[11px] font-black uppercase tracking-[0.5em] text-gray-600 mb-16">
+                <a href="pricing.html" class="hover:text-cyan-400 transition">Pricing</a>
+                <a href="studio-portal.html" class="hover:text-cyan-400 transition">Studios</a>
+                <a href="compliance.html" class="hover:text-cyan-400 transition">vSSN Hub</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+            </div>
+            
             <p class="text-[11px] text-gray-800 uppercase tracking-[1.5em] font-bold">© 2026 Solomon Kin Records LLC | Media Group</p>
         </div>
     </footer>
