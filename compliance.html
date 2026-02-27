@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vSSN HUB | Secure Identity & Voice Registry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* HEADER FIX: Responsive Logo & Z-Index Audit */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
+        }
+
+        .supreme-logo {
+            height: 300px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
+        }
+
+        /* HUB WORKSPACE: Professional Tan Linen Architecture */
+        .hub-workspace {
+            background-color: #F5F5DC; 
+            color: #111;
+            padding: 180px 2rem 100px 2rem; 
+            position: relative;
+        }
+
+        /* ENHANCEMENT: CERTIFICATE SECURITY OVERLAY */
+        .certificate-preview {
+            background: #fff;
+            border: 1px solid #d4d4b8;
+            padding: 3.5rem;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            position: relative;
+            background-image: radial-gradient(#F5F5DC 0.5px, transparent 0.5px);
+            background-size: 20px 20px; /* Security Watermark Effect */
+        }
+
+        .seal-embossed {
+            position: absolute;
+            bottom: 3rem;
+            right: 3rem;
+            width: 100px;
+            height: 100px;
+            background: #00e5ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #000;
+            border: 4px double #000;
+            box-shadow: 0 0 15px rgba(0,229,255,0.4);
+        }
+
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; }
+        .btn-black:hover { background: #00e5ff; color: #000; }
+        
+        /* Error Fix: Ensure Link Visibility on Mobile */
+        @media (max-width: 1024px) {
+            .supreme-logo { height: 180px; left: 1rem; }
+            .nav-links-container { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="supreme-header">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+            <div class="nav-links-container hidden xl:flex gap-12 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <a href="index.html" class="hover:text-white transition">Backlot</a>
+                <a href="backlot.html" class="hover:text-white transition">Talent</a>
+                <a href="compliance.html" class="text-cyan-400 border-b-2 border-cyan-400 pb-1">vSSN Hub</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="dashboard.html" class="bg-white text-black text-[9px] font-black uppercase tracking-widest px-8 py-3 rounded hover:bg-cyan-500 transition">Portal</a>
+        </div>
+    </nav>
+
+    <section class="hub-workspace">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            
+            <div class="reveal">
+                <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.5em] mb-6 underline decoration-2">Bureau of Identity</h3>
+                <h2 class="text-7xl font-black tracking-tighter mb-8 leading-[0.9]">Secure the <br><span class="italic">Origin.</span></h2>
+                <p class="text-lg text-gray-700 mb-10 leading-relaxed font-medium">
+                    In the synthetic era, **Identity is the Asset.** The vSSN Hub provides the legal scaffolding for your characters, pairing visual models with biometric **Vocal DNA**.
+                </p>
+                
+                <div class="grid grid-cols-1 gap-6 mb-12">
+                    <div class="flex items-center gap-6 bg-white/40 p-6 rounded-xl border border-white/60">
+                        <span class="text-3xl">🗃️</span>
+                        <div>
+                            <h4 class="font-black uppercase text-xs tracking-widest">Synthetic Birth Certificate</h4>
+                            <p class="text-[11px] text-gray-500 mt-1 uppercase font-bold">Validated proof of creation and authorship.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 bg-white/40 p-6 rounded-xl border border-white/60">
+                        <span class="text-3xl">🎙️</span>
+                        <div>
+                            <h4 class="font-black uppercase text-xs tracking-widest">Voice Social Security Number</h4>
+                            <p class="text-[11px] text-gray-500 mt-1 uppercase font-bold">Biometric identifier for vocal licensing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-black px-14 py-6 text-[11px] uppercase tracking-[0.4em] shadow-2xl">Start vSSN Registration</button>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <div class="certificate-preview">
+                    <div class="absolute top-4 left-0 w-full text-center">
+                        <span class="text-[7px] font-black uppercase tracking-[1em] text-gray-300">CONFIDENTIAL // vSSN ENCRYPTED</span>
+                    </div>
+
+                    <div class="text-center border-b-2 border-gray-100 pb-8 mb-10 mt-6">
+                        <h5 class="text-[10px] font-black uppercase tracking-[0.6em] text-gray-400 mb-3">Solomon Kin Records LLC</h5>
+                        <h6 class="text-3xl font-black italic tracking-tighter">Synthetic Birth Certificate</h6>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <label class="text-[9px] font-black uppercase text-gray-400 block mb-1">Persona Identity</label>
+                                <p class="text-sm font-black border-b border-gray-100 uppercase">Vester Neo</p>
+                            </div>
+                            <div>
+                                <label class="text-[9px] font-black uppercase text-gray-400 block mb-1">Official vSSN</label>
+                                <p class="text-sm font-black border-b border-gray-100 text-cyan-600 font-mono tracking-tighter">774-XX-2026</p>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[9px] font-black uppercase text-gray-400 block mb-1">Human Author / Guardian</label>
+                            <p class="text-sm font-black border-b border-gray-100 italic">[ENCRYPTED]</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <label class="text-[9px] font-black uppercase text-gray-400 block mb-1">Creation Date</label>
+                                <p class="text-sm font-black border-b border-gray-100">02.27.2026</p>
+                            </div>
+                            <div>
+                                <label class="text-[9px] font-black uppercase text-gray-400 block mb-1">Vocal Frequency</label>
+                                <p class="text-sm font-black border-b border-gray-100">88.4 kHz (Grit)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 text-[9px] font-bold uppercase text-gray-400 leading-tight border-t border-gray-100 pt-8">
+                        <p>This document certifies the legal pairing of synthetic visual assets and vocal stems under the Master Rights Protection of Solomon Kin Records LLC.</p>
+                    </div>
+
+                    <div class="seal-embossed text-center px-2">vSSN<br>VERIFIED<br>2026</div>
+                </div>
+                <p class="text-[10px] text-gray-400 mt-10 italic font-black tracking-[0.5em] text-center uppercase">Asset ID: COSA-774-ALPHA</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-24 opacity-80 grayscale">
+        <div class="flex justify-center gap-16 text-[10px] font-black uppercase tracking-[0.5em] text-gray-700 mb-16">
+            <a href="index.html" class="hover:text-cyan-400 transition">Backlot</a>
+            <a href="pricing.html" class="hover:text-cyan-400 transition">Pricing</a>
+            <a href="compliance.html" class="hover:text-cyan-400 transition">vSSN Hub</a>
+            <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+        </div>
+        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
+    </footer>
+
+</body>
+</html>
