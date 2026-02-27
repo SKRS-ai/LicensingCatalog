@@ -9,8 +9,8 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; scroll-behavior: smooth; }
         
-        /* 9X TITAN LOGO - Standard Left Position */
-        .brand-logo-titan { height: 405px; width: auto; transition: transform 0.3s ease; }
+        /* LOGO REDUCED BY 2X - Professional Titan Scale */
+        .brand-logo-titan { height: 200px; width: auto; transition: transform 0.3s ease; }
         
         /* THE TAN LINEN WORKSPACE */
         .tan-linen-bg { background-color: #F5F5DC; border-top: 1px solid #e2e2c7; border-bottom: 1px solid #e2e2c7; }
@@ -28,7 +28,7 @@
 </head>
 <body>
 
-    <div class="bg-black text-white text-[9px] font-black uppercase tracking-[0.3em] py-2 px-10 flex justify-between items-center">
+    <div class="bg-black text-white text-[9px] font-black uppercase tracking-[0.3em] py-3 px-10 flex justify-between items-center relative z-[101]">
         <div>Solomon Kin Records LLC | Media Group</div>
         <div class="flex gap-8">
             <span class="text-cyan-400">vSSN Identity Verified</span>
@@ -36,103 +36,108 @@
         </div>
     </div>
 
-    <header class="bg-white py-16 px-12 border-b border-gray-100">
+    <header class="bg-white py-6 px-12 border-b border-gray-100">
         <div class="max-w-[1900px] mx-auto flex items-center justify-between">
             <a href="index.html">
                 <img src="castaistars.png" alt="CASTAISTARS" class="brand-logo-titan">
             </a>
             <div class="flex flex-col text-right">
-                <h2 class="text-3xl font-black uppercase tracking-tighter italic">Cinema <span class="text-cyan-500">Reborn.</span></h2>
-                <p class="text-gray-400 text-xs font-bold uppercase tracking-[0.4em]">Synthetic Talent Agency</p>
+                <h2 class="text-2xl font-black uppercase tracking-tighter italic leading-none mb-1">Cinema <span class="text-cyan-500">Reborn.</span></h2>
+                <p class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.4em]">Synthetic Talent Agency</p>
             </div>
         </div>
     </header>
 
-    <nav class="nav-sticky py-5">
+    <nav class="nav-sticky py-4">
         <div class="max-w-7xl mx-auto px-10 flex justify-between items-center">
             <div class="flex gap-10 text-[11px] font-black uppercase tracking-widest text-gray-500">
                 <a href="backlot.html" class="text-black border-b-2 border-cyan-400 pb-1">Registry</a>
-                <a href="#directors" class="hover:text-cyan-500 transition">For Directors</a>
-                <a href="#creators" class="hover:text-cyan-500 transition">For Creators</a>
-                <a href="#agents" class="hover:text-cyan-500 transition">For Agents</a>
+                <a href="#directors" class="hover:text-cyan-500 transition border-b-2 border-transparent hover:border-cyan-400 pb-1">For Directors</a>
+                <a href="#creators" class="hover:text-cyan-500 transition border-b-2 border-transparent hover:border-cyan-400 pb-1">For Creators</a>
+                <a href="#agents" class="hover:text-cyan-500 transition border-b-2 border-transparent hover:border-cyan-400 pb-1">For Agents</a>
             </div>
-            <div class="flex gap-6">
-                <a href="accounts.html" class="text-[11px] font-black uppercase tracking-widest py-2 px-6 border-2 border-black rounded hover:bg-black hover:text-white transition">Join Now</a>
-                <a href="dashboard.html" class="btn-cyan text-[11px] uppercase tracking-widest px-8 py-3">Login</a>
+            <div class="flex gap-4">
+                <a href="accounts.html" class="text-[10px] font-black uppercase tracking-widest py-2.5 px-6 border-2 border-black rounded hover:bg-black hover:text-white transition">Join Now</a>
+                <a href="dashboard.html" class="btn-cyan text-[10px] uppercase tracking-widest px-8 py-3">Login</a>
             </div>
         </div>
     </nav>
 
-    <section class="tan-linen-bg py-24 px-10">
+    <section class="tan-linen-bg py-20 px-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             <div id="creators">
                 <h3 class="text-xs font-black text-cyan-600 uppercase tracking-[0.4em] mb-4">Get Discovered. Get Cast.</h3>
-                <h1 class="text-6xl font-black tracking-tighter mb-8 leading-none">Unlock thousands of <br><span class="text-black">synthetic roles.</span></h1>
-                <p class="text-lg text-gray-600 mb-10 leading-relaxed max-w-lg">Birth your persona, secure their vSSN, and start applying for movie roles and branded content today.</p>
+                <h1 class="text-5xl font-black tracking-tighter mb-6 leading-tight">Unlock thousands of <br><span class="text-black">synthetic roles.</span></h1>
+                <p class="text-base text-gray-600 mb-8 leading-relaxed max-w-lg">Birth your persona, secure their vSSN, and start applying for movie roles and branded content today.</p>
                 <div class="flex gap-4">
                     <a href="accounts.html" class="btn-black px-12 py-5 text-xs uppercase tracking-widest shadow-xl">Start Applying Now</a>
                 </div>
             </div>
 
-            <div id="directors" class="bg-white/50 p-10 rounded-2xl border border-white/80">
+            <div id="directors" class="bg-white/60 p-10 rounded-xl border border-white/80 shadow-sm">
                 <h3 class="text-xs font-black text-gray-400 uppercase tracking-[0.3em] mb-4">Directors & Studios</h3>
-                <h4 class="text-3xl font-black tracking-tight mb-6 italic text-gray-800 underline">Post Specifications</h4>
-                <p class="text-sm text-gray-500 mb-8">Looking for a particular synthetic talent? Post your casting call and specific character requirements below.</p>
+                <h4 class="text-2xl font-black tracking-tight mb-6 italic text-gray-800 border-b border-gray-200 pb-2">Post Specifications</h4>
                 <div class="space-y-4">
-                    <input type="text" placeholder="Character Type (e.g. Hero, Villain, ASMR)" class="w-full p-4 rounded-lg border-gray-200 border text-sm focus:border-cyan-400 outline-none bg-white">
-                    <input type="text" placeholder="Vocal DNA Specs (e.g. Philly Grit, Baritone)" class="w-full p-4 rounded-lg border-gray-200 border text-sm focus:border-cyan-400 outline-none bg-white">
-                    <a href="accounts.html" class="btn-cyan w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.2em]">Post a Job & Find Talent</a>
+                    <div class="flex flex-col">
+                        <label class="text-[9px] font-black uppercase text-gray-400 mb-2">Character Concept</label>
+                        <input type="text" placeholder="e.g. Hero, Villain, ASMR" class="w-full p-4 rounded-md border-gray-200 border text-sm focus:border-cyan-400 outline-none bg-white">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[9px] font-black uppercase text-gray-400 mb-2">Vocal Profile</label>
+                        <input type="text" placeholder="e.g. Philly Grit, Baritone" class="w-full p-4 rounded-md border-gray-200 border text-sm focus:border-cyan-400 outline-none bg-white">
+                    </div>
+                    <a href="accounts.html" class="btn-cyan w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.2em]">Find Matching Talent</a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section class="py-32 max-w-6xl mx-auto px-10">
-        <div class="rounded-3xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border border-gray-100">
+    <section class="py-24 max-w-5xl mx-auto px-10">
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
             <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
     <section id="agents" class="py-24 border-t border-gray-100 bg-gray-50 px-10">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-20">
-                <h2 class="text-xs font-black text-cyan-500 uppercase tracking-[0.4em] mb-4 text-center">Agency Management</h2>
-                <h3 class="text-4xl font-black text-center tracking-tight">Represent your synthetic roster with confidence.</h3>
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="mb-16">
+                <h2 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.4em] mb-4">Agency Management Suite</h2>
+                <h3 class="text-4xl font-black tracking-tight">Represent your synthetic roster with confidence.</h3>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card-white">
-                    <div class="text-cyan-500 font-black text-2xl mb-6">01</div>
-                    <h4 class="font-bold text-lg mb-4 uppercase">Onboard Your Roster</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">Set up your agency in clicks. Add clients and manage profiles for success.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div class="card-white hover:shadow-lg transition">
+                    <div class="text-cyan-500 font-black text-2xl mb-4">01</div>
+                    <h4 class="font-bold text-lg mb-3">Onboard Roster</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Set up your agency in clicks. Add clients and manage profiles for success.</p>
                 </div>
-                <div class="card-white">
-                    <div class="text-cyan-500 font-black text-2xl mb-6">02</div>
-                    <h4 class="font-bold text-lg mb-4 uppercase">Manage Submissions</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">Search the marketplace for feature films to branded content.</p>
+                <div class="card-white hover:shadow-lg transition">
+                    <div class="text-cyan-500 font-black text-2xl mb-4">02</div>
+                    <h4 class="font-bold text-lg mb-3">Submissions</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Search the marketplace for everything from feature films to branding.</p>
                 </div>
-                <div class="card-white">
-                    <div class="text-cyan-500 font-black text-2xl mb-6">03</div>
-                    <h4 class="font-bold text-lg mb-4 uppercase">Book Worldwide</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">Thousands of opportunities. Build credits and gaining exposure quickly.</p>
+                <div class="card-white hover:shadow-lg transition">
+                    <div class="text-cyan-500 font-black text-2xl mb-4">03</div>
+                    <h4 class="font-bold text-lg mb-3">Global Booking</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Thousands of roles. Build credits and gain exposure for your stars.</p>
                 </div>
-                <div class="card-white">
-                    <div class="text-cyan-500 font-black text-2xl mb-6">04</div>
-                    <h4 class="font-bold text-lg mb-4 uppercase">Represent</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">Connect with producers and building recognition for your company.</p>
+                <div class="card-white hover:shadow-lg transition">
+                    <div class="text-cyan-500 font-black text-2xl mb-4">04</div>
+                    <h4 class="font-bold text-lg mb-3">Recognition</h4>
+                    <p class="text-[11px] text-gray-500 leading-relaxed uppercase tracking-widest">Connect with producers and build recognition for your brand.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 bg-black text-center">
-        <img src="castaistars.png" alt="CASTAISTARS" class="h-24 mx-auto mb-10 opacity-30 grayscale">
-        <div class="flex justify-center gap-12 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500 mb-8">
+    <footer class="py-16 bg-black text-center">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-16 mx-auto mb-10 opacity-30 grayscale">
+        <div class="flex justify-center gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-gray-600 mb-8">
             <a href="pricing.html" class="hover:text-white transition">Pricing</a>
             <a href="studio-portal.html" class="hover:text-white transition">Studios</a>
-            <a href="compliance.html" class="hover:text-white transition">Legal</a>
+            <a href="compliance.html" class="hover:text-white transition">Legal Hub</a>
         </div>
         <p class="text-[9px] text-gray-700 uppercase tracking-[1em]">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
