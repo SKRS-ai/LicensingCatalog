@@ -52,28 +52,39 @@
         }
 
         .section-header { border-left: 5px solid #00e5ff; padding-left: 1.5rem; margin-bottom: 2.5rem; }
-        .section-title { font-size: 10px; font-weight: 900; color: #000; text-transform: uppercase; letter-spacing: 3px; }
+        .section-title { font-size: 11px; font-weight: 900; color: #000 !important; text-transform: uppercase; letter-spacing: 3px; }
 
-        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 12px; display: block; }
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000 !important; margin-bottom: 12px; display: block; }
+        
         .input-field { 
             width: 100%; padding: 1.25rem; border: 2px solid #eee; border-radius: 6px; 
-            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000; font-weight: 600;
+            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000 !important; font-weight: 600;
         }
         .input-field:focus { border-color: #00e5ff; background: #fff; }
 
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-
-        .btn-submit { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.8rem; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; }
-        .btn-submit:hover { background: #00e5ff; color: #000; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,229,255,0.3); }
-
-        /* MULTI-SELECT BADGES */
-        .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        /* THE FIX: GENRE SELECTION CONTRAST */
+        .badge-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
         .badge-checkbox { display: none; }
+        
+        /* Default State: Visible Black text on Light border */
         .badge-label { 
-            padding: 8px 16px; border: 1.5px solid #eee; border-radius: 4px; font-size: 9px; 
-            font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.2s; color: #777;
+            padding: 12px 20px; border: 2px solid #000; border-radius: 4px; font-size: 10px; 
+            font-weight: 900; text-transform: uppercase; cursor: pointer; transition: 0.2s; 
+            color: #000 !important; background: transparent; letter-spacing: 1px;
         }
-        .badge-checkbox:checked + .badge-label { background: #000; color: #00e5ff; border-color: #000; }
+        
+        /* Hover State: Cyan border, text remains Black and visible */
+        .badge-label:hover { border-color: #00e5ff; }
+
+        /* Selected State: Inverts to Black background, Cyan text (Guaranteed Legibility) */
+        .badge-checkbox:checked + .badge-label { 
+            background: #000; 
+            color: #00e5ff !important; 
+            border-color: #000; 
+        }
+
+        .btn-submit { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.8rem; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; cursor: pointer; }
+        .btn-submit:hover { background: #00e5ff; color: #000; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,229,255,0.3); }
 
         /* REUSABLE BLACK OVERRIDE */
         h2, h3, h4, p, label, span { color: #000 !important; }
@@ -94,19 +105,19 @@
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-400 tracking-widest italic text-white-fixed">Asset Submission v3.0</span>
+            <span class="text-[9px] font-black uppercase text-gray-400 tracking-widest italic text-white-fixed">Secure Intake Active</span>
         </div>
     </nav>
 
     <section class="apply-workspace">
         <div class="max-w-5xl mx-auto text-center mb-16">
             <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Supreme Talent Pitch</h3>
-            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">Birth. <span class="italic text-gray-400">Apply.</span></h2>
+            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-400 text-black">Birthright.</span></h2>
             <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Advancing the <span class="underline">Identity</span> of the Individual Character.</p>
         </div>
 
         <div class="apply-card">
-            <form action="dashboard.html">
+            <form action="dashboard.html" onsubmit="return validateForm()">
                 
                 <div class="section-header">
                     <h4 class="section-title">01. Identity Selection</h4>
@@ -114,7 +125,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div class="input-group">
                         <label class="input-label">Select Registered Star</label>
-                        <select class="input-field">
+                        <select class="input-field" required>
+                            <option value="">-- Select One --</option>
                             <option>Vester Neo (vSSN: 774-XX-2026)</option>
                             <option>M3 Persona (vSSN: 889-XX-2026)</option>
                         </select>
@@ -143,13 +155,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div class="input-group">
                         <label class="input-label">Custom Genre / Archetype (Other)</label>
-                        <input type="text" placeholder="Explain your character's unique niche..." class="input-field">
-                        <p class="text-[9px] font-bold text-gray-400 mt-2 uppercase">Define a category that doesn't exist yet.</p>
+                        <input type="text" placeholder="Explain your character's unique niche..." class="input-field" required>
+                        <p class="text-[9px] font-bold text-gray-500 mt-2 uppercase">Define a category that doesn't exist yet.</p>
                     </div>
                     <div class="input-group">
                         <label class="input-label">Vocal Disposition / Mood</label>
-                        <input type="text" placeholder="e.g. Melancholic, Aggressive, Whispering..." class="input-field">
-                        <p class="text-[9px] font-bold text-gray-400 mt-2 uppercase">Describe the 'Soul' of the audio pairing.</p>
+                        <input type="text" placeholder="e.g. Melancholic, Aggressive, Whispering..." class="input-field" required>
+                        <p class="text-[9px] font-bold text-gray-500 mt-2 uppercase">Describe the 'Soul' of the audio pairing.</p>
                     </div>
                 </div>
 
@@ -158,20 +170,20 @@
                 </div>
                 <div class="input-group mb-12">
                     <label class="input-label">Complete Character Attribute Manifest</label>
-                    <textarea placeholder="Describe every attribute: Their birth motivations, physical limitations, emotional triggers, and technical readiness. Take pride in the details—the director is looking for the individual, not a template." class="input-field h-52"></textarea>
+                    <textarea required placeholder="Describe every attribute: Their birth motivations, physical limitations, emotional triggers, and technical readiness. Take pride in the details—the director is looking for the individual, not a template." class="input-field h-52"></textarea>
                 </div>
 
                 <div class="section-header">
                     <h4 class="section-title">04. Localized Stems</h4>
                 </div>
-                <div class="grid-3 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="input-group">
                         <label class="input-label">Custom Vocal Audition</label>
-                        <input type="file" class="input-field py-2 text-xs">
+                        <input type="file" class="input-field py-2 text-xs" required>
                     </div>
                     <div class="input-group">
                         <label class="input-label">Visual Variant Reel</label>
-                        <input type="file" class="input-field py-2 text-xs">
+                        <input type="file" class="input-field py-2 text-xs" required>
                     </div>
                     <div class="input-group">
                         <label class="input-label">MoCap Data (Optional)</label>
@@ -183,7 +195,7 @@
                     <label class="flex items-start gap-5 cursor-pointer">
                         <input type="checkbox" class="mt-1 w-6 h-6 accent-cyan-400" required>
                         <span class="text-[11px] font-black text-white-fixed uppercase leading-relaxed tracking-wider">
-                            I submit this persona as a unique birthed individual. I verify the authorship and agree to the Solomon Kin Records LLC 20/80 Global Licensing Standard for this specific pitch.
+                            I verify this persona as a unique birthed individual. I agree to the Solomon Kin Records LLC 20/80 Global Licensing Standard for this specific pitch.
                         </span>
                     </label>
                 </div>
@@ -198,5 +210,11 @@
         <p class="text-[12px] text-gray-600 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
+    <script>
+        function validateForm() {
+            // Additional custom validation can be added here
+            return true; 
+        }
+    </script>
 </body>
 </html>
