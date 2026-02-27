@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLICATION | Submit Synthetic Talent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
+        }
+
+        .supreme-logo {
+            height: 300px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
+        }
+
+        .apply-workspace {
+            background-color: #F5F5DC; 
+            color: #000;
+            padding: 160px 2rem 100px 2rem; 
+            min-height: 100vh;
+        }
+
+        .apply-card {
+            background: #fff;
+            border: 1px solid #e2e2c7;
+            border-radius: 20px;
+            padding: 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.06);
+        }
+
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 10px; display: block; }
+        .input-field { 
+            width: 100%; padding: 1.2rem; border: 2px solid #eee; border-radius: 6px; 
+            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000; font-weight: 600;
+        }
+
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.5rem; font-size: 11px; text-transform: uppercase; letter-spacing: 4px; }
+        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-3px); }
+
+        .persona-selector {
+            border: 2px solid #eee;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 1rem;
+        }
+        .persona-selector:hover { border-color: #00e5ff; background: #f0feff; }
+        .persona-selector input[type="radio"] { accent-color: #00e5ff; width: 20px; height: 20px; }
+
+        h2, h3, p, label, span { color: #000 !important; }
+        .text-white-fixed { color: #fff !important; }
+        .text-cyan-fixed { color: #00e5ff !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="supreme-header">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <a href="dashboard.html" class="hover:text-white transition text-white-fixed">Back to Console</a>
+                <a href="backlot.html" class="hover:text-white transition text-white-fixed">Registry</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Pitch Submission Portal</span>
+        </div>
+    </nav>
+
+    <section class="apply-workspace">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.7em] mb-4 italic text-cyan-fixed">Casting Submission</h3>
+            <h2 class="text-7xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-400">Pitch.</span></h2>
+            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Submitting to: <span class="text-gray-500">[Project Lethal Ledger]</span></p>
+        </div>
+
+        <div class="apply-card">
+            <form action="dashboard.html">
+                
+                <div class="mb-10">
+                    <label class="input-label">01. Select Birthed Persona</label>
+                    <div class="persona-selector">
+                        <input type="radio" name="persona" id="p1" checked>
+                        <label for="p1" class="flex-1 cursor-pointer">
+                            <h4 class="font-black uppercase text-sm">Vester Neo</h4>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">vSSN: 774-XX-2026 // Baritone Grit-B</p>
+                        </label>
+                    </div>
+                    <div class="persona-selector">
+                        <input type="radio" name="persona" id="p2">
+                        <label for="p2" class="flex-1 cursor-pointer">
+                            <h4 class="font-black uppercase text-sm">M3 Persona</h4>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">vSSN: 889-XX-2026 // Tenor Sonic-Sharp</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="input-group">
+                        <label class="input-label">Project Specific Vocal Audition</label>
+                        <input type="file" accept="audio/*" class="input-field py-2 text-xs">
+                        <p class="text-[8px] mt-2 font-bold uppercase text-gray-400 italic">Upload a localized clip matching the brief</p>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Additional Visual Reference</label>
+                        <input type="file" accept="image/*,video/*" class="input-field py-2 text-xs">
+                        <p class="text-[8px] mt-2 font-bold uppercase text-gray-400 italic">Custom wardrobe or pose for this role</p>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">Why this character fits the role?</label>
+                    <textarea placeholder="Explain the character's motivations and technical readiness for this production..." class="input-field h-32"></textarea>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded border-l-4 border-black mb-10">
+                    <label class="flex items-start gap-4 cursor-pointer">
+                        <input type="checkbox" class="mt-1" required>
+                        <span class="text-[10px] font-bold text-gray-500 uppercase leading-relaxed">
+                            I authorize the submission of this vSSN-Verified persona for consideration. If booked, I agree to the project buyout terms and the Solomon Kin Records LLC 20/80 Licensing Protocol.
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-black text-white-fixed">Submit Persona for Review</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
+        <p class="text-[11px] text-white-fixed uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
+    </footer>
+
+</body>
+</html>
