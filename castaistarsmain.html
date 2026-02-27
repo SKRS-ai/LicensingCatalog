@@ -10,7 +10,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* SLIM FIXED HEADER - Locked height to prevent stretching */
+        /* SLIM FIXED HEADER - Locked height to 80px */
         .supreme-header {
             background-color: #000;
             position: sticky;
@@ -21,10 +21,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px; /* Locked slim height */
+            height: 80px; 
         }
 
-        /* OVERFLOW LOGO - 300px height without affecting header width/height */
+        /* OVERFLOW LOGO - 300px height floating over slim bar */
         .supreme-logo {
             height: 300px;
             width: auto;
@@ -41,8 +41,14 @@
         .portal-workspace {
             background-color: #F5F5DC; 
             color: #111;
-            padding: 180px 2rem 100px 2rem; /* Large buffer to clear the 300px logo */
+            padding: 180px 2rem 100px 2rem; 
             position: relative;
+        }
+
+        /* VIDEO MANIFESTO - Cinematic Bridge */
+        .video-manifesto {
+            background: linear-gradient(to bottom, #F5F5DC 50%, #000 50%);
+            padding: 0 2rem;
         }
 
         /* HYBRID SECTION 2: THE STAR GALLERY (Cinematic Black) */
@@ -50,7 +56,6 @@
             background-color: #000;
             padding: 100px 2rem;
             color: #fff;
-            border-top: 1px solid #1a1a1a;
         }
 
         /* SUPREME UI ELEMENTS */
@@ -107,9 +112,8 @@
 
     <section class="portal-workspace">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
             <div id="creators" class="portal-card">
-                <h3 class="text-[10px] font-black text-cyan-600 uppercase tracking-[0.5em] mb-4">Creator Identity</h3>
+                <h3 class="text-[10px] font-black text-cyan-600 uppercase tracking-[0.5em] mb-4 underline">Creator Hub</h3>
                 <h2 class="text-4xl font-black tracking-tighter mb-6 leading-none text-black">Birth your Star. <br>Secure the Legacy.</h2>
                 <p class="text-sm text-gray-600 mb-8 leading-relaxed">
                     Upload your 3D assets and AI characters. Link visuals to **Vocal DNA** and mint a **vSSN** to ensure authorship and licensing protection via Solomon Kin Records LLC.
@@ -118,55 +122,70 @@
             </div>
 
             <div id="directors" class="portal-card">
-                <h3 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.5em] mb-4">Production Portal</h3>
+                <h3 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.5em] mb-4 underline">Studio Hub</h3>
                 <h2 class="text-4xl font-black tracking-tighter mb-6 leading-none text-black">Source and <br>Book Talent.</h2>
                 <p class="text-sm text-gray-600 mb-8 leading-relaxed">
                     Post character briefs and communicate directly with creators. The only marketplace with 100% Master/Publishing cleared music and synthetic talent.
                 </p>
                 <div class="space-y-4">
-                    <input type="text" placeholder="Required Archetype..." class="w-full p-4 rounded border-gray-200 border text-sm outline-none bg-gray-50 focus:border-cyan-400">
+                    <input type="text" placeholder="Character Brief Specification..." class="w-full p-4 rounded border-gray-200 border text-sm outline-none bg-gray-50 focus:border-cyan-400">
                     <a href="accounts.html" class="btn-cyan w-full py-5 text-center inline-block text-[11px] uppercase tracking-[0.3em]">Request Casting Call</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="video-manifesto">
+        <div class="max-w-5xl mx-auto">
+            <div class="rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.3)] border border-white/10 bg-black p-2 transform hover:scale-[1.01] transition duration-700">
+                <iframe 
+                    class="w-full aspect-video rounded-[2.5rem]" 
+                    src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0&modestbranding=1&autoplay=0" 
+                    title="Cast Ai Stars Manifesto"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <section class="cinematic-gallery">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto pt-20">
             <div class="flex justify-between items-end mb-16">
                 <div>
                     <h2 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.5em] mb-4 underline">The Registry</h2>
-                    <h3 class="text-5xl font-black tracking-tighter">Synthetic <span class="text-white italic">Stars.</span></h3>
+                    <h3 class="text-5xl font-black tracking-tighter uppercase">Verified <span class="text-white italic">Synthetic Stars.</span></h3>
                 </div>
                 <a href="backlot.html" class="text-[11px] font-black uppercase tracking-widest text-gray-600 border-b border-gray-800 pb-2 hover:text-white hover:border-white transition">Full Agency Roster</a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="talent-card">
+                <div class="talent-card group">
                     <div class="h-80 bg-[#0a0a0a] overflow-hidden">
-                        <img src="vesper_neo.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="vesper_neo.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 group-hover:scale-110">
                     </div>
                     <div class="p-8">
                         <h4 class="text-xl font-black uppercase mb-2">Vester Neo</h4>
-                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-774 Verified</p>
+                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-774 Verified Asset</p>
                     </div>
                 </div>
-                <div class="talent-card">
+                <div class="talent-card group">
                     <div class="h-80 bg-[#0a0a0a] overflow-hidden">
-                        <img src="3days ahead.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="3days ahead.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 group-hover:scale-110">
                     </div>
                     <div class="p-8">
                         <h4 class="text-xl font-black uppercase mb-2">RDA Disruption</h4>
-                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-102 Verified</p>
+                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-102 Verified Asset</p>
                     </div>
                 </div>
-                <div class="talent-card">
+                <div class="talent-card group">
                     <div class="h-80 bg-[#0a0a0a] overflow-hidden">
-                        <img src="Hackathon.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <img src="Hackathon.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 group-hover:scale-110">
                     </div>
                     <div class="p-8">
                         <h4 class="text-xl font-black uppercase mb-2">M3 Persona</h4>
-                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-889 Verified</p>
+                        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-widest italic">vSSN-889 Verified Asset</p>
                     </div>
                 </div>
             </div>
