@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT | Solomon Kin Records LLC Global Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* SUPREME HEADER: Locked 80px */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
+        }
+
+        .supreme-logo {
+            height: 300px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
+        }
+
+        /* CONCIERGE WORKSPACE: Tan Linen */
+        .contact-workspace {
+            background-color: #F5F5DC; 
+            color: #000;
+            padding: 160px 2rem 100px 2rem; 
+            min-height: 100vh;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e2e2c7;
+            border-radius: 20px;
+            padding: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+        }
+
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000 !important; margin-bottom: 10px; display: block; }
+        .input-field { 
+            width: 100%; padding: 1.2rem; border: 2px solid #000; border-radius: 4px; 
+            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000 !important; font-weight: 700;
+        }
+        .input-field:focus { border-color: #00e5ff; background: #fff; }
+
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.5rem; font-size: 11px; text-transform: uppercase; letter-spacing: 4px; border: none; cursor: pointer; }
+        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-3px); }
+
+        .contact-info-box { border-top: 2px solid #000; margin-top: 3rem; pt: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 2rem; }
+        
+        /* BLACK TEXT OVERRIDE */
+        h2, h3, h4, p, label, span, strong { color: #000 !important; }
+        .text-white-fixed { color: #fff !important; }
+        .text-cyan-fixed { color: #00e5ff !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="supreme-header">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <a href="index.html" class="hover:text-white transition text-white-fixed">Home</a>
+                <a href="backlot.html" class="hover:text-white transition text-white-fixed">Backlot</a>
+                <a href="compliance.html" class="hover:text-white transition text-white-fixed">vSSN Hub</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Concierge Services v2.6</span>
+        </div>
+    </nav>
+
+    <section class="contact-workspace">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Direct Communication</h3>
+            <h2 class="text-7xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-400">Concierge.</span></h2>
+            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Advancing the Dialogue of the Synthetic Economy.</p>
+        </div>
+
+        <div class="contact-card">
+            <form action="mailto:castaistars@outlook.com" method="POST" enctype="text/plain">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="input-group">
+                        <label class="input-label">Your Legal Identity</label>
+                        <input type="text" placeholder="Full Name" class="input-field" required>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Professional Email</label>
+                        <input type="email" placeholder="email@domain.com" class="input-field" required>
+                    </div>
+                </div>
+
+                <div class="input-group mb-8">
+                    <label class="input-label">Inquiry Classification</label>
+                    <select class="input-field" required>
+                        <option value="">-- Select Purpose --</option>
+                        <option>Director / Casting Inquiry</option>
+                        <option>Creator / Identity Birth Support</option>
+                        <option>vSSN / Blockchain Dispute</option>
+                        <option>Partnership & Media Group Access</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-10">
+                    <label class="input-label">Message / Project Brief Outline</label>
+                    <textarea placeholder="Describe your inquiry in detail. For project briefs, include character DNA requirements..." class="input-field h-44" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-black text-white-fixed">Initialize Direct Channel</button>
+            </form>
+
+            <div class="contact-info-box">
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-4">Official Registry Support</h4>
+                    <p class="text-lg font-black italic">castaistars@outlook.com</p>
+                    <p class="text-[8px] font-bold text-gray-400 uppercase mt-2">Verified Synthetic Talent Hub</p>
+                </div>
+                <div class="text-right">
+                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-4">Solomon Kin Media Group</h4>
+                    <p class="text-xs font-black uppercase tracking-widest">Founder & CEO: Mustafa King Brown</p>
+                    <p class="text-[8px] font-bold text-gray-400 uppercase mt-2">Philadelphia | Minneapolis | Global</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
+        <p class="text-[12px] text-gray-700 uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
+    </footer>
+
+</body>
+</html>
