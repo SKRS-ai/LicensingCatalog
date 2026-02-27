@@ -3,77 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Plans | CASTAISTARS Agency</title>
+    <title>PRICING | The Evolution of Synthetic Identity</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: white; margin: 0; }
-        .price-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+
+        /* SUPREME HEADER: Locked 80px */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px; 
         }
-        .price-card:hover { transform: scale(1.05); border-color: #00e5ff; }
-        .check-icon { color: #00e5ff; margin-right: 8px; }
+
+        .supreme-logo {
+            height: 300px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 2rem;
+            z-index: 10001;
+            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
+            pointer-events: none;
+        }
+
+        /* PRICING WORKSPACE: Tan Linen Professionalism */
+        .pricing-workspace {
+            background-color: #F5F5DC; 
+            color: #000;
+            padding: 160px 2rem 100px 2rem; 
+            min-height: 100vh;
+        }
+
+        /* TIER CARDS */
+        .tier-card {
+            background: #fff;
+            border: 1px solid #e2e2c7;
+            border-radius: 20px;
+            padding: 3.5rem 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .tier-card:hover {
+            transform: translateY(-15px);
+            border-color: #00e5ff;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+        }
+
+        .tier-featured {
+            border: 2px solid #00e5ff;
+            box-shadow: 0 20px 40px rgba(0,229,255,0.1);
+        }
+
+        .price-text { font-size: 4rem; font-weight: 900; letter-spacing: -4px; line-height: 1; margin-bottom: 0.5rem; color: #000; }
+        .currency { font-size: 1.5rem; vertical-align: top; margin-right: 4px; }
+
+        .feature-list { list-style: none; margin: 2rem 0; flex-grow: 1; }
+        .feature-item { 
+            font-size: 10px; font-weight: 800; text-transform: uppercase; 
+            letter-spacing: 1.5px; margin-bottom: 1.25rem; display: flex; 
+            align-items: center; gap: 10px; color: #444;
+        }
+        .check { color: #00e5ff; font-size: 14px; }
+
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.25rem; }
+        .btn-black:hover { background: #00e5ff; color: #000; }
+
+        /* DYNAMIC CONTRAST OVERRIDE */
+        .linen-text { color: #000 !important; }
+        .linen-sub { color: #666 !important; }
     </style>
 </head>
-<body class="pb-20">
+<body>
 
-    <nav class="p-8 flex justify-center border-b border-white/5">
-        <a href="index.html"><img src="castaistars.png" alt="CASTAISTARS" class="h-10"></a>
+    <nav class="supreme-header">
+        <div class="flex items-center">
+            <a href="index.html" class="relative block w-[320px]">
+                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
+            </a>
+            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="backlot.html" class="hover:text-white transition">Registry</a>
+                <a href="compliance.html" class="hover:text-white transition">vSSN Hub</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="accounts.html" class="bg-white text-black text-[9px] font-black uppercase tracking-widest px-8 py-3 rounded hover:bg-cyan-500 transition">Begin Birthing</a>
+        </div>
     </nav>
 
-    <header class="text-center py-20 px-6">
-        <p class="text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em] mb-4">Invest in Your Stardom</p>
-        <h1 class="text-5xl font-black uppercase tracking-tighter mb-6">Plans for Every <span class="text-white">Vision</span></h1>
-        <p class="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed uppercase tracking-widest">Whether you are birthing your first persona or licensing for a global feature film, we have the infrastructure to support your journey.</p>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <div class="price-card p-10 rounded-[3rem] flex flex-col">
-            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-2">The Sculptor</h2>
-            <div class="text-4xl font-black mb-8">$0<span class="text-sm font-light text-gray-500">/mo</span></div>
-            <ul class="space-y-4 mb-12 flex-1 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-                <li><span class="check-icon">✓</span> 1 Verified Character Birth</li>
-                <li><span class="check-icon">✓</span> Standard Backlot Listing</li>
-                <li><span class="check-icon">✓</span> Basic IP Vault (5 Logs)</li>
-                <li><span class="check-icon">✓</span> Public Scouting Profile</li>
-            </ul>
-            <a href="onboard.html" class="w-full py-4 border border-white/10 text-center rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition">Start Free</a>
+    <section class="pricing-workspace">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.6em] mb-4 italic">Investment in Synthesis</h3>
+            <h2 class="text-7xl font-black tracking-tighter mb-6 linen-text uppercase">The Price of <span class="italic text-gray-400">Evolution.</span></h2>
+            <p class="max-w-3xl mx-auto text-lg font-medium leading-relaxed linen-sub">
+                We don't just host characters; we birth identities. Every tier is designed to advance your star's visual likeness, localize their vocal properties, and secure their presence on the global blockchain.
+            </p>
         </div>
 
-        <div class="price-card p-10 rounded-[3rem] border-cyan-500/40 bg-cyan-500/5 flex flex-col relative overflow-hidden">
-            <div class="absolute top-6 right-[-35px] bg-cyan-500 text-black text-[8px] font-black px-10 py-1 rotate-45 uppercase">Popular</div>
-            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-cyan-400 mb-2">The Professional</h2>
-            <div class="text-4xl font-black mb-8">$29<span class="text-sm font-light text-gray-500">/mo</span></div>
-            <ul class="space-y-4 mb-12 flex-1 text-[11px] font-bold uppercase tracking-widest text-white">
-                <li><span class="check-icon">✓</span> Unlimited Character Births</li>
-                <li><span class="check-icon">✓</span> Featured Backlot Placement</li>
-                <li><span class="check-icon">✓</span> Unlimited IP Vault Logs</li>
-                <li><span class="check-icon">✓</span> Priority Vocal DNA Locking</li>
-                <li><span class="check-icon">✓</span> vSSN Identity Badge</li>
-            </ul>
-            <button class="w-full py-4 bg-cyan-500 text-black text-center rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-white transition">Get Pro Access</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <div class="tier-card">
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-gray-400">01. Genesis Entry</h4>
+                <div class="price-text"><span class="currency">$</span>49<span class="text-sm font-bold tracking-widest text-gray-400">/MO</span></div>
+                <p class="text-[10px] font-bold uppercase tracking-widest mb-6">Foundational Identity</p>
+                
+                <ul class="feature-list">
+                    <li class="feature-item"><span class="check">✔</span> Standard vSSN Registry</li>
+                    <li class="feature-item"><span class="check">✔</span> Static Likeness Profile</li>
+                    <li class="feature-item"><span class="check">✔</span> Basic Vocal DNA Pairing</li>
+                    <li class="feature-item"><span class="check">✔</span> 20/80 Licensing Shield</li>
+                </ul>
+                <a href="accounts.html" class="btn-black text-center text-[10px] uppercase tracking-widest">Birth Your Star</a>
+            </div>
+
+            <div class="tier-card tier-featured">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-cyan-400 text-[8px] font-black px-4 py-2 rounded uppercase tracking-widest">Most Requested</div>
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-cyan-500">02. Titan Professional</h4>
+                <div class="price-text"><span class="currency">$</span>149<span class="text-sm font-bold tracking-widest text-gray-400">/MO</span></div>
+                <p class="text-[10px] font-bold uppercase tracking-widest mb-6">Marketplace Dominance</p>
+                
+                <ul class="feature-list">
+                    <li class="feature-item"><span class="check">✔</span> Verified vSSN Credentials</li>
+                    <li class="feature-item"><span class="check">✔</span> Full Video & Reel Hosting</li>
+                    <li class="feature-item"><span class="check">✔</span> Advanced Vocal DNA Tuning</li>
+                    <li class="feature-item"><span class="check">✔</span> OpenSea Blockchain Minting</li>
+                    <li class="feature-item"><span class="check">✔</span> Direct Booking Access</li>
+                </ul>
+                <a href="accounts.html" class="bg-cyan-400 text-black w-full py-5 text-center inline-block text-[10px] font-black uppercase tracking-widest rounded hover:bg-black hover:text-white transition">Evolve to Titan</a>
+            </div>
+
+            <div class="tier-card">
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-gray-400">03. Empire Studio</h4>
+                <div class="price-text"><span class="currency">$</span>499<span class="text-sm font-bold tracking-widest text-gray-400">/MO</span></div>
+                <p class="text-[10px] font-bold uppercase tracking-widest mb-6">Full World Building</p>
+                
+                <ul class="feature-list">
+                    <li class="feature-item"><span class="check">✔</span> Elite Backlot Positioning</li>
+                    <li class="feature-item"><span class="check">✔</span> Multi-Character Management</li>
+                    <li class="feature-item"><span class="check">✔</span> Master Rights Legal Retainer</li>
+                    <li class="feature-item"><span class="check">✔</span> Direct Casting Concierge</li>
+                    <li class="feature-item"><span class="check">✔</span> API Integration Access</li>
+                </ul>
+                <a href="accounts.html" class="btn-black text-center text-[10px] uppercase tracking-widest">Build Your Empire</a>
+            </div>
+
         </div>
 
-        <div class="price-card p-10 rounded-[3rem] flex flex-col">
-            <h2 class="text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-2">The Studio</h2>
-            <div class="text-4xl font-black mb-8">Custom</div>
-            <ul class="space-y-4 mb-12 flex-1 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-                <li><span class="check-icon">✓</span> Global Licensing Rights</li>
-                <li><span class="check-icon">✓</span> Private Screening Rooms</li>
-                <li><span class="check-icon">✓</span> Digital Replica Compliance</li>
-                <li><span class="check-icon">✓</span> Authorship Audit Reports</li>
-                <li><span class="check-icon">✓</span> Agent-Assisted Casting</li>
-            </ul>
-            <a href="contact.html" class="w-full py-4 border border-white/10 text-center rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition">Contact Sales</a>
+        <div class="mt-32 max-w-4xl mx-auto border-t border-black/10 pt-20 text-center">
+            <h4 class="text-[11px] font-black uppercase tracking-[1em] mb-10">The Solomon Kin Promise</h4>
+            <p class="text-sm font-black italic uppercase leading-loose linen-text">
+                "We take pride in the birthing properties of the individual. Our ecosystem is not just a platform—it is the replicable, supreme architecture where your digital Advance meets your physical Origin. Your character's identity is our greatest asset."
+            </p>
         </div>
+    </section>
 
-    </main>
-
-    <footer class="mt-20 py-10 text-center border-t border-white/5">
-        <p class="text-[9px] font-black uppercase tracking-[0.5em] text-gray-700">All commissions for licensed talent are handled via Solomon Kin Records LLC.</p>
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
+        <div class="flex justify-center gap-16 text-[10px] font-black uppercase tracking-[0.5em] text-gray-700 mb-16">
+            <a href="index.html" class="hover:text-cyan-400 transition">Backlot</a>
+            <a href="compliance.html" class="hover:text-cyan-400 transition">vSSN Hub</a>
+            <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+        </div>
+        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
 </body>
