@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APPLICATION | Submit Synthetic Talent</title>
+    <title>APPLICATION | The Character Submission Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -37,7 +37,6 @@
 
         .apply-workspace {
             background-color: #F5F5DC; 
-            color: #000;
             padding: 160px 2rem 100px 2rem; 
             min-height: 100vh;
         }
@@ -46,36 +45,38 @@
             background: #fff;
             border: 1px solid #e2e2c7;
             border-radius: 20px;
-            padding: 4rem;
-            max-width: 900px;
+            padding: 4.5rem;
+            max-width: 1100px;
             margin: 0 auto;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.06);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
         }
 
-        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 10px; display: block; }
+        .section-header { border-left: 5px solid #00e5ff; padding-left: 1.5rem; margin-bottom: 2.5rem; }
+        .section-title { font-size: 10px; font-weight: 900; color: #000; text-transform: uppercase; letter-spacing: 3px; }
+
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 12px; display: block; }
         .input-field { 
-            width: 100%; padding: 1.2rem; border: 2px solid #eee; border-radius: 6px; 
+            width: 100%; padding: 1.25rem; border: 2px solid #eee; border-radius: 6px; 
             font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000; font-weight: 600;
         }
+        .input-field:focus { border-color: #00e5ff; background: #fff; }
 
-        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.5rem; font-size: 11px; text-transform: uppercase; letter-spacing: 4px; }
-        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-3px); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
-        .persona-selector {
-            border: 2px solid #eee;
-            padding: 1.5rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-bottom: 1rem;
+        .btn-submit { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.8rem; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; }
+        .btn-submit:hover { background: #00e5ff; color: #000; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,229,255,0.3); }
+
+        /* MULTI-SELECT BADGES */
+        .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .badge-checkbox { display: none; }
+        .badge-label { 
+            padding: 8px 16px; border: 1.5px solid #eee; border-radius: 4px; font-size: 9px; 
+            font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.2s; color: #777;
         }
-        .persona-selector:hover { border-color: #00e5ff; background: #f0feff; }
-        .persona-selector input[type="radio"] { accent-color: #00e5ff; width: 20px; height: 20px; }
+        .badge-checkbox:checked + .badge-label { background: #000; color: #00e5ff; border-color: #000; }
 
-        h2, h3, p, label, span { color: #000 !important; }
+        /* REUSABLE BLACK OVERRIDE */
+        h2, h3, h4, p, label, span { color: #000 !important; }
         .text-white-fixed { color: #fff !important; }
         .text-cyan-fixed { color: #00e5ff !important; }
     </style>
@@ -88,78 +89,113 @@
                 <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
             </a>
             <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
-                <a href="dashboard.html" class="hover:text-white transition text-white-fixed">Back to Console</a>
-                <a href="backlot.html" class="hover:text-white transition text-white-fixed">Registry</a>
+                <a href="dashboard.html" class="hover:text-cyan-400 transition text-white-fixed">Console</a>
+                <a href="backlot.html" class="hover:text-cyan-400 transition text-white-fixed">Backlot</a>
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Pitch Submission Portal</span>
+            <span class="text-[9px] font-black uppercase text-gray-400 tracking-widest italic text-white-fixed">Asset Submission v3.0</span>
         </div>
     </nav>
 
     <section class="apply-workspace">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.7em] mb-4 italic text-cyan-fixed">Casting Submission</h3>
-            <h2 class="text-7xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-400">Pitch.</span></h2>
-            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Submitting to: <span class="text-gray-500">[Project Lethal Ledger]</span></p>
+        <div class="max-w-5xl mx-auto text-center mb-16">
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Supreme Talent Pitch</h3>
+            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">Birth. <span class="italic text-gray-400">Apply.</span></h2>
+            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Advancing the <span class="underline">Identity</span> of the Individual Character.</p>
         </div>
 
         <div class="apply-card">
             <form action="dashboard.html">
                 
+                <div class="section-header">
+                    <h4 class="section-title">01. Identity Selection</h4>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="input-group">
+                        <label class="input-label">Select Registered Star</label>
+                        <select class="input-field">
+                            <option>Vester Neo (vSSN: 774-XX-2026)</option>
+                            <option>M3 Persona (vSSN: 889-XX-2026)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Project Target</label>
+                        <input type="text" value="Project Lethal Ledger" class="input-field bg-gray-100" readonly>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h4 class="section-title">02. Character Anatomy & Genre</h4>
+                </div>
                 <div class="mb-10">
-                    <label class="input-label">01. Select Birthed Persona</label>
-                    <div class="persona-selector">
-                        <input type="radio" name="persona" id="p1" checked>
-                        <label for="p1" class="flex-1 cursor-pointer">
-                            <h4 class="font-black uppercase text-sm">Vester Neo</h4>
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">vSSN: 774-XX-2026 // Baritone Grit-B</p>
-                        </label>
-                    </div>
-                    <div class="persona-selector">
-                        <input type="radio" name="persona" id="p2">
-                        <label for="p2" class="flex-1 cursor-pointer">
-                            <h4 class="font-black uppercase text-sm">M3 Persona</h4>
-                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">vSSN: 889-XX-2026 // Tenor Sonic-Sharp</p>
-                        </label>
+                    <label class="input-label">Define Character Genre / Essence (Select Multi)</label>
+                    <div class="badge-grid">
+                        <input type="checkbox" id="g1" class="badge-checkbox"><label for="g1" class="badge-label">Cyber-Noir</label>
+                        <input type="checkbox" id="g2" class="badge-checkbox"><label for="g2" class="badge-label">High-Fantasy</label>
+                        <input type="checkbox" id="g3" class="badge-checkbox"><label for="g3" class="badge-label">Modern-Luxe</label>
+                        <input type="checkbox" id="g4" class="badge-checkbox"><label for="g4" class="badge-label">Gritty-Survival</label>
+                        <input type="checkbox" id="g5" class="badge-checkbox"><label for="g5" class="badge-label">Synthetic-Pop</label>
+                        <input type="checkbox" id="g6" class="badge-checkbox"><label for="g6" class="badge-label">Historical-Auth</label>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <div class="input-group">
-                        <label class="input-label">Project Specific Vocal Audition</label>
-                        <input type="file" accept="audio/*" class="input-field py-2 text-xs">
-                        <p class="text-[8px] mt-2 font-bold uppercase text-gray-400 italic">Upload a localized clip matching the brief</p>
+                        <label class="input-label">Custom Genre / Archetype (Other)</label>
+                        <input type="text" placeholder="Explain your character's unique niche..." class="input-field">
+                        <p class="text-[9px] font-bold text-gray-400 mt-2 uppercase">Define a category that doesn't exist yet.</p>
                     </div>
                     <div class="input-group">
-                        <label class="input-label">Additional Visual Reference</label>
-                        <input type="file" accept="image/*,video/*" class="input-field py-2 text-xs">
-                        <p class="text-[8px] mt-2 font-bold uppercase text-gray-400 italic">Custom wardrobe or pose for this role</p>
+                        <label class="input-label">Vocal Disposition / Mood</label>
+                        <input type="text" placeholder="e.g. Melancholic, Aggressive, Whispering..." class="input-field">
+                        <p class="text-[9px] font-bold text-gray-400 mt-2 uppercase">Describe the 'Soul' of the audio pairing.</p>
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <label class="input-label">Why this character fits the role?</label>
-                    <textarea placeholder="Explain the character's motivations and technical readiness for this production..." class="input-field h-32"></textarea>
+                <div class="section-header">
+                    <h4 class="section-title">03. The Life Record</h4>
+                </div>
+                <div class="input-group mb-12">
+                    <label class="input-label">Complete Character Attribute Manifest</label>
+                    <textarea placeholder="Describe every attribute: Their birth motivations, physical limitations, emotional triggers, and technical readiness. Take pride in the details—the director is looking for the individual, not a template." class="input-field h-52"></textarea>
                 </div>
 
-                <div class="bg-gray-50 p-8 rounded border-l-4 border-black mb-10">
-                    <label class="flex items-start gap-4 cursor-pointer">
-                        <input type="checkbox" class="mt-1" required>
-                        <span class="text-[10px] font-bold text-gray-500 uppercase leading-relaxed">
-                            I authorize the submission of this vSSN-Verified persona for consideration. If booked, I agree to the project buyout terms and the Solomon Kin Records LLC 20/80 Licensing Protocol.
+                <div class="section-header">
+                    <h4 class="section-title">04. Localized Stems</h4>
+                </div>
+                <div class="grid-3 mb-12">
+                    <div class="input-group">
+                        <label class="input-label">Custom Vocal Audition</label>
+                        <input type="file" class="input-field py-2 text-xs">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Visual Variant Reel</label>
+                        <input type="file" class="input-field py-2 text-xs">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">MoCap Data (Optional)</label>
+                        <input type="file" class="input-field py-2 text-xs">
+                    </div>
+                </div>
+
+                <div class="bg-black p-8 rounded-xl border-l-8 border-cyan-400 mb-12 shadow-2xl">
+                    <label class="flex items-start gap-5 cursor-pointer">
+                        <input type="checkbox" class="mt-1 w-6 h-6 accent-cyan-400" required>
+                        <span class="text-[11px] font-black text-white-fixed uppercase leading-relaxed tracking-wider">
+                            I submit this persona as a unique birthed individual. I verify the authorship and agree to the Solomon Kin Records LLC 20/80 Global Licensing Standard for this specific pitch.
                         </span>
                     </label>
                 </div>
 
-                <button type="submit" class="btn-black text-white-fixed">Submit Persona for Review</button>
+                <button type="submit" class="btn-submit text-white-fixed">Broadcast Synthetic Individual to Production</button>
             </form>
         </div>
     </section>
 
     <footer class="py-40 bg-black text-center border-t border-white/5">
         <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
-        <p class="text-[11px] text-white-fixed uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
+        <p class="text-[12px] text-gray-600 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
 </body>
