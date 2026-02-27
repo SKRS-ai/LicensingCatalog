@@ -39,7 +39,7 @@
         /* REGISTRATION WORKSPACE: Tan Linen */
         .registration-workspace {
             background-color: #F5F5DC; 
-            color: #111;
+            color: #000; /* ALL TEXT BLACK FOR VISIBILITY */
             padding: 180px 2rem 100px 2rem; 
             min-height: 100vh;
         }
@@ -49,23 +49,42 @@
             border: 1px solid #e2e2c7;
             border-radius: 12px;
             padding: 3.5rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             box-shadow: 0 20px 50px rgba(0,0,0,0.05);
         }
 
-        .input-group { margin-bottom: 1.5rem; }
-        .input-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 8px; display: block; }
+        /* HIGH VISIBILITY TYPOGRAPHY */
+        .input-group { margin-bottom: 2rem; }
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 10px; display: block; }
+        
         .input-field { 
-            width: 100%; padding: 1rem; border: 1px solid #eee; border-radius: 4px; 
-            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s;
+            width: 100%; padding: 1.25rem; border: 2px solid #eee; border-radius: 4px; 
+            font-size: 15px; background: #fafafa; outline: none; transition: 0.3s; color: #000; font-weight: 500;
         }
         .input-field:focus { border-color: #00e5ff; background: #fff; }
 
-        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.25rem; }
-        .btn-black:hover { background: #00e5ff; color: #000; }
+        /* MULTI-ASSET UPLOAD ZONE */
+        .upload-grid { display: grid; grid-cols: 1; md:grid-cols-2; gap: 1.5rem; }
+        .upload-box {
+            border: 2px dashed #e2e2c7;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            background: #fff;
+            transition: 0.3s;
+        }
+        .upload-box:hover { border-color: #00e5ff; background: #f0feff; }
 
-        .onboarding-step { color: #00e5ff; font-weight: 900; font-size: 10px; letter-spacing: 3px; margin-bottom: 1rem; }
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.5rem; font-size: 12px; }
+        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-2px); }
+
+        .onboarding-step { color: #00e5ff; font-weight: 900; font-size: 11px; letter-spacing: 4px; margin-bottom: 1.5rem; border-left: 4px solid #00e5ff; padding-left: 1rem; }
+        
+        /* BLACK TEXT OVERRIDE */
+        h2, p, label, span { color: #000 !important; }
+        .text-white-fixed { color: #fff !important; }
+        .text-cyan-fixed { color: #00e5ff !important; }
     </style>
 </head>
 <body>
@@ -76,43 +95,88 @@
                 <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
             </a>
             <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
-                <a href="index.html" class="hover:text-white transition">Backlot</a>
-                <a href="compliance.html" class="hover:text-white transition">vSSN Hub</a>
+                <a href="index.html" class="hover:text-white transition text-white-fixed">Backlot</a>
+                <a href="compliance.html" class="hover:text-white transition text-white-fixed">vSSN Hub</a>
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic">Secure Intake v2.0</span>
+            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Biometric Intake Active</span>
         </div>
     </nav>
 
     <section class="registration-workspace">
-        <div class="max-w-4xl mx-auto text-center mb-12">
-            <h2 class="text-6xl font-black tracking-tighter mb-4">Identity <span class="italic text-gray-400">Pairing.</span></h2>
-            <p class="text-gray-600 font-medium">Link your Human Authorship to your Synthetic Asset for On-Chain Minting.</p>
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h2 class="text-7xl font-black tracking-tighter mb-4">Identity <span class="italic text-gray-400">Pairing.</span></h2>
+            <p class="text-xl font-bold uppercase tracking-widest">Universal Intake for Synthetic Actors & Virtual Influencers</p>
         </div>
 
         <div class="form-card">
             <form action="dashboard.html">
-                <div class="onboarding-step">STEP 01: HUMAN VERIFICATION</div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="onboarding-step">HUMAN VERIFICATION</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                     <div class="input-group">
-                        <label class="input-label">Legal Name / Human Creator</label>
-                        <input type="text" placeholder="Full Legal Name" class="input-field" required>
+                        <label class="input-label">Legal Name / Rights Holder</label>
+                        <input type="text" placeholder="Full Name for Licensing" class="input-field" required>
                     </div>
                     <div class="input-group">
-                        <label class="input-label">Creator Email (vSSN Linked)</label>
-                        <input type="email" placeholder="email@domain.com" class="input-field" required>
+                        <label class="input-label">Secure Email Registry</label>
+                        <input type="email" placeholder="vssn-linked-email@domain.com" class="input-field" required>
                     </div>
                 </div>
 
-                <div class="onboarding-step mt-8">STEP 02: SYNTHETIC ASSET DATA</div>
-                
+                <div class="onboarding-step">CHARACTER ASSET INTAKE</div>
                 <div class="input-group">
-                    <label class="input-label">Character Persona Name</label>
+                    <label class="input-label">Synthetic Persona Name (Stage Name)</label>
                     <input type="text" placeholder="e.g. Vester Neo" class="input-field" required>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="input-group">
-                        <label class="input-label">Likeness Upload (.obj / .png / .
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="upload-box">
+                        <label class="input-label mb-4">Visual Likeness (Photos & Videos)</label>
+                        <input type="file" multiple accept="image/*,video/*" class="hidden" id="visual-upload">
+                        <label for="visual-upload" class="cursor-pointer">
+                            <span class="block text-3xl mb-2">📸</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Upload Media Assets</span>
+                            <p class="text-[9px] mt-2 italic">Accepts JPG, PNG, MP4, MOV</p>
+                        </label>
+                    </div>
+                    
+                    <div class="upload-box">
+                        <label class="input-label mb-4">Vocal DNA (Audio Stem)</label>
+                        <input type="file" accept="audio/*" class="hidden" id="audio-upload">
+                        <label for="audio-upload" class="cursor-pointer">
+                            <span class="block text-3xl mb-2">🎙️</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Upload Vocal Frequency</span>
+                            <p class="text-[9px] mt-2 italic">Accepts WAV, MP3, AIFF</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="onboarding-step">ON-CHAIN MINTING</div>
+                <div class="input-group">
+                    <label class="input-label">OpenSea Wallet (Required for Blockchain Authorship)</label>
+                    <input type="text" placeholder="0x..." class="input-field font-mono">
+                </div>
+
+                <div class="bg-gray-100 p-8 rounded border-l-4 border-black mb-10">
+                    <label class="flex items-start gap-5 cursor-pointer">
+                        <input type="checkbox" class="mt-1 w-5 h-5" required>
+                        <span class="text-[11px] font-bold uppercase leading-relaxed">
+                            I confirm I am the original creator of this synthetic asset. I authorize <strong class="text-black">Solomon Kin Records LLC</strong> to manage 100% of Master/Publishing rights and issue an immutable vSSN on the blockchain.
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-black uppercase tracking-[0.6em] text-white-fixed">Initialize Genesis Record</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-40 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
+        <p class="text-[11px] text-white-fixed uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
+    </footer>
+
+</body>
+</html>
