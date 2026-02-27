@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APPLICATION | The Character Submission Engine</title>
+    <title>APPLICATION | Solomon Kin Records LLC Submission Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
+        /* HEADER: Locked 80px Height */
         .supreme-header {
             background-color: #000;
             position: sticky;
@@ -35,61 +36,60 @@
             pointer-events: none;
         }
 
+        /* WORKSPACE: Tan Linen */
         .apply-workspace {
             background-color: #F5F5DC; 
-            padding: 160px 2rem 100px 2rem; 
+            padding: 180px 2rem 100px 2rem; 
             min-height: 100vh;
         }
 
         .apply-card {
             background: #fff;
-            border: 1px solid #e2e2c7;
+            border: 2px solid #e2e2c7;
             border-radius: 20px;
             padding: 4.5rem;
             max-width: 1100px;
             margin: 0 auto;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.1);
         }
 
-        .section-header { border-left: 5px solid #00e5ff; padding-left: 1.5rem; margin-bottom: 2.5rem; }
+        /* SECTION HEADERS */
+        .section-header { border-left: 6px solid #000; padding-left: 1.5rem; margin-bottom: 2.5rem; }
         .section-title { font-size: 11px; font-weight: 900; color: #000 !important; text-transform: uppercase; letter-spacing: 3px; }
 
-        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000 !important; margin-bottom: 12px; display: block; }
+        /* FORM INPUT VISIBILITY FIX */
+        .input-label { font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000 !important; margin-bottom: 12px; display: block; }
         
         .input-field { 
-            width: 100%; padding: 1.25rem; border: 2px solid #eee; border-radius: 6px; 
-            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000 !important; font-weight: 600;
+            width: 100%; padding: 1.25rem; border: 2px solid #000; border-radius: 6px; 
+            font-size: 14px; background: #fff; outline: none; transition: 0.3s; color: #000 !important; font-weight: 700;
         }
-        .input-field:focus { border-color: #00e5ff; background: #fff; }
+        .input-field:focus { border-color: #00e5ff; box-shadow: 0 0 15px rgba(0,229,255,0.2); }
+        .input-field::placeholder { color: #888 !important; font-weight: 400; }
 
-        /* THE FIX: GENRE SELECTION CONTRAST */
+        /* GENRE SELECTOR: ERROR-FREE CONTRAST */
         .badge-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
         .badge-checkbox { display: none; }
-        
-        /* Default State: Visible Black text on Light border */
         .badge-label { 
-            padding: 12px 20px; border: 2px solid #000; border-radius: 4px; font-size: 10px; 
+            padding: 12px 24px; border: 2px solid #000; border-radius: 4px; font-size: 10px; 
             font-weight: 900; text-transform: uppercase; cursor: pointer; transition: 0.2s; 
             color: #000 !important; background: transparent; letter-spacing: 1px;
         }
-        
-        /* Hover State: Cyan border, text remains Black and visible */
-        .badge-label:hover { border-color: #00e5ff; }
-
-        /* Selected State: Inverts to Black background, Cyan text (Guaranteed Legibility) */
         .badge-checkbox:checked + .badge-label { 
             background: #000; 
             color: #00e5ff !important; 
             border-color: #000; 
         }
 
-        .btn-submit { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.8rem; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; cursor: pointer; }
+        /* SUBMIT BUTTON: HIGH COMMAND */
+        .btn-submit { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.8rem; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; cursor: pointer; border: none; }
         .btn-submit:hover { background: #00e5ff; color: #000; transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,229,255,0.3); }
 
-        /* REUSABLE BLACK OVERRIDE */
-        h2, h3, h4, p, label, span { color: #000 !important; }
+        /* GLOBAL CONTRAST RECOVERY */
+        h2, h3, h4, p, label, span, strong { color: #000 !important; opacity: 1 !important; }
         .text-white-fixed { color: #fff !important; }
         .text-cyan-fixed { color: #00e5ff !important; }
+        .text-sub-heavy { color: #333 !important; font-weight: 800; }
     </style>
 </head>
 <body>
@@ -105,42 +105,46 @@
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-400 tracking-widest italic text-white-fixed">Secure Intake Active</span>
+            <span class="text-[10px] font-black uppercase tracking-widest italic text-white-fixed">Asset Submission v3.2</span>
         </div>
     </nav>
 
     <section class="apply-workspace">
         <div class="max-w-5xl mx-auto text-center mb-16">
-            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Supreme Talent Pitch</h3>
-            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-400 text-black">Birthright.</span></h2>
-            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Advancing the <span class="underline">Identity</span> of the Individual Character.</p>
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Production Intake</h3>
+            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">Identity <span class="italic text-gray-700">Pitch.</span></h2>
+            <p class="text-sm font-black text-black uppercase tracking-[0.5em] mt-4">Commanding the <span class="underline decoration-2">Sovereignty</span> of Synthetic Stars.</p>
         </div>
 
         <div class="apply-card">
-            <form action="dashboard.html" onsubmit="return validateForm()">
+            <form action="dashboard.html" method="GET">
                 
                 <div class="section-header">
-                    <h4 class="section-title">01. Identity Selection</h4>
+                    <h4 class="section-title">01. Submission Targeting</h4>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
                     <div class="input-group">
-                        <label class="input-label">Select Registered Star</label>
+                        <label class="input-label">Select Registered Star in Network</label>
                         <select class="input-field" required>
-                            <option value="">-- Select One --</option>
+                            <option value="">-- Choose Your Verified Asset --</option>
                             <option>Vester Neo (vSSN: 774-XX-2026)</option>
+                            <option>RDA Disruption (vSSN: 102-XX-2026)</option>
                             <option>M3 Persona (vSSN: 889-XX-2026)</option>
+                            <option>Nova Prime (vSSN: 442-XX-2026)</option>
+                            <option>Echo Luxe (vSSN: 229-XX-2026)</option>
+                            <option>Axel Thorne (vSSN: 991-XX-2026)</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label class="input-label">Project Target</label>
-                        <input type="text" value="Project Lethal Ledger" class="input-field bg-gray-100" readonly>
+                        <label class="input-label">Project Target / Role ID</label>
+                        <input type="text" placeholder="Enter the Production Title or Agency Brief ID..." class="input-field" required>
                     </div>
                 </div>
 
                 <div class="section-header">
-                    <h4 class="section-title">02. Character Anatomy & Genre</h4>
+                    <h4 class="section-title">02. Character DNA & Genre</h4>
                 </div>
-                <div class="mb-10">
+                <div class="mb-12">
                     <label class="input-label">Define Character Genre / Essence (Select Multi)</label>
                     <div class="badge-grid">
                         <input type="checkbox" id="g1" class="badge-checkbox"><label for="g1" class="badge-label">Cyber-Noir</label>
@@ -152,50 +156,49 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
                     <div class="input-group">
                         <label class="input-label">Custom Genre / Archetype (Other)</label>
-                        <input type="text" placeholder="Explain your character's unique niche..." class="input-field" required>
-                        <p class="text-[9px] font-bold text-gray-500 mt-2 uppercase">Define a category that doesn't exist yet.</p>
+                        <input type="text" placeholder="Detail your character's unique niche..." class="input-field" required>
                     </div>
                     <div class="input-group">
                         <label class="input-label">Vocal Disposition / Mood</label>
                         <input type="text" placeholder="e.g. Melancholic, Aggressive, Whispering..." class="input-field" required>
-                        <p class="text-[9px] font-bold text-gray-500 mt-2 uppercase">Describe the 'Soul' of the audio pairing.</p>
                     </div>
                 </div>
 
                 <div class="section-header">
-                    <h4 class="section-title">03. The Life Record</h4>
+                    <h4 class="section-title">03. Attribute Manifest</h4>
                 </div>
                 <div class="input-group mb-12">
-                    <label class="input-label">Complete Character Attribute Manifest</label>
-                    <textarea required placeholder="Describe every attribute: Their birth motivations, physical limitations, emotional triggers, and technical readiness. Take pride in the details—the director is looking for the individual, not a template." class="input-field h-52"></textarea>
+                    <label class="input-label">Complete Personality & Physical Profile</label>
+                    <textarea required placeholder="Describe birth motivations, physical limitations, and emotional triggers. Provide the Director with the full soul of the asset." class="input-field h-44"></textarea>
                 </div>
 
                 <div class="section-header">
-                    <h4 class="section-title">04. Localized Stems</h4>
+                    <h4 class="section-title">04. Technical & Vocal Stems</h4>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="input-group">
-                        <label class="input-label">Custom Vocal Audition</label>
-                        <input type="file" class="input-field py-2 text-xs" required>
+                        <label class="input-label">Vocal Audition (WAV)</label>
+                        <input type="file" class="input-field py-3 text-xs" required>
                     </div>
                     <div class="input-group">
-                        <label class="input-label">Visual Variant Reel</label>
-                        <input type="file" class="input-field py-2 text-xs" required>
+                        <label class="input-label">Visual Reel (MP4)</label>
+                        <input type="file" class="input-field py-3 text-xs" required>
                     </div>
                     <div class="input-group">
                         <label class="input-label">MoCap Data (Optional)</label>
-                        <input type="file" class="input-field py-2 text-xs">
+                        <input type="file" class="input-field py-3 text-xs">
+                        <p class="text-[9px] font-black uppercase text-gray-800 mt-2">FBX / BVH Files</p>
                     </div>
                 </div>
 
-                <div class="bg-black p-8 rounded-xl border-l-8 border-cyan-400 mb-12 shadow-2xl">
-                    <label class="flex items-start gap-5 cursor-pointer">
+                <div class="bg-black p-10 rounded-xl border-l-[12px] border-cyan-400 mb-12 shadow-2xl">
+                    <label class="flex items-start gap-6 cursor-pointer">
                         <input type="checkbox" class="mt-1 w-6 h-6 accent-cyan-400" required>
-                        <span class="text-[11px] font-black text-white-fixed uppercase leading-relaxed tracking-wider">
-                            I verify this persona as a unique birthed individual. I agree to the Solomon Kin Records LLC 20/80 Global Licensing Standard for this specific pitch.
+                        <span class="text-[12px] font-black text-white-fixed uppercase leading-relaxed tracking-wider">
+                            I authorize this submission. I verify authorship and agree to the <span class="text-cyan-400">Solomon Kin Records LLC</span> 20/80 Global Licensing Standard for this specific pitch.
                         </span>
                     </label>
                 </div>
@@ -207,14 +210,8 @@
 
     <footer class="py-40 bg-black text-center border-t border-white/5">
         <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
-        <p class="text-[12px] text-gray-600 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
+        <p class="text-[12px] text-gray-700 uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
-    <script>
-        function validateForm() {
-            // Additional custom validation can be added here
-            return true; 
-        }
-    </script>
 </body>
 </html>
