@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDIO PORTAL | Solomon Kin Records LLC Executive Access</title>
+    <title>EXECUTIVE INTAKE | Solomon Kin Records LLC Studio Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* SUPREME HEADER: Locked 80px */
+        /* HEADER: Locked 80px */
         .supreme-header {
             background-color: #000;
             position: sticky;
@@ -43,47 +43,40 @@
             padding: 160px 2rem 100px 2rem; 
         }
 
-        /* POSTING FORM CARD */
+        /* ADVANCED FORM CARD */
         .brief-card {
             background: #fff;
             border: 1px solid #e2e2c7;
-            border-radius: 16px;
-            padding: 4rem;
-            max-width: 900px;
+            border-radius: 20px;
+            padding: 4.5rem;
+            max-width: 1100px;
             margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.08);
         }
 
-        .input-group { margin-bottom: 1.5rem; }
-        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 8px; display: block; }
+        .section-label { font-size: 10px; font-weight: 900; color: #00e5ff; background: #000; display: inline-block; padding: 4px 12px; border-radius: 4px; margin-bottom: 1.5rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        
+        .input-group { margin-bottom: 2rem; }
+        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 10px; display: block; }
         .input-field { 
-            width: 100%; padding: 1.1rem; border: 2px solid #eee; border-radius: 4px; 
-            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000;
+            width: 100%; padding: 1.2rem; border: 2px solid #eee; border-radius: 6px; 
+            font-size: 14px; background: #fafafa; outline: none; transition: 0.3s; color: #000; font-weight: 600;
         }
-        .input-field:focus { border-color: #00e5ff; background: #fff; }
+        .input-field:focus { border-color: #00e5ff; background: #fff; box-shadow: 0 0 15px rgba(0,229,255,0.1); }
 
-        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.4rem; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; }
-        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-2px); }
+        .check-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .check-item { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 800; text-transform: uppercase; color: #444; cursor: pointer; }
+        .check-item input { accent-color: #00e5ff; width: 16px; height: 16px; }
 
-        /* OPEN CALLS: Cinematic Black */
-        .open-calls-section {
-            background-color: #000;
-            padding: 100px 2rem;
-            color: #fff;
-        }
+        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.8rem; font-size: 12px; text-transform: uppercase; letter-spacing: 4px; }
+        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-3px); }
 
-        .call-item {
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 1.5rem;
-            transition: 0.4s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .call-item:hover { border-color: #00e5ff; transform: scale(1.01); }
+        /* BLACK TEXT OVERRIDE */
+        h2, h3, h4, p, label, span { color: #000 !important; }
+        .text-white-fixed { color: #fff !important; }
+        .text-cyan-fixed { color: #00e5ff !important; }
     </style>
 </head>
 <body>
@@ -94,107 +87,117 @@
                 <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
             </a>
             <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
-                <a href="index.html" class="hover:text-white transition">Home</a>
-                <a href="backlot.html" class="hover:text-white transition">Backlot</a>
-                <a href="compliance.html" class="hover:text-white transition">vSSN Hub</a>
+                <a href="index.html" class="hover:text-white transition text-white-fixed">Home</a>
+                <a href="backlot.html" class="hover:text-white transition text-white-fixed">Backlot</a>
+                <a href="compliance.html" class="hover:text-white transition text-white-fixed">vSSN Hub</a>
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic">Studio Access Level 4</span>
+            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Executive Level 4 Intake</span>
         </div>
     </nav>
 
     <section class="studio-workspace">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.6em] mb-4 italic">Production Assets Required</h3>
-            <h2 class="text-7xl font-black tracking-tighter mb-4 text-black uppercase">Post a <span class="italic text-gray-400">Brief.</span></h2>
-            <p class="text-lg font-bold text-black uppercase tracking-widest">Connect with Solomon Kin Verified Creators Instantly.</p>
+        <div class="max-w-5xl mx-auto text-center mb-20">
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.7em] mb-4 italic">Production Assets Required</h3>
+            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">Broadcast <span class="italic text-gray-400">Brief.</span></h2>
+            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Command the Marketplace. Secure the Persona.</p>
         </div>
 
         <div class="brief-card">
             <form action="#">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                
+                <div class="section-label text-cyan-fixed">01. Project Parameters</div>
+                <div class="grid-3">
                     <div class="input-group">
-                        <label class="input-label">Project Title</label>
-                        <input type="text" placeholder="e.g. Untitled Noir Thriller" class="input-field" required>
+                        <label class="input-label">Project Working Title</label>
+                        <input type="text" placeholder="e.g. Project 'Lethal Ledger'" class="input-field" required>
                     </div>
                     <div class="input-group">
-                        <label class="input-label">Studio / Production Co.</label>
+                        <label class="input-label">Production Company</label>
                         <input type="text" placeholder="Legal Entity Name" class="input-field" required>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Project Medium</label>
+                        <select class="input-field">
+                            <option>Feature Film (Cinema)</option>
+                            <option>AAA Video Game</option>
+                            <option>Virtual Influencer Campaign</option>
+                            <option>AI Radio / Podcast Series</option>
+                            <option>Music Video Production</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-label text-cyan-fixed">02. Character DNA & Archetype</div>
+                <div class="grid-3">
+                    <div class="input-group">
+                        <label class="input-label">Core Archetype</label>
+                        <select class="input-field">
+                            <option>Lead Hero (Clean-Vocal)</option>
+                            <option>Antagonist (Grit-B Pairing)</option>
+                            <option>Sage / Narrator (Sonic-Sharp)</option>
+                            <option>Underworld / Noir (Baritone)</option>
+                            <option>High-Fashion / Luxe (Soprano)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Age Range (Apparent)</label>
+                        <input type="text" placeholder="e.g. 25-35 Synthetic Years" class="input-field">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">Vocal Texture Profile</label>
+                        <select class="input-field">
+                            <option>Velvet / Smooth</option>
+                            <option>Gravel / Distorted</option>
+                            <option>Monotone / Robotic</option>
+                            <option>Hyper-Realistic Humanoid</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-label text-cyan-fixed">03. Technical Fidelity & MoCap</div>
+                <div class="input-group">
+                    <label class="input-label">Select Required Deliverables</label>
+                    <div class="check-grid">
+                        <label class="check-item"><input type="checkbox"> Face-Link / AR Ready</label>
+                        <label class="check-item"><input type="checkbox"> Full Body MoCap Compatible</label>
+                        <label class="check-item"><input type="checkbox"> 4K Visual Textures</label>
+                        <label class="check-item"><input type="checkbox"> Unreal Engine 5 Rigged</label>
+                        <label class="check-item"><input type="checkbox"> Biometric Voice-to-Skull</label>
+                        <label class="check-item"><input type="checkbox"> Live-Stream Optimized</label>
+                    </div>
+                </div>
+
+                <div class="section-label text-cyan-fixed">04. Legal & vSSN Requirements</div>
+                <div class="grid-3">
+                    <div class="input-group">
+                        <label class="input-label">Required Verification Level</label>
+                        <select class="input-field">
+                            <option>Standard vSSN (Verified Identity)</option>
+                            <option>Genesis Record (Blockchain Secured)</option>
+                            <option>Elite Backlot (Agency Managed)</option>
+                        </select>
+                    </div>
+                    <div class="input-group lg:col-span-2">
+                        <label class="input-label">Project Length / Licensing Term</label>
+                        <input type="text" placeholder="e.g. 2 Year Buyout / Global Distribution" class="input-field">
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label class="input-label">Character Archetype & Description</label>
-                    <textarea placeholder="Describe the visual and personality traits required for the star..." class="input-field h-32" required></textarea>
+                    <label class="input-label">Full Brief / Special Instructions</label>
+                    <textarea placeholder="Describe character motivations, specific vocal inflections, and emotional range requirements..." class="input-field h-40"></textarea>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                    <div class="input-group">
-                        <label class="input-label">Required Vocal DNA Pairing</label>
-                        <select class="input-field">
-                            <option>Any Vocal Range</option>
-                            <option>Deep Baritone (Grit-Focus)</option>
-                            <option>Sharp Tenor (Sonic-Sharp)</option>
-                            <option>Velvet Soprano</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Project Category</label>
-                        <select class="input-field">
-                            <option>Cinema Feature</option>
-                            <option>Branded Influencer Campaign</option>
-                            <option>Virtual Identity Ambassadorship</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-black">Broadcast Casting Brief</button>
+                <button type="submit" class="btn-black text-white-fixed">Broadcast Casting Brief to Global Backlot</button>
             </form>
-        </div>
-    </section>
-
-    <section class="open-calls-section">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-16">
-                <div>
-                    <h3 class="text-[10px] font-black text-cyan-500 uppercase tracking-[0.6em] mb-4 underline">The Board</h3>
-                    <h4 class="text-5xl font-black tracking-tighter uppercase">Active <span class="italic text-gray-500">Casting Calls.</span></h4>
-                </div>
-                <p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest italic">Updated: Real-Time // 2026</p>
-            </div>
-
-            <div class="space-y-6">
-                <div class="call-item">
-                    <div>
-                        <h5 class="text-2xl font-black uppercase italic tracking-tight mb-1">Global Fragrance Brand</h5>
-                        <p class="text-[11px] text-gray-500 uppercase tracking-widest mb-4">Role: Virtual Ambassador // Soprano Vocal Required</p>
-                        <div class="flex gap-4">
-                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Influencer</span>
-                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Verified vSSN Only</span>
-                        </div>
-                    </div>
-                    <button class="text-cyan-400 font-black uppercase text-[10px] tracking-widest border border-cyan-400/30 px-8 py-4 rounded hover:bg-cyan-400 hover:text-black transition">View Details</button>
-                </div>
-
-                <div class="call-item">
-                    <div>
-                        <h5 class="text-2xl font-black uppercase italic tracking-tight mb-1">Noir Action Feature</h5>
-                        <p class="text-[11px] text-gray-500 uppercase tracking-widest mb-4">Role: Lead Antagonist // Baritone Grit-B Pairing</p>
-                        <div class="flex gap-4">
-                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Cinema</span>
-                            <span class="bg-white/5 border border-white/10 text-[9px] font-black px-3 py-1 rounded uppercase">Genesis Record Required</span>
-                        </div>
-                    </div>
-                    <button class="text-cyan-400 font-black uppercase text-[10px] tracking-widest border border-cyan-400/30 px-8 py-4 rounded hover:bg-cyan-400 hover:text-black transition">View Details</button>
-                </div>
-            </div>
         </div>
     </section>
 
     <footer class="py-40 bg-black text-center border-t border-white/5">
         <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
-        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
+        <p class="text-[11px] text-white-fixed uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
     </footer>
 
 </body>
