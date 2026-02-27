@@ -3,221 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTAISTARS | Professional AI Casting & Identity Platform</title>
+    <title>CASTAISTARS | Professional Synthetic Talent Marketplace</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: white; scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #fff; color: #111; scroll-behavior: smooth; }
         
-        /* THE EMPIRE LOGO (720px Height) */
-        .brand-logo-empire { 
-            height: 720px; 
-            width: auto; 
-            filter: drop-shadow(0 0 40px rgba(0, 229, 255, 0.15));
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
-        }
+        /* STANDARD NAV LOGO SCALE */
+        .nav-logo { height: 45px; width: auto; }
         
-        /* Backstage-Inspired Design Language */
-        .search-pill { 
-            background: #0d0d0d; 
-            border: 1px solid rgba(255,255,255,0.1); 
-            transition: all 0.3s ease; 
-        }
-        .search-pill:focus-within { 
-            border-color: #00e5ff; 
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1); 
-        }
+        /* Backstage Design System Utilities */
+        .btn-primary { background-color: #00e5ff; color: #000; font-weight: 800; transition: all 0.2s ease; border-radius: 4px; }
+        .btn-primary:hover { background-color: #000; color: #00e5ff; }
+        
+        .btn-outline { border: 2px solid #111; color: #111; font-weight: 800; border-radius: 4px; transition: all 0.2s; }
+        .btn-outline:hover { background: #111; color: #fff; }
 
-        .talent-grid-card { 
-            background: #080808; 
-            border: 1px solid rgba(255,255,255,0.05); 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-        }
-        .talent-grid-card:hover { 
-            transform: translateY(-8px); 
-            border-color: #00e5ff; 
-            background: #0c0c0c;
-        }
+        .nav-sticky { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 1px solid #eee; }
+        
+        .section-gray { background-color: #f9fafb; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9; }
+        .card { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; transition: box-shadow 0.3s; }
+        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        /* Reveal Logic */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Custom Scrollbar for A-List Feel */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
+        .heading-hero { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
     </style>
 </head>
-<body class="bg-black">
+<body>
 
-    <div class="w-full bg-[#050505] border-b border-white/5 py-3 px-10 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-gray-600">
-        <div class="flex gap-8">
-            <span class="text-cyan-400">Cast Ai Stars Global</span>
-            <span class="hidden md:inline">Identity Protection: vSSN Verified</span>
-        </div>
-        <div class="flex gap-8">
-            <a href="compliance.html" class="hover:text-white transition">Regulatory Hub</a>
-            <a href="pricing.html" class="hover:text-white transition">Agent Membership</a>
+    <div class="bg-black text-white text-[9px] font-bold uppercase tracking-[0.2em] py-2 px-8 flex justify-between items-center">
+        <div>Solomon Kin Records LLC | Media Group</div>
+        <div class="flex gap-6">
+            <span class="text-cyan-400">vSSN Identity Verified</span>
+            <a href="compliance.html" class="hover:underline">Licensing Rights</a>
         </div>
     </div>
 
-    <header class="w-full bg-black flex flex-col items-center py-24 border-b border-white/5">
-        <a href="index.html" class="mb-16 block reveal active">
-            <img src="castaistars.png" alt="CASTAISTARS" class="brand-logo-empire">
-        </a>
-        <div class="flex flex-col items-center gap-6 reveal active">
-            <div class="flex items-center gap-10">
-                <span class="text-3xl font-black uppercase tracking-[0.6em] text-white">Solomon Kin Records</span>
-                <div class="h-10 w-px bg-white/20"></div>
-                <span class="text-sm font-bold uppercase tracking-[0.5em] text-cyan-400">Media Group LLC</span>
-            </div>
-        </div>
-    </header>
-
-    <nav class="sticky top-0 z-[100] bg-black/95 backdrop-blur-xl border-b border-white/10 py-6">
-        <div class="max-w-[1600px] mx-auto px-10 flex flex-col xl:flex-row gap-8 items-center">
+    <nav class="nav-sticky py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             
-            <div class="flex gap-10 text-[11px] font-black uppercase tracking-[0.2em] text-gray-500 whitespace-nowrap">
-                <a href="backlot.html" class="text-white border-b-2 border-cyan-400 pb-1">Browse Talent</a>
-                <a href="studio-portal.html" class="hover:text-cyan-400 transition">Studio Portal</a>
-                <a href="success.html" class="hover:text-cyan-400 transition">Case Studies</a>
-            </div>
-            
-            <div class="flex-1 w-full search-pill flex items-center px-8 py-4 rounded-xl">
-                <svg class="w-5 h-5 text-gray-600 mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                <input type="text" placeholder="Find Vocal DNA, Character Types, or Persona IDs..." class="bg-transparent border-none focus:ring-0 text-sm w-full text-white placeholder-gray-700 font-medium">
+            <div class="flex items-center gap-8">
+                <a href="index.html">
+                    <img src="castaistars.png" alt="CASTAISTARS" class="nav-logo">
+                </a>
+                <div class="hidden lg:flex gap-6 text-[11px] font-bold uppercase tracking-wider text-gray-500">
+                    <a href="backlot.html" class="text-black hover:text-cyan-500 transition">Find Talent</a>
+                    <a href="#post-job" class="hover:text-cyan-500 transition">Post a Job</a>
+                    <a href="#agent-portal" class="hover:text-cyan-500 transition">For Agents</a>
+                </div>
             </div>
 
-            <div class="flex gap-6">
-                <a href="onboard.html" class="bg-white text-black px-10 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-cyan-500 transition-all transform hover:scale-105">Birth Star</a>
-                <a href="dashboard.html" class="border border-white/20 text-white px-10 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all">My Studio</a>
+            <div class="flex items-center gap-4">
+                <a href="accounts.html" class="text-[11px] font-bold uppercase tracking-widest px-5 py-2 hover:text-cyan-500 transition">Join</a>
+                <a href="dashboard.html" class="btn-primary text-[11px] uppercase tracking-widest px-6 py-2">Log In</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-[1600px] mx-auto px-10 py-32">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-40 items-center">
-            <div class="lg:col-span-5 reveal">
-                <h1 class="text-6xl xl:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-10">
-                    Industry <br><span class="text-cyan-400 italic">Standard.</span>
-                </h1>
-                <p class="text-gray-500 text-xl font-light leading-relaxed mb-12 uppercase tracking-widest">
-                    The world’s first enterprise marketplace for synthetic talent. Protecting the creator, empowering the studio.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <button class="bg-cyan-500 text-black px-12 py-6 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white transition-all">Hire Talent</button>
-                    <button class="glass border border-white/10 text-white px-12 py-6 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white/10 transition-all">View Analytics</button>
-                </div>
-            </div>
-            <div class="lg:col-span-7 reveal">
-                <div class="relative group p-1.5 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-[3rem]">
-                    <div class="aspect-video bg-black rounded-[2.8rem] overflow-hidden border border-white/10">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0&autoplay=0" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
+    <section class="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+            <h1 class="heading-hero mb-6 text-slate-900">Cast your next <br><span class="text-cyan-500">synthetic star.</span></h1>
+            <p class="text-lg text-slate-500 mb-8 leading-relaxed max-w-md">Connect with thousands of creators and professional agents representing production-ready AI personas and vocal DNA assets.</p>
+            <div class="flex gap-4">
+                <a href="accounts.html" class="btn-primary px-10 py-4 text-sm shadow-xl shadow-cyan-100/50">Get Started</a>
+                <a href="backlot.html" class="btn-outline px-10 py-4 text-sm">Browse Backlot</a>
             </div>
         </div>
+        <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-100">
+            <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/faKQHWgRB4Q?si=faKQHWgRB4Q&rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
-        <section class="mb-40 reveal">
-            <div class="flex items-center gap-6 mb-12">
-                <h3 class="text-xs font-black uppercase tracking-[0.4em] text-gray-600">Filter Registry</h3>
-                <div class="flex-1 h-px bg-white/5"></div>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
-                <a href="#" class="p-8 talent-grid-card rounded-3xl group">
-                    <p class="text-[9px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-3">Vocal Tone</p>
-                    <p class="text-sm font-medium text-gray-400 group-hover:text-white transition">Baritone Grit</p>
-                </a>
-                <a href="#" class="p-8 talent-grid-card rounded-3xl group">
-                    <p class="text-[9px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-3">Archetype</p>
-                    <p class="text-sm font-medium text-gray-400 group-hover:text-white transition">Tech-Noir</p>
-                </a>
-                <a href="#" class="p-8 talent-grid-card rounded-3xl group">
-                    <p class="text-[9px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-3">Rights</p>
-                    <p class="text-sm font-medium text-gray-400 group-hover:text-white transition">Full Sync</p>
-                </a>
-                <a href="#" class="p-8 talent-grid-card rounded-3xl group">
-                    <p class="text-[9px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-3">Compliance</p>
-                    <p class="text-sm font-medium text-gray-400 group-hover:text-white transition">vSSN Secure</p>
-                </a>
-                <a href="#" class="p-8 talent-grid-card rounded-3xl group">
-                    <p class="text-[9px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-3">Licensing</p>
-                    <p class="text-sm font-medium text-gray-400 group-hover:text-white transition">Enterprise</p>
-                </a>
-                <a href="#" class="p-8 talent-grid-card rounded-3xl group">
-                    <p class="text-[9px] font-black uppercase tracking-[0.3em] text-cyan-400 mb-3">Region</p>
-                    <p class="text-sm font-medium text-gray-400 group-hover:text-white transition">Global</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="reveal">
-            <div class="flex justify-between items-end mb-16">
-                <div>
-                    <h2 class="text-4xl font-black uppercase tracking-tighter">Verified <span class="text-cyan-400">Assets.</span></h2>
-                    <p class="text-gray-600 text-[10px] font-black uppercase tracking-[0.5em] mt-3">Ready for Licensing & Distribution</p>
-                </div>
-                <a href="backlot.html" class="text-[10px] font-black uppercase tracking-widest text-cyan-400 hover:text-white transition">Browse All 10,000+ Profiles →</a>
-            </div>
+    <section id="post-job" class="section-gray py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black mb-4 tracking-tight">Hire Synthetic Talent</h2>
+            <p class="text-slate-500 mb-12">Post a casting call and receive submissions from the world's top AI sculptors.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="talent-grid-card rounded-[3.5rem] overflow-hidden group">
-                    <div class="h-[450px] relative overflow-hidden bg-[#0a0a0a]">
-                        <img src="vesper_neo.png" alt="Vester Neo" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
-                        <div class="absolute bottom-0 left-0 w-full p-10 bg-gradient-to-t from-black via-black/40 to-transparent">
-                            <span class="text-cyan-400 text-[9px] font-black uppercase tracking-widest block mb-2">Persona ID: vSSN-774</span>
-                            <h4 class="text-4xl font-black uppercase tracking-tighter">Vester Neo</h4>
-                        </div>
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-black uppercase text-slate-400 mb-2">I am looking for</label>
+                        <select class="border-slate-200 border p-3 rounded text-sm focus:border-cyan-400 outline-none">
+                            <option>Vocal Persona</option>
+                            <option>Cinematic Character</option>
+                            <option>Musical Asset</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-black uppercase text-slate-400 mb-2">Vocal DNA Specs</label>
+                        <input type="text" placeholder="e.g. Gritty Baritone" class="border-slate-200 border p-3 rounded text-sm focus:border-cyan-400 outline-none">
                     </div>
                 </div>
-
-                <div class="talent-grid-card rounded-[3.5rem] overflow-hidden group">
-                    <div class="h-[450px] relative overflow-hidden bg-[#0a0a0a]">
-                        <img src="3days ahead.jpg" alt="RDA" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
-                        <div class="absolute bottom-0 left-0 w-full p-10 bg-gradient-to-t from-black via-black/40 to-transparent">
-                            <span class="text-cyan-400 text-[9px] font-black uppercase tracking-widest block mb-2">Persona ID: vSSN-102</span>
-                            <h4 class="text-4xl font-black uppercase tracking-tighter">RDA Disruption</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="talent-grid-card rounded-[3.5rem] overflow-hidden group">
-                    <div class="h-[450px] relative overflow-hidden bg-[#0a0a0a]">
-                        <img src="Hackathon.png" alt="M3" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
-                        <div class="absolute bottom-0 left-0 w-full p-10 bg-gradient-to-t from-black via-black/40 to-transparent">
-                            <span class="text-cyan-400 text-[9px] font-black uppercase tracking-widest block mb-2">Persona ID: vSSN-889</span>
-                            <h4 class="text-4xl font-black uppercase tracking-tighter">M3 Persona</h4>
-                        </div>
-                    </div>
-                </div>
+                <button class="w-full btn-primary py-4 text-xs uppercase tracking-widest">Post My Casting Call</button>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-[#030303] border-t border-white/5 py-60 text-center relative overflow-hidden">
-        <div class="relative z-10">
-            <img src="castaistars.png" class="h-40 mx-auto mb-24 opacity-10 hover:opacity-30 transition duration-1000 grayscale">
-            <div class="flex flex-wrap justify-center gap-16 text-[11px] font-black uppercase tracking-[0.5em] text-gray-700 mb-20">
-                <a href="pricing.html" class="hover:text-cyan-400">Agency Plans</a>
-                <a href="studio-portal.html" class="hover:text-cyan-400">Studio B2B</a>
-                <a href="compliance.html" class="hover:text-cyan-400">Rights Hub</a>
-                <a href="contact.html" class="hover:text-cyan-400">Contact</a>
+    <section id="agent-portal" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="mb-16">
+            <h2 class="text-xs font-black text-cyan-500 uppercase tracking-widest mb-3">Professional Agency Tools</h2>
+            <h3 class="text-4xl font-black tracking-tight">Represent your talent with confidence.</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card">
+                <div class="text-cyan-500 font-black text-2xl mb-4">01</div>
+                <h4 class="font-bold text-lg mb-3">Build & onboard your roster</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Set up your agency in just a few quick clicks. Add your clients and manage their profiles to ensure they’re set up for success.</p>
             </div>
-            <p class="text-[12px] text-gray-900 uppercase tracking-[1.5em] italic">© 2026 Solomon Kin Records LLC | Media Group</p>
+            <div class="card">
+                <div class="text-cyan-500 font-black text-2xl mb-4">02</div>
+                <h4 class="font-bold text-lg mb-3">Manage submissions with ease</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Search the marketplace for all types of jobs. Customize applications or one-click submit to get your talent booked.</p>
+            </div>
+            <div class="card">
+                <div class="text-cyan-500 font-black text-2xl mb-4">03</div>
+                <h4 class="font-bold text-lg mb-3">Book jobs worldwide</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Build your talent’s credits and exposure quickly. Our workflow tools are built with flexibility in mind.</p>
+            </div>
+            <div class="card">
+                <div class="text-cyan-500 font-black text-2xl mb-4">04</div>
+                <h4 class="font-bold text-lg mb-3">Represent with confidence</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Connect with producers and creators around the world while building recognition for your company industry-wide.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-900 py-20 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <h2 class="text-white text-3xl font-bold mb-8">Ready to showcase your synthetic talent?</h2>
+            <a href="accounts.html" class="btn-primary px-12 py-4 inline-block text-sm">Join Cast Ai Stars Today</a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs text-slate-400">© 2026 Solomon Kin Records LLC | Media Group</p>
+            <div class="flex gap-8 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <a href="pricing.html" class="hover:text-black transition">Pricing</a>
+                <a href="studio-portal.html" class="hover:text-black transition">Studios</a>
+                <a href="compliance.html" class="hover:text-black transition">Legal</a>
+            </div>
         </div>
     </footer>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
 
 </body>
 </html>
