@@ -1,117 +1,164 @@
-<section class="backlot-preview" style="background-color: #F5F5DC; padding: 100px 2rem;">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-6xl font-black uppercase tracking-tighter text-black mb-12">The <span class="italic text-gray-400">Backlot.</span></h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="star-card" style="background-image: url('3days ahead.jpg');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">3dayz ahead</span>
-                    <p class="artist-desc">RDA Disruption Full Band</p>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASTAISTARS | Solomon Kin Records LLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-            <div class="star-card" style="background-image: url('Hackathon.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">DJ M3</span>
-                    <p class="artist-desc">Mixing Artist / Independent DJ</p>
-                </div>
-            </div>
+        /* SECTION 1: HERO (Black Void) */
+        .hero-section {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 4rem;
+            background: linear-gradient(to right, #000 40%, transparent);
+        }
 
-            <div class="star-card" style="background-image: url('DANTE VEX.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">Dante Vex</span>
-                    <p class="artist-desc">Lead Vocalist / RDA Disruption</p>
-                </div>
-            </div>
+        /* SECTION 2: GATEWAY GRID (Linen Workspace) */
+        .linen-zone { background-color: #F5F5DC; padding: 100px 2rem; color: #000; }
+        .gateway-card {
+            background: #fff; border: 2px solid #000; padding: 3rem;
+            display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;
+            transition: 0.3s;
+        }
+        .gateway-card:hover { transform: translateY(-10px); border-color: #00e5ff; }
 
-            <div class="star-card" style="background-image: url('Eva SKRMG.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">Eva</span>
-                    <p class="artist-desc">The Hunter / Filth Factor</p>
-                </div>
-            </div>
+        /* SECTION 3: FILM TREATMENTS (Vibrant Dream Glow) */
+        .btn-vibrant {
+            display: block; background: #000; color: #00e5ff !important; padding: 20px;
+            text-align: center; font-weight: 900; text-transform: uppercase; letter-spacing: 3px;
+            border: 2px solid #00e5ff; box-shadow: 0 0 15px rgba(0,229,255,0.4); text-decoration: none;
+        }
 
-            <div class="star-card" style="background-image: url('Mr Kenny K.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">Mr. Kenny K</span>
-                    <p class="artist-desc">Captain / Staff of Filth</p>
-                </div>
-            </div>
+        /* SECTION 4: THE FOUNDING (Backlot Preview - 16 Assets) */
+        .backlot-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 80px 2rem;
+            background-color: #F5F5DC;
+            border-top: 2px solid #000;
+        }
+        .star-token {
+            height: 400px; background-size: cover; background-position: center;
+            position: relative; border: 1px solid #000; display: flex; flex-direction: column; justify-content: flex-end;
+        }
+        .token-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 45%, transparent); }
+        .token-content { position: relative; z-index: 10; padding: 1.5rem; }
+        .token-name { color: #00e5ff !important; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
+        .token-desc { color: #fff; font-size: 9px; text-transform: uppercase; font-weight: 700; opacity: 0.8; margin-top: 4px; }
 
-            <div class="star-card" style="background-image: url('YUNGBRO SKRMG.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">YUNGBRO</span>
-                    <p class="artist-desc">"One Night Again" / SKRMG Artist</p>
-                </div>
-            </div>
+        /* FOOTER LOGO HOVER */
+        .footer-logo { height: 300px; filter: grayscale(1) opacity(0.3); transition: 0.8s; }
+        .footer-logo:hover { filter: grayscale(0) opacity(1) drop-shadow(0 0 30px #00e5ff); }
+    </style>
+</head>
+<body>
 
-            <div class="star-card" style="background-image: url('PRINCE RAZ SKRMG IK.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">Prince Raz</span>
-                    <p class="artist-desc">Island King / SKRMG Artist</p>
-                </div>
-            </div>
+    <section class="hero-section">
+        <h3 class="text-cyan-400 font-black uppercase tracking-[0.8em] mb-4">Solomon Kin Records LLC</h3>
+        <h1 class="text-9xl font-black uppercase leading-none">CASTAISTARS</h1>
+        <p class="text-xl font-medium max-w-2xl mt-8">The supreme architecture for character world-building. Secure the identity, localize the voice, and anchor the soul.</p>
+    </section>
 
-            <div class="star-card" style="background-image: url('Underwear Girl.png');">
-                <div class="card-overlay"></div>
-                <div class="card-info">
-                    <span class="artist-name">Underwear Girl</span>
-                    <p class="artist-desc">Bionic Bindu / Filth Factor</p>
-                </div>
+    <section class="linen-zone">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="gateway-card">
+                <h3 class="text-3xl font-black uppercase">The Terminal.</h3>
+                <p class="text-xs font-bold my-6">Manage birthed assets and track vSSN status.</p>
+                <a href="dashboard.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Enter Console</a>
             </div>
-
+            <div class="gateway-card">
+                <h3 class="text-3xl font-black uppercase">The Backlot.</h3>
+                <p class="text-xs font-bold my-6">Browse the verified registry of synthetic talent.</p>
+                <a href="backlot.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Explore Registry</a>
+            </div>
+            <div class="gateway-card">
+                <h3 class="text-3xl font-black uppercase">The Vault.</h3>
+                <p class="text-xs font-bold my-6">Review immutable blockchain hashes.</p>
+                <a href="ip-vault.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Access Vault</a>
+            </div>
+            <div class="gateway-card">
+                <h3 class="text-3xl font-black uppercase">The Shield.</h3>
+                <p class="text-xs font-bold my-6">Codifying the 20/80 split and master rights.</p>
+                <a href="licensing.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Verify Protocol</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    .star-card {
-        height: 450px;
-        background-size: cover;
-        background-position: center;
-        border: 2px solid #000;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        transition: 0.4s ease;
-        overflow: hidden;
-    }
-    .star-card:hover { transform: translateY(-10px); border-color: #00e5ff; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-    .card-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, #000 40%, transparent);
-        z-index: 1;
-    }
-    .card-info {
-        position: relative;
-        z-index: 2;
-        padding: 1.5rem;
-    }
-    .artist-name {
-        display: block;
-        font-size: 1.2rem;
-        font-weight: 900;
-        color: #00e5ff !important;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-    .artist-desc {
-        font-size: 10px;
-        font-weight: 700;
-        color: #fff !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-        opacity: 0.8;
-    }
-</style>
+    <section class="linen-zone" style="padding-top: 0;">
+        <div class="max-w-7xl mx-auto border-t-2 border-black pt-20">
+            <h2 class="text-5xl font-black uppercase mb-12">Movie Treatments</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" class="btn-vibrant">Mother’s Mercy (Available Now)</a>
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" class="btn-vibrant">Obsidian: Black Box (Available Now)</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="backlot-preview-grid">
+        
+        <div class="star-token" style="background-image: url('3days ahead.jpg');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">3dayz ahead</span>
+                <p class="token-desc">RDA Disruption Full Band</p>
+            </div>
+        </div>
+
+        <div class="star-token" style="background-image: url('Hackathon.png');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">DJ M3</span>
+                <p class="token-desc">Independent Mixing Artist</p>
+            </div>
+        </div>
+
+        <div class="star-token" style="background-image: url('DANTE VEX.png');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">Dante Vex</span>
+                <p class="token-desc">Lead Vocalist / RDA Disruption</p>
+            </div>
+        </div>
+
+        <div class="star-token" style="background-image: url('Eva SKRMG.png');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">Eva</span>
+                <p class="token-desc">The Hunter / Filth Factor</p>
+            </div>
+        </div>
+
+        <div class="star-token" style="background-image: url('YUNGBRO SKRMG.png');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">Yungbro</span>
+                <p class="token-desc">"One Night Again" Artist</p>
+            </div>
+        </div>
+
+        <div class="star-token" style="background-image: url('PRINCE RAZ SKRMG IK.png');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">Prince Raz</span>
+                <p class="token-desc">Island King / SKRMG</p>
+            </div>
+        </div>
+
+        </section>
+
+    <footer class="py-20 bg-black text-center">
+        <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html">
+            <img src="castaistars.png" class="footer-logo mx-auto" alt="Logo">
+        </a>
+    </footer>
+
+</body>
+</html>
