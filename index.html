@@ -3,236 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKRMG - Solomon Kin Records Media Group. One-Stop Studio Licensing and REALM Pictures IP.">
-    <title>SKRMG | Solomon Kin Records Media Group</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
+    <title>Solomon Kin Records | Studio & Production Portal</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
             --gold: #d4af37;
             --dark-bg: #050505;
-            --card-bg: #0f0f0f;
-            --text-main: #fcfcfc;
-            --text-dim: #999;
-            --accent-green: #39ff14;
-            --glass: rgba(255, 255, 255, 0.03);
-            --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --card-bg: #111111;
+            --text-light: #f4f4f4;
+            --text-gray: #a0a0a0;
+            --accent-green: #00ff00;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; }
         
         body {
             background-color: var(--dark-bg);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.5;
+            color: var(--text-light);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
         }
 
+        /* Glassmorphism Navigation */
         nav {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass);
-            padding: 1.2rem 5%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 9999;
         }
 
-        .nav-logo { font-weight: 900; letter-spacing: 6px; color: var(--gold); text-decoration: none; font-size: 1.5rem; }
-        .nav-links a { color: var(--text-main); text-decoration: none; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-left: 2rem; }
+        .nav-logo { color: var(--gold); font-weight: 900; letter-spacing: 3px; font-size: 1.2rem; }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
 
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Hero Header */
         header {
-            height: 70vh;
+            padding: 220px 20px 120px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1a1500 0%, #000 100%);
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
-        .main-logo { width: clamp(280px, 40vw, 500px); height: auto; margin-bottom: 1.5rem; }
+        .main-logo { max-width: 320px; width: 100%; height: auto; margin-bottom: 20px; display: block; }
+        .media-group-tag { color: var(--gold); letter-spacing: 12px; text-transform: uppercase; font-size: 1.1rem; margin: 0; text-indent: 12px; }
 
-        .section { padding: 80px 5%; border-bottom: 1px solid var(--glass); }
-        h2 { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 2rem; border-left: 5px solid var(--gold); padding-left: 20px; }
+        .pitch-banner {
+            background: var(--gold);
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            width: 100%;
+        }
 
-        /* --- MOVIE SLATE GRID --- */
-        .bento-grid {
+        .section { padding: 100px 10% 60px; }
+        h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; border-left: 5px solid var(--gold); padding-left: 15px; margin-bottom: 40px; }
+
+        /* REALM PICTURES SLATES */
+        .treatment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .bento-item {
-            background: var(--card-bg);
-            border: 1px solid var(--glass);
-            border-radius: 15px;
-            padding: 2rem;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .bento-item:hover { border-color: var(--gold); background: #151515; transform: translateY(-5px); }
-        .status-now { color: var(--accent-green); font-weight: 900; font-size: 0.7rem; display: block; margin-bottom: 10px; }
-        .status-soon { color: var(--gold); font-weight: 900; font-size: 0.7rem; display: block; margin-bottom: 10px; }
-
-        /* --- MUSIC CATALOG BLOCKS --- */
-        .artist-block {
-            background: var(--card-bg);
-            border-radius: 20px;
-            margin-bottom: 4rem;
-            overflow: hidden;
-            border: 1px solid var(--glass);
-        }
-
-        .artist-header {
-            padding: 3rem;
+        .treatment-item {
             display: flex;
-            align-items: center;
-            gap: 3rem;
-            background: linear-gradient(to right, #111, #000);
-            flex-wrap: wrap;
+            flex-direction: column;
+            background: var(--card-bg);
+            border: 1px solid #222;
+            transition: 0.4s;
         }
 
-        .artist-logo { width: 180px; height: 180px; object-fit: contain; background: #000; padding: 10px; border-radius: 10px; border: 1px solid var(--glass); }
+        .treatment-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-        .artist-meta h3 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 5px; }
-        .artist-meta a { color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; }
+        .btn-treatment {
+            padding: 25px;
+            text-align: center;
+            text-decoration: none !important;
+            color: white !important;
+            font-weight: bold;
+            display: block;
+        }
 
-        .track-list { width: 100%; border-collapse: collapse; }
-        .track-list td { padding: 1.2rem 3rem; border-top: 1px solid var(--glass); font-size: 0.95rem; }
-        .track-list tr:hover { background: rgba(255,255,255,0.02); }
-        .apple-link { color: var(--gold); text-decoration: none; font-weight: 900; font-size: 0.7rem; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 4px; transition: 0.3s; }
-        .apple-link:hover { background: var(--gold); color: #000; }
+        .logline {
+            padding: 0 20px 25px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+            font-style: italic;
+        }
 
-        .badge { background: rgba(57, 255, 20, 0.1); color: var(--accent-green); padding: 4px 10px; border-radius: 3px; font-size: 0.6rem; font-weight: 900; margin-left: 10px; }
+        .status-now { color: var(--accent-green); font-size: 0.7rem; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; display: block;}
+        .status-soon { color: var(--gold); font-size: 0.7rem; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; display: block;}
 
-        footer { padding: 4rem; text-align: center; color: #444; font-size: 0.8rem; }
+        /* ARTIST CATALOG */
+        .artist-card {
+            background: var(--card-bg);
+            padding: 50px 30px;
+            margin-bottom: 40px;
+            border: 1px solid #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .artist-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: grayscale(100%);
+            transition: 0.6s;
+        }
+
+        .artist-card:hover .artist-logo { filter: grayscale(0%); transform: scale(1.05); }
+
+        .song-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .song-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 14px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+
+        .song-link:hover { color: var(--gold); border-color: var(--gold); }
+
+        .site-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--gold);
+            padding: 12px 25px;
+            transition: 0.3s;
+        }
+
+        .site-link:hover { background: var(--gold); color: black; }
+
+        /* FORMS */
+        .contact-box { max-width: 800px; margin: auto; background: #000; padding: 60px; border: 1px solid var(--gold); }
+        input, textarea { width: 100%; padding: 18px; margin-bottom: 20px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
+        .submit-btn { background: var(--gold); color: black; font-weight: bold; padding: 22px; border: none; width: 100%; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .submit-btn:hover { background: #fff; }
+
+        footer { text-align: center; padding: 80px 20px; color: #444; font-size: 0.8rem; border-top: 1px solid #111; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 10px; }
+            .nav-links { margin-top: 10px; }
+            header { padding-top: 220px; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="nav-logo">SKRMG</a>
+        <div class="nav-logo">SKRMG</div>
         <div class="nav-links">
-            <a href="#realm">REALM Slates</a>
-            <a href="#music">Artist Catalog</a>
+            <a href="#about">About</a>
+            <a href="#movies">Movies</a>
+            <a href="#music">Music</a>
+            <a href="#terms">Licensing</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
-        <img src="SKRMG.png" alt="SKRMG Logo" class="main-logo">
-        <div style="letter-spacing: 5px; color: var(--gold); font-weight: 700; margin-top: -20px;">LLC MEDIA GROUP</div>
+        <img src="SKRMG.png" alt="Solomon Kin Records" class="main-logo">
+        <p class="media-group-tag">Media Group</p>
     </header>
 
-    <section id="realm" class="section">
-        <h2>REALM Pictures Slate</h2>
-        <div class="bento-grid">
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" target="_blank" class="bento-item">
-                <span class="status-now">AVAILABLE NOW</span>
-                <h3 style="color:white; margin-bottom:10px;">Mother's Mercy</h3>
-                <p style="color:var(--text-dim); font-size:0.8rem;">High-concept military/ecological thriller.</p>
-            </a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" target="_blank" class="bento-item">
-                <span class="status-now">AVAILABLE NOW</span>
-                <h3 style="color:white; margin-bottom:10px;">Obsidian: The Black Box</h3>
-                <p style="color:var(--text-dim); font-size:0.8rem;">Supernatural Tech-Noir investigation.</p>
-            </a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item">
-                <span class="status-soon">COMING SOON</span>
-                <h3 style="color:white; margin-bottom:10px;">The Gorgon Protocol</h3>
-                <p style="color:var(--text-dim); font-size:0.8rem;">V2K Neuro-technology conspiracy.</p>
-            </a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item">
-                <span class="status-soon">COMING SOON</span>
-                <h3 style="color:white; margin-bottom:10px;">Global Citizen Joe</h3>
-                <p style="color:var(--text-dim); font-size:0.8rem;">Psychological identity drama.</p>
-            </a>
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item">
-                <span class="status-soon">COMING SOON</span>
-                <h3 style="color:white; margin-bottom:10px;">DEADHEAD</h3>
-                <p style="color:var(--text-dim); font-size:0.8rem;">Digital consciousness courier thriller.</p>
-            </a>
+    <div class="pitch-banner">
+        100% OWNED ASSETS • STUDIO-READY TREATMENTS • MASTER & PUBLISHING CLEARANCE
+    </div>
+
+    <section id="about" class="section">
+        <h2>Corporate Profile</h2>
+        <p style="max-width: 900px; color: var(--text-gray); line-height: 2; font-size: 1.1rem;">
+            Solomon Kin Records, LLC Media Group is a premier boutique production and licensing firm. We provide "One-Stop" licensing clearance for Sync, Master, and Publishing. With a focus on Tech-Noir, Cyberpunk, and high-concept cinematic world-building, we ensure frictionless acquisition for global entertainment studios.
+        </p>
+    </section>
+
+    <section id="movies" class="section" style="background: #080808;">
+        <h2>REALM Pictures | Movie Treatments</h2>
+        <div class="treatment-grid">
+            
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" target="_blank" class="btn-treatment">
+                    <span class="status-now">Available Now</span> Mother’s Mercy
+                </a>
+                <p class="logline">When the animal kingdom initiates a coordinated military strike against humanity, survivors must navigate a world where nature has become the ultimate predator.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" target="_blank" class="btn-treatment">
+                    <span class="status-now">Available Now</span> Obsidian: The Black Box
+                </a>
+                <p class="logline">To protect his son from a supernatural legacy, a powerful Warlock disguises himself as a stray cat to battle occult forces from the shadows.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="btn-treatment">
+                    <span class="status-soon">Coming Soon</span> The Gorgon Protocol
+                </a>
+                <p class="logline">A Philadelphia IT expert uncovers a V2K conspiracy, forcing him to use his technical mastery to expose a signal that controls human thought.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="btn-treatment">
+                    <span class="status-soon">Coming Soon</span> Global Citizen Joe
+                </a>
+                <p class="logline">An ordinary man is thrust into a globalist conspiracy where his identity becomes the currency for a new world order he never asked to lead.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="btn-treatment">
+                    <span class="status-soon">Coming Soon</span> DEADHEAD
+                </a>
+                <p class="logline">A courier discovers their cargo is a digital conscious—and every intelligence agency on earth wants it deleted.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="btn-treatment">
+                    <span class="status-soon">Coming Soon</span> Tier Alpha
+                </a>
+                <p class="logline">Only the genetically "Alpha" are allowed to survive a global extinction event—until an outlier discovers the hierarchy is a lie.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="btn-treatment">
+                    <span class="status-soon">Coming Soon</span> Sovereign Mind
+                </a>
+                <p class="logline">A pioneer in neural-linking technology realizes her software is being used to reprogram dissidents, leading a mental rebellion from the inside.</p>
+            </div>
+
+            <div class="treatment-item">
+                <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="btn-treatment">
+                    <span class="status-soon">Coming Soon</span> The Architecture of Failure
+                </a>
+                <p class="logline">An elite architect discovers the smart city he designed is actually a high-tech prison, and he must destroy his own masterpiece to escape.</p>
+            </div>
         </div>
     </section>
 
     <section id="music" class="section">
-        <h2>Labels & Artist Powerhouse</h2>
-
-        <div class="artist-block">
-            <div class="artist-header">
-                <img src="DJM3%20new.png" alt="DJ M3 Logo" class="artist-logo">
-                <div class="artist-meta">
-                    <h3>DJ M3</h3>
-                    <a href="https://brneo059.wixsite.com/dj-m3" target="_blank">OFFICIAL SITE</a> | <a href="DJ-M3-EPK.pdf">DOWNLOAD EPK</a>
-                </div>
+        <h2>Artist Licensing Catalog</h2>
+        <p style="color: var(--text-gray); margin-bottom: 40px;">Professional Electronic Press Kits (EPK) available for studio review and artist verification.</p>
+        
+        <div class="artist-card">
+            <img src="DJM3%20new.png" alt="DJ M3" class="artist-logo">
+            <div class="song-grid">
+                <a href="https://music.apple.com/pl/song/ransomware/1656120423" target="_blank" rel="noopener" class="song-link">Ransomware</a>
+                <a href="https://music.apple.com/pl/song/encryption/1656120424" target="_blank" rel="noopener" class="song-link">Encryption</a>
+                <a href="https://music.apple.com/pl/song/zero-day/1656120426" target="_blank" rel="noopener" class="song-link">Zero-day</a>
+                <a href="https://music.apple.com/pl/song/firewall/1656120428" target="_blank" rel="noopener" class="song-link">Firewall</a>
             </div>
-            <table class="track-list">
-                <tr><td>Ransomware <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/ransomware/1656120423" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Encryption <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/encryption/1656120424" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Zero-day <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/zero-day/1656120426" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Firewall <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/firewall/1656120428" class="apple-link">APPLE MUSIC</a></td></tr>
-            </table>
+            <a href="DJ-M3-EPK.pdf" download class="site-link">Download DJ M3 Cyberpunk EPK</a>
         </div>
 
-        <div class="artist-block">
-            <div class="artist-header">
-                <img src="RDA%20disruption%20three%20days%20ahead%20logo.png" alt="3dayz ahead Logo" class="artist-logo">
-                <div class="artist-meta">
-                    <h3>3dayz ahead (RDA Disruption)</h3>
-                    <a href="https://brneo059.wixsite.com/rda-disruption" target="_blank">OFFICIAL SITE</a> | <a href="RDA-EPK.pdf">DOWNLOAD EPK</a>
-                </div>
+        <div class="artist-card">
+            <img src="RDA%20disruption%20three%20days%20ahead%20logo.png" alt="3dayz ahead" class="artist-logo">
+            <div class="song-grid">
+                <a href="https://music.apple.com/pl/album/dextera-dei-et-sinister-manus-single/1655121881" target="_blank" rel="noopener" class="song-link">Dextera Dei</a>
+                <a href="https://music.apple.com/ru/artist/rda-disruption/1603338000" target="_blank" rel="noopener" class="song-link">Red Devil Alien</a>
+                <a href="https://music.apple.com/ca/album/global-citizen-joe-feat-eric-castiglia-the-algorhythm/1538189792" target="_blank" rel="noopener" class="song-link">Global Citizen Joe</a>
+                <a href="https://music.apple.com/es/album/blood-gold-single/1654864279" target="_blank" rel="noopener" class="song-link">Blood and Gold</a>
+                <a href="https://music.apple.com/es/album/song-of-desire-single/1657920973" target="_blank" rel="noopener" class="song-link">Song of Desire</a>
             </div>
-            <table class="track-list">
-                <tr><td>Dextera Dei et Sinister Manus <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/album/dextera-dei-et-sinister-manus-single/1655121881" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Red Devil Alien <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ru/artist/rda-disruption/1603338000" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Global Citizen Joe <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ca/album/global-citizen-joe-feat-eric-castiglia-the-algorhythm/1538189792" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Welcome to Carnahan <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ca/album/welcome-to-carnahan-feat-eric-castiglia-the/1548186034" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Blood and Gold <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/es/album/blood-gold-single/1654864279" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Song of Desire <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/es/album/song-of-desire-single/1657920973" class="apple-link">APPLE MUSIC</a></td></tr>
-            </table>
+            <a href="RDA-Disruption-EPK.pdf" download class="site-link">Download RDA Disruption EPK</a>
         </div>
 
-        <div class="artist-block">
-            <div class="artist-header">
-                <img src="YUNGBRO LOGO.png" alt="Yungbro Logo" class="artist-logo">
-                <div class="artist-meta">
-                    <h3>Yungbro</h3>
-                    <a href="https://brneo059.wixsite.com/yungbro" target="_blank">OFFICIAL SITE</a>
-                </div>
+        <div class="artist-card">
+            <img src="YUNGBRO%20LOGO.png" alt="Yungbro" class="artist-logo">
+            <div class="song-grid">
+                <a href="https://music.apple.com/ca/album/one-night-again-single/1657744162" target="_blank" rel="noopener" class="song-link">One Night Again</a>
             </div>
-            <table class="track-list">
-                <tr><td>One Night Again <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ca/album/one-night-again-single/1657744162" class="apple-link">APPLE MUSIC</a></td></tr>
-            </table>
+            <a href="YungBro-EPK.pdf" download class="site-link">Download YungBro EPK</a>
         </div>
 
-        <div class="artist-block">
-            <div class="artist-header">
-                <img src="Prince Raz logo.png" alt="Prince Raz Logo" class="artist-logo">
-                <div class="artist-meta">
-                    <h3>Prince Raz</h3>
-                    <a href="https://brneo059.wixsite.com/prince-raz" target="_blank">OFFICIAL SITE</a>
-                </div>
+        <div class="artist-card">
+            <img src="Prince%20Raz%20logo.png" alt="Prince Raz" class="artist-logo">
+            <div class="song-grid">
+                <a href="https://music.apple.com/us/album/twerk-work-single/1656091164" target="_blank" rel="noopener" class="song-link">Twerk Work</a>
+                <a href="https://music.apple.com/us/album/joy-inside-single/1655861942" target="_blank" rel="noopener" class="song-link">Joy Inside</a>
+                <a href="https://music.apple.com/us/album/eyes-on-you-single/1542287080" target="_blank" rel="noopener" class="song-link">Eyes On You</a>
             </div>
-            <table class="track-list">
-                <tr><td>Twerk Work <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/us/album/twerk-work-single/1656091164" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Joy Inside <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/us/album/joy-inside-single/1655861942" class="apple-link">APPLE MUSIC</a></td></tr>
-                <tr><td>Eyes On You <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/us/album/eyes-on-you-single/1542287080" class="apple-link">APPLE MUSIC</a></td></tr>
-            </table>
+            <a href="Prince-Raz-EPK.pdf" download class="site-link">Download Prince Raz EPK</a>
+        </div>
+    </section>
+
+    <section class="section" style="background: #080808;">
+        <h2>Division: Cast Ai Stars</h2>
+        <p>Proprietary AI and Synthetic Human talent for modern media production and virtual influencer branding.</p>
+        <a href="http://castaistars.com" target="_blank" rel="noopener" class="site-link">Enter AI Portal</a>
+    </section>
+
+    <section id="terms" class="section">
+        <h2>Terms of Licensing</h2>
+        <p style="color: var(--text-gray); line-height: 1.8; max-width: 900px;">
+            Solomon Kin Records, LLC Media Group grants non-exclusive and exclusive licenses globally for Sync, Public Performance, and Derivative Works. All assets are guaranteed 100% "One-Stop" cleared, encompassing both master recording and publishing rights.
+        </p>
+    </section>
+
+    <section id="contact" class="section" style="background: #000;">
+        <div class="contact-box">
+            <h2 style="border: none; text-align: center; padding: 0;">Studio Inquiry</h2>
+            <form action="mailto:nehemiah.brown@solomonkinrecords.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Full Name / Studio Name" required>
+                <input type="email" name="email" placeholder="Professional Email" required>
+                <textarea name="message" rows="6" placeholder="Identify the Movie Treatment or Music Project for review..." required></textarea>
+                <button type="submit" class="submit-btn">Send Licensing Inquiry</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Solomon Kin Records Media Group. <br> SKRMG. Powerhouse Production.</p>
+        &copy; 2026 Solomon Kin Records, LLC Media Group. All Rights Reserved.
     </footer>
 
 </body>
 </html>
-
-
