@@ -3,180 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTRATION | CastAiStars Synthetic Onboarding</title>
+    <title>ACCESS PROTOCOL | CASTAISTARS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* HEADER: Locked 80px Height */
-        .supreme-header {
-            background-color: #000;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            border-bottom: 1px solid #1a1a1a;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px; 
+        /* PULSE ANNOUNCEMENT */
+        .auth-axiom {
+            font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8em;
+            color: #00e5ff; text-align: center; padding: 20px 0; border-bottom: 1px solid #1a1a1a;
+            animation: pulseFade 4s infinite;
         }
+        @keyframes pulseFade { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 
-        .supreme-logo {
-            height: 300px;
-            width: auto;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 2rem;
-            z-index: 10001;
-            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
-            pointer-events: none;
-        }
-
-        /* REGISTRATION WORKSPACE: Tan Linen */
-        .registration-workspace {
-            background-color: #F5F5DC; 
-            color: #000; /* ALL TEXT BLACK FOR VISIBILITY */
-            padding: 180px 2rem 100px 2rem; 
-            min-height: 100vh;
-        }
-
-        .form-card {
-            background: #fff;
-            border: 1px solid #e2e2c7;
-            border-radius: 12px;
-            padding: 3.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-        }
-
-        /* HIGH VISIBILITY TYPOGRAPHY */
-        .input-group { margin-bottom: 2rem; }
-        .input-label { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; margin-bottom: 10px; display: block; }
+        /* SPLIT VIEW: CINEMATIC LEFT / LINEN RIGHT */
+        .auth-wrapper { display: flex; height: calc(100vh - 55px); }
         
-        .input-field { 
-            width: 100%; padding: 1.25rem; border: 2px solid #eee; border-radius: 4px; 
-            font-size: 15px; background: #fafafa; outline: none; transition: 0.3s; color: #000; font-weight: 500;
+        .auth-visual { 
+            flex: 1.2; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('castaistars.png'); 
+            background-size: cover; 
+            background-position: center; 
+            border-right: 1px solid #1a1a1a; 
+            display: none; md:flex; 
+            align-items: center; justify-content: center;
+            position: relative;
         }
-        .input-field:focus { border-color: #00e5ff; background: #fff; }
 
-        /* MULTI-ASSET UPLOAD ZONE */
-        .upload-grid { display: grid; grid-cols: 1; md:grid-cols-2; gap: 1.5rem; }
-        .upload-box {
-            border: 2px dashed #e2e2c7;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            background: #fff;
-            transition: 0.3s;
+        .auth-portal { 
+            flex: 1; background-color: #F5F5DC; color: #000; padding: 4rem 2rem;
+            display: flex; flex-direction: column; justify-content: center;
+            min-width: 400px;
         }
-        .upload-box:hover { border-color: #00e5ff; background: #f0feff; }
 
-        .btn-black { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; width: 100%; padding: 1.5rem; font-size: 12px; }
-        .btn-black:hover { background: #00e5ff; color: #000; transform: translateY(-2px); }
-
-        .onboarding-step { color: #00e5ff; font-weight: 900; font-size: 11px; letter-spacing: 4px; margin-bottom: 1.5rem; border-left: 4px solid #00e5ff; padding-left: 1rem; }
+        /* FORM ELEMENTS */
+        .protocol-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; color: #888; margin-bottom: 0.5rem; display: block; }
         
-        /* BLACK TEXT OVERRIDE */
-        h2, p, label, span { color: #000 !important; }
-        .text-white-fixed { color: #fff !important; }
-        .text-cyan-fixed { color: #00e5ff !important; }
+        .auth-input {
+            width: 100%; background: #fff; border: 2px solid #000; 
+            padding: 1.2rem; font-weight: 700; text-transform: uppercase; font-size: 12px;
+            margin-bottom: 1.5rem; outline: none; transition: 0.3s ease;
+        }
+        .auth-input:focus { border-color: #00e5ff; box-shadow: 0 0 15px rgba(0,229,255,0.2); }
+
+        /* BUTTONS */
+        .btn-primary {
+            width: 100%; background: #000; color: #fff; padding: 1.5rem;
+            font-weight: 900; text-transform: uppercase; letter-spacing: 3px;
+            font-size: 11px; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            border: 2px solid #000; cursor: pointer;
+        }
+        .btn-primary:hover { background: #00e5ff; color: #000; border-color: #00e5ff; transform: translateY(-2px); }
+
+        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 2rem; }
+        
+        .btn-social {
+            background: #fff; border: 2px solid #000; padding: 1rem;
+            font-weight: 900; text-transform: uppercase; font-size: 10px;
+            display: flex; align-items: center; justify-content: center; gap: 10px; 
+            transition: 0.3s; cursor: pointer;
+        }
+        .btn-social:hover { background: #f0f0f0; border-color: #555; }
+
+        .divider { border-bottom: 1px solid #dcdcdc; margin: 2.5rem 0; position: relative; }
+        .divider span { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #F5F5DC; padding: 0 20px; font-size: 10px; font-weight: 900; color: #999;
+        }
+
+        /* LOGO OVERLAY ON LEFT */
+        .visual-logo-small { position: absolute; bottom: 40px; left: 40px; height: 50px; opacity: 0.5; }
     </style>
 </head>
 <body>
 
-    <nav class="supreme-header">
-        <div class="flex items-center">
-            <a href="index.html" class="relative block w-[320px]">
-                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
-            </a>
-            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
-                <a href="index.html" class="hover:text-white transition text-white-fixed">Backlot</a>
-                <a href="compliance.html" class="hover:text-white transition text-white-fixed">vSSN Hub</a>
+    <div class="auth-axiom">Identity Verification // Secure Protocol // Authorize Session</div>
+
+    <div class="auth-wrapper">
+        <div class="auth-visual">
+            <div class="text-center z-10">
+                <h1 class="text-8xl font-black uppercase tracking-tighter leading-none">Access<br><span class="text-cyan-400 italic">Console.</span></h1>
+                <p class="mt-8 text-[11px] font-black tracking-[1.2em] text-gray-400 opacity-60">SOLOMON KIN RECORDS LLC</p>
+            </div>
+            <img src="castaistars.png" class="visual-logo-small" alt="Castaistars">
+        </div>
+
+        <div class="auth-portal">
+            <div class="max-w-md mx-auto w-full">
+                <header class="mb-12">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.8em] text-gray-400 mb-3">Member Portal</h4>
+                    <h2 class="text-6xl font-black uppercase tracking-tighter leading-[0.85]">Authorize.</h2>
+                </header>
+
+                <div class="social-grid">
+                    <button class="btn-social" onclick="window.location.href='dashboard.html'">
+                        <img src="https://www.google.com/favicon.ico" class="w-4 h-4" alt="Google"> Google
+                    </button>
+                    <button class="btn-social" onclick="window.location.href='dashboard.html'">
+                        <img src="https://www.apple.com/favicon.ico" class="w-4 h-4" alt="Apple"> Apple
+                    </button>
+                </div>
+
+                <div class="divider"><span>OR DIRECT ACCESS</span></div>
+
+                <form action="dashboard.html" method="GET">
+                    <div class="mb-2">
+                        <label class="protocol-label">V-SSN / Email Address</label>
+                        <input type="email" class="auth-input" placeholder="ID@CASTAISTARS.COM" required>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="protocol-label">Security Access Key</label>
+                        <input type="password" class="auth-input" placeholder="••••••••••••" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Verify & Enter Terminal</button>
+                </form>
+
+                <footer class="mt-16 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                    <div>
+                        <p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-400 mb-2">New Creator?</p>
+                        <a href="onboard.html" class="text-[12px] font-black uppercase border-b-2 border-black hover:text-cyan-500 hover:border-cyan-500 transition-all duration-300">Initialize Account</a>
+                    </div>
+                    <a href="support.html" class="text-[10px] font-black uppercase text-gray-400 hover:text-black tracking-widest transition">Recovery Protocol</a>
+                </footer>
             </div>
         </div>
-        <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Biometric Intake Active</span>
-        </div>
-    </nav>
-
-    <section class="registration-workspace">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-            <h2 class="text-7xl font-black tracking-tighter mb-4">Identity <span class="italic text-gray-400">Pairing.</span></h2>
-            <p class="text-xl font-bold uppercase tracking-widest">Universal Intake for Synthetic Actors & Virtual Influencers</p>
-        </div>
-
-        <div class="form-card">
-            <form action="dashboard.html">
-                
-                <div class="onboarding-step">HUMAN VERIFICATION</div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                    <div class="input-group">
-                        <label class="input-label">Legal Name / Rights Holder</label>
-                        <input type="text" placeholder="Full Name for Licensing" class="input-field" required>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">Secure Email Registry</label>
-                        <input type="email" placeholder="vssn-linked-email@domain.com" class="input-field" required>
-                    </div>
-                </div>
-
-                <div class="onboarding-step">CHARACTER ASSET INTAKE</div>
-                <div class="input-group">
-                    <label class="input-label">Synthetic Persona Name (Stage Name)</label>
-                    <input type="text" placeholder="e.g. Vester Neo" class="input-field" required>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                    <div class="upload-box">
-                        <label class="input-label mb-4">Visual Likeness (Photos & Videos)</label>
-                        <input type="file" multiple accept="image/*,video/*" class="hidden" id="visual-upload">
-                        <label for="visual-upload" class="cursor-pointer">
-                            <span class="block text-3xl mb-2">📸</span>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Upload Media Assets</span>
-                            <p class="text-[9px] mt-2 italic">Accepts JPG, PNG, MP4, MOV</p>
-                        </label>
-                    </div>
-                    
-                    <div class="upload-box">
-                        <label class="input-label mb-4">Vocal DNA (Audio Stem)</label>
-                        <input type="file" accept="audio/*" class="hidden" id="audio-upload">
-                        <label for="audio-upload" class="cursor-pointer">
-                            <span class="block text-3xl mb-2">🎙️</span>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Upload Vocal Frequency</span>
-                            <p class="text-[9px] mt-2 italic">Accepts WAV, MP3, AIFF</p>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="onboarding-step">ON-CHAIN MINTING</div>
-                <div class="input-group">
-                    <label class="input-label">OpenSea Wallet (Required for Blockchain Authorship)</label>
-                    <input type="text" placeholder="0x..." class="input-field font-mono">
-                </div>
-
-                <div class="bg-gray-100 p-8 rounded border-l-4 border-black mb-10">
-                    <label class="flex items-start gap-5 cursor-pointer">
-                        <input type="checkbox" class="mt-1 w-5 h-5" required>
-                        <span class="text-[11px] font-bold uppercase leading-relaxed">
-                            I confirm I am the original creator of this synthetic asset. I authorize <strong class="text-black">Solomon Kin Records LLC</strong> to manage 100% of Master/Publishing rights and issue an immutable vSSN on the blockchain.
-                        </span>
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-black uppercase tracking-[0.6em] text-white-fixed">Initialize Genesis Record</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="py-40 bg-black text-center border-t border-white/5">
-        <img src="castaistars.png" alt="CASTAISTARS" class="h-[300px] mx-auto mb-20 opacity-80 grayscale">
-        <p class="text-[11px] text-white-fixed uppercase tracking-[2em] font-bold italic">© 2026 Solomon Kin Records LLC | Media Group</p>
-    </footer>
+    </div>
 
 </body>
 </html>
