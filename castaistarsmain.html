@@ -1,224 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTAISTARS | Solomon Kin Records LLC | Synthetic Talent Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
-
-        /* HEADER: Locked 80px */
-        .supreme-header {
-            background-color: #000;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            border-bottom: 1px solid #1a1a1a;
-            padding: 0 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px; 
-        }
-
-        .supreme-logo {
-            height: 300px;
-            width: auto;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 2rem;
-            z-index: 10001;
-            filter: drop-shadow(0 15px 30px rgba(0,229,255,0.15));
-            transition: 0.5s;
-        }
-
-        /* HERO: THE VISION */
-        .hero-section {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 2rem;
-            background: linear-gradient(to right, #000 40%, rgba(0,0,0,0));
-            position: relative;
-        }
-
-        /* THE ECOSYSTEM GRID: Tan Linen Workspace */
-        .gateway-grid {
-            background-color: #F5F5DC; 
-            padding: 120px 2rem 60px 2rem;
-            position: relative;
-        }
-
-        .gateway-card {
-            background: #fff;
-            border: 2px solid #000;
-            padding: 3.5rem;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 420px;
-        }
-        .gateway-card:hover { transform: translateY(-15px); border-color: #00e5ff; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
-
-        .btn-link { background: #000; color: #fff !important; font-weight: 900; padding: 1.25rem 2.5rem; text-transform: uppercase; letter-spacing: 3px; font-size: 11px; border-radius: 4px; display: inline-block; transition: 0.3s; text-align: center; text-decoration: none; }
-        .btn-link:hover { background: #00e5ff; color: #000 !important; }
-
-        /* LIVE BACKLOT PREVIEW */
-        .backlot-preview {
-            background-color: #F5F5DC;
-            padding: 0 2rem 120px 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        .star-token {
-            background: #000;
-            border-radius: 12px;
-            height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-            transition: 0.4s;
-            border: 1px solid #1a1a1a;
-            position: relative;
-            overflow: hidden;
-        }
-        .star-token:hover { transform: scale(1.05); border-color: #00e5ff; box-shadow: 0 10px 30px rgba(0,229,255,0.2); }
-        .token-name { font-size: 10px; font-weight: 900; color: #00e5ff !important; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* FOOTER LOGO: Interactive Luminous */
-        .footer-logo-container { padding: 80px 0; display: block; }
-        .footer-logo {
-            height: 300px;
-            width: auto;
-            filter: grayscale(100%) brightness(0.5);
-            transition: all 0.8s ease;
-            cursor: pointer;
-        }
-        .footer-logo:hover {
-            filter: grayscale(0%) brightness(1) drop-shadow(0 0 40px rgba(0,229,255,0.5));
-        }
-
-        /* TEXT CONTRAST ENGINE */
-        .linen-text { color: #000 !important; }
-        .linen-sub { color: #444 !important; font-weight: 700; }
-        .white-fixed { color: #fff !important; }
-        .cyan-fixed { color: #00e5ff !important; }
-    </style>
-</head>
-<body>
-
-    <nav class="supreme-header">
-        <div class="flex items-center">
-            <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html" class="relative block w-[320px]">
-                <img src="castaistars.png" alt="CASTAISTARS" class="supreme-logo">
-            </a>
-            <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
-                <a href="backlot.html" class="hover:text-cyan-400 transition white-fixed">Registry</a>
-                <a href="pricing.html" class="hover:text-cyan-400 transition white-fixed">Pricing</a>
-                <a href="compliance.html" class="hover:text-cyan-400 transition white-fixed">vSSN Hub</a>
-            </div>
-        </div>
-        <a href="dashboard.html" class="bg-white text-black text-[10px] font-black uppercase tracking-widest px-8 py-3.5 rounded hover:bg-cyan-500 transition">Creator Console</a>
-    </nav>
-
-    <section class="hero-section">
-        <div class="max-w-5xl">
-            <h3 class="text-[12px] font-black cyan-fixed uppercase tracking-[0.8em] mb-6 italic animate-pulse">Solomon Kin Records LLC</h3>
-            <h1 class="text-9xl font-black tracking-tighter uppercase leading-[0.8] mb-10 white-fixed">
-                Identity. <br><span class="italic text-gray-500">Enhanced.</span>
-            </h1>
-            <p class="text-xl font-medium tracking-wide leading-relaxed max-w-2xl mb-12 white-fixed">
-                The world's supreme architecture for character world-building. We secure the identity, localize the voice, and anchor the soul on the blockchain.
-            </p>
-            <div class="flex gap-8">
-                <a href="accounts.html" class="bg-cyan-400 text-black px-14 py-6 text-[11px] font-black uppercase tracking-widest hover:bg-white transition">Birth Your Star</a>
-                <a href="studio-portal.html" class="border-2 border-white px-14 py-6 text-[11px] font-black uppercase tracking-widest hover:bg-cyan-400 hover:border-cyan-400 hover:text-black transition white-fixed">Studio Access</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="gateway-grid">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+<section class="talent-spotlight-ribbon" style="background-color: #F5F5DC; padding: 60px 2rem 20px 2rem; border-bottom: 2px solid #000;">
+    <div class="max-w-7xl mx-auto">
+        <h4 class="text-[10px] font-black uppercase tracking-[0.8em] mb-10 text-gray-400 italic">
+            vSSN Verified Assets // Founding Class
+        </h4>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             
-            <div class="gateway-card">
-                <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-4 linen-sub">Creator</h4>
-                    <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 linen-text">The <br>Terminal.</h3>
-                    <p class="text-[11px] font-bold leading-relaxed mb-8 linen-sub">Manage birthed assets, track vSSN status, and pitch to global productions.</p>
-                </div>
-                <a href="dashboard.html" class="btn-link">Enter Console</a>
+            <div class="talent-token" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent), url('vesper_neo.png');">
+                <span class="token-label">Vester Neo</span>
             </div>
 
-            <div class="gateway-card">
-                <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-4 linen-sub">Discovery</h4>
-                    <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 linen-text">The <br>Backlot.</h3>
-                    <p class="text-[11px] font-bold leading-relaxed mb-8 linen-sub">Browse the verified registry of synthetic talent ready for cinema and gaming.</p>
-                </div>
-                <a href="backlot.html" class="btn-link">Explore Registry</a>
+            <div class="talent-token" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent), url('3days ahead.jpg');">
+                <span class="token-label">RDA Disruption</span>
             </div>
 
-            <div class="gateway-card">
-                <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-4 linen-sub">Security</h4>
-                    <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 linen-text">The <br>Vault.</h3>
-                    <p class="text-[11px] font-bold leading-relaxed mb-8 linen-sub">Review your immutable blockchain hashes and secured vocal DNA archives.</p>
-                </div>
-                <a href="ip-vault.html" class="btn-link">Access Vault</a>
+            <div class="talent-token" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent), url('Hackathon.png');">
+                <span class="token-label">M3 Persona</span>
             </div>
 
-            <div class="gateway-card">
-                <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-4 linen-sub">Sovereignty</h4>
-                    <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 linen-text">The <br>Shield.</h3>
-                    <p class="text-[11px] font-bold leading-relaxed mb-8 linen-sub">Codifying the 20/80 split and securing the master rights of every birth.</p>
-                </div>
-                <a href="licensing.html" class="btn-link">Verify Protocol</a>
+            <div class="talent-token" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent), url('nova_prime.png');">
+                <span class="token-label">Nova Prime</span>
+            </div>
+
+            <div class="talent-token" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent), url('echo_synth.png');">
+                <span class="token-label">Echo Luxe</span>
+            </div>
+
+            <div class="talent-token" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent), url('axel_thorne.png');">
+                <span class="token-label">Axel Thorne</span>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="backlot-preview">
-        <div class="star-token">
-            <span class="token-name">Vester Neo</span>
+<section class="linen-workspace" style="background-color: #F5F5DC; padding: 40px 2rem 120px 2rem;">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <div class="gateway-card">
+            <div class="mb-4">
+                <span class="text-[9px] font-black uppercase text-cyan-600 tracking-[0.4em] block mb-2">Creator</span>
+                <h3 class="text-4xl font-black uppercase leading-[0.9]">The<br>Terminal.</h3>
+            </div>
+            <p class="text-[11px] font-bold my-8 leading-relaxed text-gray-800">Manage birthed assets, track vSSN status, and pitch to global productions.</p>
+            <a href="dashboard.html" class="gateway-btn">Enter Console</a>
         </div>
-        <div class="star-token">
-            <span class="token-name">RDA Disruption</span>
+        
+        <div class="gateway-card">
+            <div class="mb-4">
+                <span class="text-[9px] font-black uppercase text-gray-400 tracking-[0.4em] block mb-2">Discovery</span>
+                <h3 class="text-4xl font-black uppercase leading-[0.9]">The<br>Backlot.</h3>
+            </div>
+            <p class="text-[11px] font-bold my-8 leading-relaxed text-gray-800">Browse the verified registry of synthetic talent ready for cinema and gaming.</p>
+            <a href="backlot.html" class="gateway-btn">Explore Registry</a>
         </div>
-        <div class="star-token">
-            <span class="token-name">M3 Persona</span>
-        </div>
-        <div class="star-token">
-            <span class="token-name">Nova Prime</span>
-        </div>
-        <div class="star-token">
-            <span class="token-name">Echo Luxe</span>
-        </div>
-        <div class="star-token">
-            <span class="token-name">Axel Thorne</span>
-        </div>
-    </section>
 
-    <footer class="py-40 bg-black text-center border-t border-white/5">
-        <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html" class="footer-logo-container">
-            <img src="castaistars.png" alt="CASTAISTARS" class="footer-logo mx-auto">
-        </a>
-        <div class="flex justify-center gap-16 text-[10px] font-black uppercase tracking-[0.5em] text-gray-800 mb-16">
-            <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
-            <a href="licensing.html" class="hover:text-cyan-400 transition">Legal</a>
-            <a href="compliance.html" class="hover:text-cyan-400 transition">Compliance</a>
+        <div class="gateway-card">
+            <div class="mb-4">
+                <span class="text-[9px] font-black uppercase text-gray-400 tracking-[0.4em] block mb-2">Security</span>
+                <h3 class="text-4xl font-black uppercase leading-[0.9]">The<br>Vault.</h3>
+            </div>
+            <p class="text-[11px] font-bold my-8 leading-relaxed text-gray-800">Review your immutable blockchain hashes and secured vocal DNA archives.</p>
+            <a href="ip-vault.html" class="gateway-btn">Access Vault</a>
         </div>
-        <p class="text-[11px] text-gray-900 uppercase tracking-[2em] font-bold italic leading-none">© 2026 Solomon Kin Records LLC | Media Group</p>
-    </footer>
 
-</body>
-</html>
+        <div class="gateway-card">
+            <div class="mb-4">
+                <span class="text-[9px] font-black uppercase text-gray-400 tracking-[0.4em] block mb-2">Sovereignty</span>
+                <h3 class="text-4xl font-black uppercase leading-[0.9]">The<br>Shield.</h3>
+            </div>
+            <p class="text-[11px] font-bold my-8 leading-relaxed text-gray-800">Codifying the 20/80 split and securing the master rights of every birth.</p>
+            <a href="licensing.html" class="gateway-btn">Verify Protocol</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* COMPLIANCE STYLES */
+    .talent-token {
+        height: 220px;
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.2rem;
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+    }
+    .talent-token:hover {
+        border-color: #00e5ff;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .token-label {
+        color: #00e5ff !important;
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .gateway-card {
+        background: #fff;
+        border: 2px solid #000;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 420px;
+        transition: 0.3s;
+    }
+    .gateway-btn {
+        display: block;
+        background: #000;
+        color: #fff !important;
+        padding: 1.2rem;
+        text-align: center;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .gateway-btn:hover {
+        background: #00e5ff;
+        color: #000 !important;
+    }
+</style>
