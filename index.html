@@ -26,13 +26,11 @@
             background-color: var(--dark-bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
             line-height: 1.5;
         }
 
-        /* --- NAVIGATION --- */
         nav {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass);
             padding: 1.2rem 5%;
@@ -46,173 +44,193 @@
         }
 
         .nav-logo { font-weight: 900; letter-spacing: 6px; color: var(--gold); text-decoration: none; font-size: 1.5rem; }
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            margin-left: 2rem;
-            transition: var(--transition);
-        }
-        .nav-links a:hover { color: var(--gold); }
+        .nav-links a { color: var(--text-main); text-decoration: none; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; margin-left: 2rem; }
 
-        /* --- HERO --- */
         header {
-            height: 90vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 0 5%;
+            text-align: center;
             background: radial-gradient(circle at center, #1a1500 0%, #000 100%);
         }
 
-        .main-logo { width: clamp(280px, 40vw, 500px); height: auto; margin-bottom: 2rem; }
-        .hero-title { font-size: 0.75rem; letter-spacing: 12px; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; opacity: 0.8; }
-        
-        .pill {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            color: var(--gold);
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+        .main-logo { width: clamp(280px, 40vw, 500px); height: auto; margin-bottom: 1.5rem; }
 
-        /* --- BENTO GRID SECTION --- */
-        .section { padding: 100px 5%; }
-        .section-header { margin-bottom: 3rem; }
-        h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 0.5rem; }
-        .line { width: 80px; height: 3px; background: var(--gold); }
+        .section { padding: 80px 5%; border-bottom: 1px solid var(--glass); }
+        h2 { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 2rem; border-left: 5px solid var(--gold); padding-left: 20px; }
 
+        /* --- MOVIE SLATE GRID --- */
         .bento-grid {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-auto-rows: minmax(150px, auto);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
         .bento-item {
             background: var(--card-bg);
             border: 1px solid var(--glass);
-            border-radius: 20px;
-            padding: 2.5rem;
+            border-radius: 15px;
+            padding: 2rem;
             text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
             transition: var(--transition);
-            position: relative;
+        }
+
+        .bento-item:hover { border-color: var(--gold); background: #151515; transform: translateY(-5px); }
+        .status-now { color: var(--accent-green); font-weight: 900; font-size: 0.7rem; display: block; margin-bottom: 10px; }
+        .status-soon { color: var(--gold); font-weight: 900; font-size: 0.7rem; display: block; margin-bottom: 10px; }
+
+        /* --- MUSIC CATALOG BLOCKS --- */
+        .artist-block {
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 4rem;
             overflow: hidden;
+            border: 1px solid var(--glass);
         }
 
-        .bento-item:hover { transform: scale(1.02); border-color: var(--gold); background: #151515; }
-        .bento-item.featured { grid-column: span 8; grid-row: span 3; }
-        .bento-item.square { grid-column: span 4; grid-row: span 3; }
-        .bento-item.wide { grid-column: span 12; grid-row: span 2; }
-
-        .tag { color: var(--gold); text-transform: uppercase; font-size: 0.65rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
-        .status-now { color: var(--accent-green); font-weight: 900; letter-spacing: 1px; }
-        .status-soon { color: var(--gold); opacity: 0.7; }
-
-        .item-title { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 0.5rem; }
-        .item-desc { color: var(--text-dim); font-size: 0.95rem; line-height: 1.4; }
-
-        /* --- MUSIC CATALOG --- */
-        .music-block { background: var(--card-bg); border-radius: 20px; margin-bottom: 3rem; border: 1px solid var(--glass); }
-        .music-header { padding: 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
-        .artist-flex { display: flex; align-items: center; gap: 2rem; }
-        .artist-avatar { width: 120px; height: 120px; border-radius: 12px; object-fit: cover; }
-
-        .sync-table { width: 100%; border-collapse: collapse; }
-        .sync-table td { padding: 1.5rem 3rem; border-top: 1px solid var(--glass); font-size: 0.9rem; }
-        .sync-table tr:hover { background: rgba(255,255,255,0.02); }
-        
-        .badge { 
-            display: inline-block;
-            background: rgba(57, 255, 20, 0.1); 
-            color: var(--accent-green); 
-            padding: 5px 12px; 
-            border-radius: 3px; 
-            font-size: 0.6rem; 
-            font-weight: 900; 
-            letter-spacing: 1px;
+        .artist-header {
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            background: linear-gradient(to right, #111, #000);
+            flex-wrap: wrap;
         }
 
-        .listen-btn { color: var(--gold); text-decoration: none; font-weight: 900; font-size: 0.75rem; letter-spacing: 1px; border-bottom: 1px solid transparent; transition: 0.3s; }
-        .listen-btn:hover { border-bottom: 1px solid var(--gold); }
+        .artist-logo { width: 180px; height: 180px; object-fit: contain; background: #000; padding: 10px; border-radius: 10px; border: 1px solid var(--glass); }
 
-        /* --- CONTACT --- */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            background: #0a0a0a;
-            padding: 4rem;
-            border-radius: 30px;
-        }
+        .artist-meta h3 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 5px; }
+        .artist-meta a { color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; }
 
-        .field { width: 100%; padding: 1.2rem; background: #111; border: 1px solid var(--glass); border-radius: 10px; color: white; margin-bottom: 1rem; font-family: inherit; }
-        .submit-btn { width: 100%; padding: 1.2rem; background: var(--gold); border: none; border-radius: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
+        .track-list { width: 100%; border-collapse: collapse; }
+        .track-list td { padding: 1.2rem 3rem; border-top: 1px solid var(--glass); font-size: 0.95rem; }
+        .track-list tr:hover { background: rgba(255,255,255,0.02); }
+        .apple-link { color: var(--gold); text-decoration: none; font-weight: 900; font-size: 0.7rem; border: 1px solid var(--gold); padding: 5px 15px; border-radius: 4px; transition: 0.3s; }
+        .apple-link:hover { background: var(--gold); color: #000; }
 
-        footer { padding: 4rem 5%; text-align: center; border-top: 1px solid var(--glass); color: #444; font-size: 0.75rem; }
+        .badge { background: rgba(57, 255, 20, 0.1); color: var(--accent-green); padding: 4px 10px; border-radius: 3px; font-size: 0.6rem; font-weight: 900; margin-left: 10px; }
 
-        @media (max-width: 900px) {
-            .bento-item.featured, .bento-item.square, .bento-item.wide { grid-column: span 12; }
-            .contact-container { grid-template-columns: 1fr; }
-        }
+        footer { padding: 4rem; text-align: center; color: #444; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <nav aria-label="Main Navigation">
+    <nav>
         <a href="#" class="nav-logo">SKRMG</a>
         <div class="nav-links">
-            <a href="#realm">IP Slates</a>
-            <a href="#vault">Catalog</a>
-            <a href="#contact">Inquiry</a>
+            <a href="#realm">REALM Slates</a>
+            <a href="#music">Artist Catalog</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
-        <img src="SKRMG.png" alt="SKRMG Principal Logo" class="main-logo" loading="eager">
-        <p class="hero-title">A Multi-Platform Media Conglomerate</p>
-        <div class="pill">Strategic IP & 100% Owned Sync Assets</div>
+        <img src="SKRMG.png" alt="SKRMG Logo" class="main-logo">
+        <div style="letter-spacing: 5px; color: var(--gold); font-weight: 700; margin-top: -20px;">LLC MEDIA GROUP</div>
     </header>
 
     <section id="realm" class="section">
-        <div class="section-header">
-            <span class="tag">REALM Pictures Division</span>
-            <h2>Active IP Slates</h2>
-            <div class="line"></div>
-        </div>
-
+        <h2>REALM Pictures Slate</h2>
         <div class="bento-grid">
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" target="_blank" class="bento-item featured">
-                <span class="tag status-now">AVAILABLE NOW</span>
-                <h3 class="item-title">Mother's Mercy</h3>
-                <p class="item-desc">High-concept military thriller exploring the coordinated collapse of ecological boundaries. IP ready for series or feature acquisition.</p>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" target="_blank" class="bento-item">
+                <span class="status-now">AVAILABLE NOW</span>
+                <h3 style="color:white; margin-bottom:10px;">Mother's Mercy</h3>
+                <p style="color:var(--text-dim); font-size:0.8rem;">High-concept military/ecological thriller.</p>
             </a>
-
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" target="_blank" class="bento-item square">
-                <span class="tag status-now">AVAILABLE NOW</span>
-                <h3 class="item-title">Obsidian: The Black Box</h3>
-                <p class="item-desc">A deep-dive into the "Black Box" of consciousness and arcane protection. Supernatural Tech-Noir.</p>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" target="_blank" class="bento-item">
+                <span class="status-now">AVAILABLE NOW</span>
+                <h3 style="color:white; margin-bottom:10px;">Obsidian: The Black Box</h3>
+                <p style="color:var(--text-dim); font-size:0.8rem;">Supernatural Tech-Noir investigation.</p>
             </a>
-
-            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item wide">
-                <span class="tag status-soon">COMING SOON</span>
-                <h3 class="item-title">The Gorgon Protocol</h3>
-                <p class="item-desc">An investigation into the intersection of V2K neuro-technology and pharmaceutical corporate espionage.</p>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item">
+                <span class="status-soon">COMING SOON</span>
+                <h3 style="color:white; margin-bottom:10px;">The Gorgon Protocol</h3>
+                <p style="color:var(--text-dim); font-size:0.8rem;">V2K Neuro-technology conspiracy.</p>
+            </a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item">
+                <span class="status-soon">COMING SOON</span>
+                <h3 style="color:white; margin-bottom:10px;">Global Citizen Joe</h3>
+                <p style="color:var(--text-dim); font-size:0.8rem;">Psychological identity drama.</p>
+            </a>
+            <a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" target="_blank" class="bento-item">
+                <span class="status-soon">COMING SOON</span>
+                <h3 style="color:white; margin-bottom:10px;">DEADHEAD</h3>
+                <p style="color:var(--text-dim); font-size:0.8rem;">Digital consciousness courier thriller.</p>
             </a>
         </div>
     </section>
 
-    <section id="vault" class="section" style="background: #000;">
-        <div class="section-header">
-            <span class="tag">Master & Publishing</span>
-            <h2>Sync Licensing Vault</h2>
+    <section id="music" class="section">
+        <h2>Labels & Artist Powerhouse</h2>
+
+        <div class="artist-block">
+            <div class="artist-header">
+                <img src="DJM3%20new.png" alt="DJ M3 Logo" class="artist-logo">
+                <div class="artist-meta">
+                    <h3>DJ M3</h3>
+                    <a href="https://brneo059.wixsite.com/dj-m3" target="_blank">OFFICIAL SITE</a> | <a href="DJ-M3-EPK.pdf">DOWNLOAD EPK</a>
+                </div>
+            </div>
+            <table class="track-list">
+                <tr><td>Ransomware <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/ransomware/1656120423" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Encryption <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/encryption/1656120424" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Zero-day <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/zero-day/1656120426" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Firewall <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/song/firewall/1656120428" class="apple-link">APPLE MUSIC</a></td></tr>
+            </table>
+        </div>
+
+        <div class="artist-block">
+            <div class="artist-header">
+                <img src="RDA%20disruption%20three%20days%20ahead%20logo.png" alt="3dayz ahead Logo" class="artist-logo">
+                <div class="artist-meta">
+                    <h3>3dayz ahead (RDA Disruption)</h3>
+                    <a href="https://brneo059.wixsite.com/rda-disruption" target="_blank">OFFICIAL SITE</a> | <a href="RDA-EPK.pdf">DOWNLOAD EPK</a>
+                </div>
+            </div>
+            <table class="track-list">
+                <tr><td>Dextera Dei et Sinister Manus <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/pl/album/dextera-dei-et-sinister-manus-single/1655121881" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Red Devil Alien <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ru/artist/rda-disruption/1603338000" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Global Citizen Joe <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ca/album/global-citizen-joe-feat-eric-castiglia-the-algorhythm/1538189792" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Welcome to Carnahan <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ca/album/welcome-to-carnahan-feat-eric-castiglia-the/1548186034" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Blood and Gold <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/es/album/blood-gold-single/1654864279" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Song of Desire <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/es/album/song-of-desire-single/1657920973" class="apple-link">APPLE MUSIC</a></td></tr>
+            </table>
+        </div>
+
+        <div class="artist-block">
+            <div class="artist-header">
+                <img src="Yungbro-Logo.png" alt="Yungbro Logo" class="artist-logo">
+                <div class="artist-meta">
+                    <h3>Yungbro</h3>
+                    <a href="https://brneo059.wixsite.com/yungbro" target="_blank">OFFICIAL SITE</a>
+                </div>
+            </div>
+            <table class="track-list">
+                <tr><td>One Night Again <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/ca/album/one-night-again-single/1657744162" class="apple-link">APPLE MUSIC</a></td></tr>
+            </table>
+        </div>
+
+        <div class="artist-block">
+            <div class="artist-header">
+                <img src="Prince-Raz-Logo.png" alt="Prince Raz Logo" class="artist-logo">
+                <div class="artist-meta">
+                    <h3>Prince Raz</h3>
+                    <a href="https://brneo059.wixsite.com/prince-raz" target="_blank">OFFICIAL SITE</a>
+                </div>
+            </div>
+            <table class="track-list">
+                <tr><td>Twerk Work <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/us/album/twerk-work-single/1656091164" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Joy Inside <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/us/album/joy-inside-single/1655861942" class="apple-link">APPLE MUSIC</a></td></tr>
+                <tr><td>Eyes On You <span class="badge">100% CLEARED</span></td><td align="right"><a href="https://music.apple.com/us/album/eyes-on-you-single/1542287080" class="apple-link">APPLE MUSIC</a></td></tr>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Solomon Kin Records Media Group. <br> SKRMG. Powerhouse Production.</p>
+    </footer>
+
+</body>
+</html>
