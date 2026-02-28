@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP VAULT | Solomon Kin Records LLC Intellectual Property Shield</title>
+    <title>IP VAULT | Solomon Kin Records LLC High-Security Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* HEADER: Locked 80px */
+        /* SUPREME HEADER: Locked 80px */
         .supreme-header {
             background-color: #000;
             position: sticky;
@@ -36,10 +36,9 @@
             pointer-events: none;
         }
 
-        /* VAULT WORKSPACE: Darkened Tan Linen for High Security */
+        /* VAULT WORKSPACE: Tan Linen Professionalism */
         .vault-workspace {
-            background-color: #E2E2C7; 
-            color: #000;
+            background-color: #F5F5DC; 
             padding: 160px 2rem 100px 2rem; 
             min-height: 100vh;
         }
@@ -47,34 +46,35 @@
         .vault-card {
             background: #fff;
             border: 2px solid #000;
-            border-radius: 4px; /* Industrial sharp edges */
-            padding: 3rem;
+            border-radius: 20px;
+            padding: 4rem;
             max-width: 1200px;
             margin: 0 auto;
-            box-shadow: 20px 20px 0px rgba(0,0,0,1);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.1);
         }
 
-        /* VAULT ASSET ROWS */
-        .asset-row {
-            display: grid;
-            grid-template-columns: 2fr 1.5fr 1fr 1fr;
-            gap: 20px;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            align-items: center;
+        /* ASSET LEDGER TABLE */
+        .ledger-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+        .ledger-header { border-bottom: 3px solid #000; text-align: left; }
+        .ledger-header th { padding: 1.5rem 1rem; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: #000; }
+        
+        .ledger-row { border-bottom: 1px solid #eee; transition: 0.3s; }
+        .ledger-row:hover { background: #f9f9f9; }
+        .ledger-row td { padding: 2rem 1rem; vertical-align: middle; color: #000 !important; }
+
+        /* TECHNICAL BADGES */
+        .vssn-chip { font-family: monospace; background: #000; color: #00e5ff; padding: 6px 12px; border-radius: 4px; font-size: 11px; font-weight: 900; }
+        .hash-code { font-family: monospace; font-size: 10px; color: #888; letter-spacing: 1px; }
+        
+        .btn-action { 
+            background: #000; color: #fff; font-weight: 900; border-radius: 4px; 
+            padding: 12px 24px; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; 
+            transition: 0.3s; border: none; cursor: pointer;
         }
+        .btn-action:hover { background: #00e5ff; color: #000; transform: scale(1.05); }
 
-        .vssn-box { font-family: monospace; background: #000; color: #00e5ff; padding: 5px 10px; font-size: 11px; border-radius: 3px; }
-        .hash-tag { font-family: monospace; font-size: 10px; color: #888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-        .btn-vault { background: #000; color: #fff; font-weight: 900; border-radius: 4px; transition: 0.3s; padding: 10px 20px; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .btn-vault:hover { background: #00e5ff; color: #000; }
-
-        .status-badge { font-size: 8px; font-weight: 900; padding: 4px 8px; border-radius: 20px; text-transform: uppercase; }
-        .status-locked { background: #e6fffa; color: #2c7a7b; border: 1px solid #2c7a7b; }
-
-        /* CONTRAST OVERRIDES */
-        h1, h2, h3, h4, p, span, label { color: #000 !important; }
+        /* CONTRAST RECOVERY */
+        h1, h2, h3, h4, p, span, label, td, th { color: #000 !important; }
         .text-white-fixed { color: #fff !important; }
         .text-cyan-fixed { color: #00e5ff !important; }
     </style>
@@ -88,88 +88,97 @@
             </a>
             <div class="hidden xl:flex gap-10 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
                 <a href="dashboard.html" class="hover:text-white transition text-white-fixed">Console</a>
-                <a href="backlot.html" class="hover:text-white transition text-white-fixed">Backlot</a>
+                <a href="backlot.html" class="hover:text-white transition text-white-fixed">Registry</a>
+                <a href="licensing.html" class="hover:text-white transition text-white-fixed">Licensing</a>
             </div>
         </div>
         <div class="flex items-center gap-6">
-            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">Vault Security: Protocol 8</span>
+            <span class="text-[9px] font-black uppercase text-gray-600 tracking-widest italic text-white-fixed">IP Shield: SECURE</span>
         </div>
     </nav>
 
     <section class="vault-workspace">
         <div class="max-w-6xl mx-auto text-center mb-16">
-            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Proprietary Asset Storage</h3>
-            <h2 class="text-7xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-500">Vault.</span></h2>
-            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Immutable Encryption for the Synthetic Identity.</p>
+            <h3 class="text-[11px] font-black text-cyan-600 uppercase tracking-[0.8em] mb-4 italic text-cyan-fixed">Proprietary Asset Repository</h3>
+            <h2 class="text-8xl font-black tracking-tighter mb-4 text-black uppercase leading-none">The <span class="italic text-gray-400">Vault.</span></h2>
+            <p class="text-sm font-black text-black uppercase tracking-[0.5em]">Immutable Identity Storage for Synthetic Individuals.</p>
         </div>
 
         <div class="vault-card">
-            <div class="flex justify-between items-center mb-10 border-b-4 border-black pb-6">
-                <h4 class="text-xl font-black uppercase italic">Master Asset Ledger</h4>
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 bg-gray-50 p-8 rounded-xl border border-gray-100">
+                <div class="flex items-center gap-6">
+                    <div class="h-12 w-12 bg-black rounded-full flex items-center justify-center border-2 border-cyan-400">
+                        <span class="text-cyan-400 text-cyan-fixed">🛡️</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-black uppercase">Creator Authorship: SECURED</h4>
+                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Global vSSN Registry v3.2</p>
+                    </div>
+                </div>
                 <div class="flex gap-4">
-                    <span class="text-[9px] font-black uppercase bg-black text-white px-4 py-2 text-white-fixed">AES-256 Shielded</span>
-                    <span class="text-[9px] font-black uppercase bg-cyan-400 text-black px-4 py-2">On-Chain Verified</span>
+                    <div class="text-right">
+                        <p class="text-[9px] font-black uppercase mb-1">Blockchain Connectivity</p>
+                        <span class="bg-black text-cyan-400 text-[9px] font-black px-4 py-2 rounded text-cyan-fixed">SYNCED // ERC-721</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-4 gap-5 pb-4 border-b-2 border-black">
-                <span class="text-[10px] font-black uppercase tracking-widest">Synthetic Asset</span>
-                <span class="text-[10px] font-black uppercase tracking-widest">Blockchain Hash</span>
-                <span class="text-[10px] font-black uppercase tracking-widest text-center">vSSN Credentials</span>
-                <span class="text-[10px] font-black uppercase tracking-widest text-right">Actions</span>
-            </div>
+            <table class="ledger-table">
+                <thead class="ledger-header">
+                    <tr>
+                        <th>Persona Identity</th>
+                        <th>On-Chain Hash</th>
+                        <th>vSSN Registry</th>
+                        <th class="text-right">Access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ledger-row">
+                        <td>
+                            <div class="flex flex-col">
+                                <span class="text-lg font-black uppercase tracking-tighter">Vester Neo</span>
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest italic">Baritone Grit-B // Verified</span>
+                            </div>
+                        </td>
+                        <td><span class="hash-code">0x8823f4b2e91...2026</span></td>
+                        <td><span class="vssn-chip">774-XX-2026</span></td>
+                        <td class="text-right"><button class="btn-action">Extract DNA</button></td>
+                    </tr>
+                    <tr class="ledger-row">
+                        <td>
+                            <div class="flex flex-col">
+                                <span class="text-lg font-black uppercase tracking-tighter">M3 Persona</span>
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest italic">Tenor Sonic-Sharp // Verified</span>
+                            </div>
+                        </td>
+                        <td><span class="hash-code">0x1192d3f9a88...2026</span></td>
+                        <td><span class="vssn-chip">889-XX-2026</span></td>
+                        <td class="text-right"><button class="btn-action">Extract DNA</button></td>
+                    </tr>
+                    <tr class="ledger-row">
+                        <td>
+                            <div class="flex flex-col">
+                                <span class="text-lg font-black uppercase tracking-tighter">Nova Prime</span>
+                                <span class="text-[9px] font-bold text-gray-400 uppercase tracking-widest italic">Soprano Crystal // Verified</span>
+                            </div>
+                        </td>
+                        <td><span class="hash-code">0x4427e1b5d92...2026</span></td>
+                        <td><span class="vssn-chip">442-XX-2026</span></td>
+                        <td class="text-right"><button class="btn-action">Extract DNA</button></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <div class="asset-row">
-                <div>
-                    <p class="font-black uppercase text-sm">Vester Neo</p>
-                    <p class="text-[9px] text-gray-500 uppercase font-bold mt-1">Status: <span class="status-badge status-locked">Vaulted</span></p>
-                </div>
-                <div class="hash-tag">0x8823f4b2e911029c...2026</div>
-                <div class="text-center">
-                    <span class="vssn-box">774-XX-2026</span>
-                </div>
-                <div class="text-right">
-                    <button class="btn-vault">Review DNA</button>
-                </div>
-            </div>
-
-            <div class="asset-row">
-                <div>
-                    <p class="font-black uppercase text-sm">M3 Persona</p>
-                    <p class="text-[9px] text-gray-500 uppercase font-bold mt-1">Status: <span class="status-badge status-locked">Vaulted</span></p>
-                </div>
-                <div class="hash-tag">0x1192d3f9a882c1b4...2026</div>
-                <div class="text-center">
-                    <span class="vssn-box">889-XX-2026</span>
-                </div>
-                <div class="text-right">
-                    <button class="btn-vault">Review DNA</button>
-                </div>
-            </div>
-
-            <div class="asset-row">
-                <div>
-                    <p class="font-black uppercase text-sm">Nova Prime</p>
-                    <p class="text-[9px] text-gray-500 uppercase font-bold mt-1">Status: <span class="status-badge status-locked">Vaulted</span></p>
-                </div>
-                <div class="hash-tag">0x4427e1b5d92c81a2...2026</div>
-                <div class="text-center">
-                    <span class="vssn-box">442-XX-2026</span>
-                </div>
-                <div class="text-right">
-                    <button class="btn-vault">Review DNA</button>
-                </div>
-            </div>
-
-            <div class="mt-16 bg-gray-50 p-10 border-2 border-dashed border-gray-200 text-center">
-                <p class="text-[11px] font-black uppercase tracking-widest mb-4">Add Advanced Biometric Security to New Asset?</p>
-                <a href="accounts.html" class="btn-vault inline-block">Initialize New Vault Entry</a>
+            <div class="mt-16 text-center">
+                <p class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6 italic">Secure addition of New Life Properties?</p>
+                <a href="accounts.html" class="border-2 border-black px-12 py-5 text-[10px] font-black uppercase tracking-widest hover:bg-black hover:text-white transition inline-block">Initialize Vault Entry</a>
             </div>
         </div>
 
         <div class="mt-20 max-w-4xl mx-auto text-center">
-            <p class="text-sm font-black italic uppercase leading-loose">
-                "We secure what you birth. The Vault is the final authority in character world-building."
+            <p class="text-sm font-black italic uppercase leading-loose text-black">
+                "We secure what you birth. The Vault is the final authority in character world-building." <br>
+                <span class="text-gray-400">— Solomon Kin Records LLC</span>
             </p>
         </div>
     </section>
