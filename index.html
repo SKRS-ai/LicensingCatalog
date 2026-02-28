@@ -1,4 +1,193 @@
-<section class="film-vault-section" style="background-color: #F5F5DC; padding: 100px 2rem; border-top: 2px solid #000;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASTAISTARS | Solomon Kin Records LLC | Realm Pictures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+
+        /* HEADER */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        .logo-link { height: 100%; display: flex; align-items: center; }
+        .supreme-logo { height: 280px; transition: 0.5s; }
+
+        /* HERO SECTION (Black Void) */
+        .hero-section {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 4rem;
+            background: linear-gradient(to right, #000 40%, transparent);
+        }
+
+        /* TAN LINEN WORKSPACE */
+        .linen-workspace {
+            background-color: #F5F5DC; /* The specific Tan Linen color */
+            padding: 100px 2rem;
+            color: #000 !important;
+        }
+
+        /* VIBRANT DREAM BUTTONS */
+        .btn-available {
+            display: block;
+            background: #000;
+            color: #00e5ff !important;
+            padding: 20px;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 2px solid #00e5ff;
+            box-shadow: 0 0 15px rgba(0,229,255,0.4);
+            transition: 0.3s;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .btn-available:hover {
+            box-shadow: 0 0 30px #00e5ff;
+            transform: scale(1.02);
+        }
+        .btn-coming {
+            display: block;
+            background: transparent;
+            color: #000 !important;
+            padding: 20px;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid #000;
+            text-decoration: none;
+            opacity: 0.5;
+        }
+
+        /* ARTIST TOKENS */
+        .star-token {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            position: relative;
+            transition: 0.4s;
+        }
+        .star-token:hover { transform: translateY(-10px); border-color: #00e5ff; }
+        .token-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 40%, transparent); z-index: 1; }
+        .token-content { position: relative; z-index: 2; }
+        
+        .artist-title { font-size: 24px; font-weight: 900; color: #00e5ff !important; text-transform: uppercase; }
+        .track-link { display: block; color: #fff !important; font-size: 10px; text-transform: uppercase; margin-top: 5px; opacity: 0.8; text-decoration: none; }
+        .track-link:hover { color: #00e5ff !important; opacity: 1; }
+
+        /* FOOTER LOGO */
+        .footer-logo {
+            height: 300px;
+            filter: grayscale(1) opacity(0.3);
+            transition: 0.8s;
+        }
+        .footer-logo:hover {
+            filter: grayscale(0) opacity(1) drop-shadow(0 0 30px #00e5ff);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="supreme-header">
+        <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html" class="logo-link">
+            <img src="castaistars.png" class="supreme-logo" alt="Logo">
+        </a>
+        <div class="flex gap-10 text-[10px] font-black uppercase tracking-widest text-gray-400">
+            <a href="backlot.html" class="hover:text-white">Registry</a>
+            <a href="dashboard.html" class="hover:text-white">Terminal</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h3 class="text-cyan-400 font-black uppercase tracking-[0.8em] mb-4">Solomon Kin Records LLC</h3>
+        <h1 class="text-9xl font-black uppercase leading-none mb-6">REALM<br><span class="italic text-gray-500">PICTURES.</span></h1>
+    </section>
+
+    <main class="linen-workspace">
+        <div class="max-w-7xl mx-auto mb-32">
+            <h2 class="text-5xl font-black uppercase mb-2">Upcoming Movie Treatments</h2>
+            <p class="text-xs font-bold uppercase tracking-widest mb-12 opacity-60">Preview concepts for future film projects.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <span class="text-[10px] font-black uppercase text-cyan-600">Available Now</span>
+                    <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" class="btn-available">Mother’s Mercy</a>
+                </div>
+                <div>
+                    <span class="text-[10px] font-black uppercase text-cyan-600">Available Now</span>
+                    <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" class="btn-available">Obsidian: The Black Box</a>
+                </div>
+                <div><span class="text-[10px] font-black uppercase opacity-40">Coming Soon</span><a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-coming">DEADHEAD</a></div>
+                <div><span class="text-[10px] font-black uppercase opacity-40">Coming Soon</span><a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-coming">Global Citizen Joe</a></div>
+                <div><span class="text-[10px] font-black uppercase opacity-40">Coming Soon</span><a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-coming">The Lost American</a></div>
+                <div><span class="text-[10px] font-black uppercase opacity-40">Coming Soon</span><a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-coming">Masthead off the Record</a></div>
+                <div><span class="text-[10px] font-black uppercase opacity-40">Coming Soon</span><a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-coming">Ghosts in the Console</a></div>
+                <div><span class="text-[10px] font-black uppercase opacity-40">Coming Soon</span><a href="https://brneo059.wixsite.com/solomon-kin-records/upcoming-movie-treatments" class="btn-coming">The Gorgon Protocol</a></div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-black uppercase mb-12">The Founding</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="star-token" style="background-image: url('rda_disruption.png');">
+                    <div class="token-overlay"></div>
+                    <div class="token-content">
+                        <a href="https://brneo059.wixsite.com/rda-disruption" class="artist-title">3dayz ahead</a>
+                        <a href="https://music.apple.com/pl/album/dextera-dei-et-sinister-manus-single/1655121881" class="track-link">Dextera Dei et Sinister Manus</a>
+                        <a href="https://music.apple.com/ca/album/blood-gold-single/1654864279" class="track-link">Blood and Gold</a>
+                    </div>
+                </div>
+
+                <div class="star-token" style="background-image: url('PRINCE RAZ SMRMG.png');">
+                    <div class="token-overlay"></div>
+                    <div class="token-content">
+                        <a href="https://music.apple.com/us/artist/prince-raz/1542286668" class="artist-title">Prince Raz</a>
+                        <a href="https://music.apple.com/ca/album/one-night-again-single/1657744162" class="track-link">One Night Again (feat. YUNGBRO)</a>
+                    </div>
+                </div>
+
+                <div class="star-token" style="background-image: url('Eva SKRMG.png');">
+                    <div class="token-overlay"></div>
+                    <div class="token-content">
+                        <span class="artist-title">Eva SKRMG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-20 bg-black text-center">
+        <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html">
+            <img src="castaistars.png" class="footer-logo mx-auto" alt="Logo">
+        </a>
+    </footer>
+
+</body>
+</html><section class="film-vault-section" style="background-color: #F5F5DC; padding: 100px 2rem; border-top: 2px solid #000;">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-20">
             <h2 class="text-6xl font-black uppercase tracking-tighter text-black">Upcoming Movie <span class="italic text-gray-400">Treatments.</span></h2>
@@ -76,3 +265,4 @@
         opacity: 0.6;
     }
 </style>
+
