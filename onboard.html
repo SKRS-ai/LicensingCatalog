@@ -10,137 +10,130 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* PULSE HEADER */
+        /* SUPREME HEADER (SAME AS MAIN) */
+        .supreme-header {
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 10000; height: 90px;
+            display: flex; align-items: center; justify-content: space-between; padding: 0 3rem;
+            border-bottom: 1px solid #222;
+        }
+        .supreme-logo { height: 280px; transition: 0.5s; cursor: pointer; }
+
         .onboard-axiom {
             font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8em;
-            color: #00e5ff; text-align: center; padding: 20px 0; border-bottom: 1px solid #1a1a1a;
+            color: #00e5ff; text-align: center; padding: 15px 0; border-bottom: 1px solid #1a1a1a;
         }
 
-        /* MULTI-STEP PROGRESS BAR */
-        .step-indicator {
-            display: flex; justify-content: center; gap: 4rem; padding: 3rem 0; background: #050505;
-            border-bottom: 1px solid #111;
-        }
+        /* PROGRESS STEPS */
+        .step-indicator { display: flex; justify-content: center; gap: 4rem; padding: 2rem 0; background: #080808; border-bottom: 1px solid #111; }
         .step { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3em; color: #333; display: flex; align-items: center; }
         .step.active { color: #00e5ff; }
         .step span { border: 1px solid #333; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; margin-right: 12px; border-radius: 50%; font-size: 9px; }
         .step.active span { border-color: #00e5ff; box-shadow: 0 0 10px rgba(0,229,255,0.3); }
 
-        /* MAIN CONTAINER (LINEN) */
-        .synthesis-lab { 
-            background-color: #F5F5DC; color: #000; min-height: 90vh; 
-            padding: 80px 2rem; display: flex; justify-content: center;
-        }
-        .lab-card { width: 100%; max-width: 900px; }
+        /* LAB AREA */
+        .synthesis-lab { background-color: #F5F5DC; color: #000; padding: 80px 2rem; display: flex; justify-content: center; }
+        .lab-card { width: 100%; max-width: 1000px; }
 
-        /* FORM LOGIC */
+        /* FORM ELEMENTS */
         .lab-label { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.4em; color: #999; margin-bottom: 1rem; display: block; }
-        
         .lab-input {
             width: 100%; background: #fff; border: 2px solid #000; padding: 1.5rem;
-            font-weight: 700; text-transform: uppercase; font-size: 13px; margin-bottom: 2.5rem;
-            outline: none; transition: 0.3s; appearance: none; /* Removes default safari styling */
+            font-weight: 700; text-transform: uppercase; font-size: 13px; margin-bottom: 2rem;
+            outline: none; transition: 0.3s;
         }
-        .lab-input:focus { border-color: #00e5ff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .lab-input:focus { border-color: #00e5ff; }
 
-        /* CUSTOM SELECT ARROW */
-        .select-wrapper { position: relative; }
-        .select-wrapper::after {
-            content: '▼'; font-size: 10px; position: absolute; right: 20px; top: 28px; pointer-events: none;
-        }
+        .upload-zone { border: 2px dashed #000; padding: 4rem 2rem; text-align: center; cursor: pointer; background: #fff; transition: 0.4s; }
+        .upload-zone:hover { border-color: #00e5ff; background: #fafafa; }
 
-        .upload-zone {
-            border: 2px dashed #000; padding: 5rem 2rem; text-align: center; cursor: pointer;
-            transition: 0.4s; background: #fff; margin-bottom: 2.5rem;
-        }
-        .upload-zone:hover { border-color: #00e5ff; background: #fafafa; transform: scale(1.01); }
+        .protocol-section { background: rgba(0,0,0,0.03); padding: 3rem; border: 1px solid #ddd; margin-bottom: 3rem; }
 
-        .nav-buttons { display: flex; justify-content: space-between; align-items: center; margin-top: 5rem; }
-        
         .btn-next {
             background: #000; color: #fff; padding: 1.5rem 5rem; font-weight: 900;
             text-transform: uppercase; letter-spacing: 4px; font-size: 12px; transition: 0.4s;
             border: 2px solid #000; cursor: pointer;
         }
-        .btn-next:hover { background: #00e5ff; color: #000; border-color: #00e5ff; box-shadow: 0 10px 20px rgba(0,229,255,0.2); }
-        
-        .btn-abort { 
-            font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; 
-            color: #999; border: none; background: none; cursor: pointer; transition: 0.3s;
-        }
-        .btn-abort:hover { color: #ff4444; }
-
-        textarea.lab-input { resize: none; min-height: 150px; }
+        .btn-next:hover { background: #00e5ff; color: #000; border-color: #00e5ff; }
     </style>
 </head>
 <body>
 
-    <div class="onboard-axiom">Asset Synthesis Protocol // vSSN Initialization</div>
+    <div class="onboard-axiom">Asset Synthesis Protocol // Secure Identity Extension</div>
+
+    <nav class="supreme-header">
+        <a href="index.html">
+            <img src="castaistars.png" class="supreme-logo" alt="Logo">
+        </a>
+        <div class="text-[10px] font-black uppercase tracking-widest text-cyan-400">Step 01: DNA Initialization</div>
+    </nav>
 
     <nav class="step-indicator">
         <div class="step active"><span>01</span> Identity DNA</div>
-        <div class="step"><span>02</span> Media Anchor</div>
-        <div class="step"><span>03</span> Protocol Secure</div>
+        <div class="step"><span>02</span> Visual Anchor</div>
+        <div class="step"><span>03</span> Rights & Protocol</div>
     </nav>
 
     <section class="synthesis-lab">
         <div class="lab-card">
             <header class="mb-16">
-                <div class="flex items-center gap-4 mb-4">
-                    <span class="h-[1px] w-12 bg-cyan-500"></span>
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.8em] text-cyan-600">Phase 01 // Identity</h4>
-                </div>
-                <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85]">Birth the <br><span class="italic text-black">Identity.</span></h2>
+                <h2 class="text-7xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85]">Define the <br><span class="italic text-cyan-600">Extension.</span></h2>
             </header>
 
             <form action="dashboard.html" method="POST">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div>
-                        <label class="lab-label">Synthetic Stage Name</label>
-                        <input type="text" class="lab-input" placeholder="e.g. DANTE VEX" required>
+                        <label class="lab-label">Synthetic Name</label>
+                        <input type="text" class="lab-input" placeholder="e.g. CYAN ECLIPSE" required>
                     </div>
-                    <div class="select-wrapper">
-                        <label class="lab-label">Persona Classification</label>
-                        <select class="lab-input" required>
-                            <option value="" disabled selected>Select Archetype</option>
-                            <option>Lead Vocalist</option>
-                            <option>Electronic Producer</option>
-                            <option>Cinema Avatar</option>
-                            <option>Session Instrumentalist</option>
+                    <div>
+                        <label class="lab-label">Market Classification</label>
+                        <select class="lab-input">
+                            <option>High-Fidelity Cinema Hero</option>
+                            <option>Electronic Vocal Asset</option>
+                            <option>Meta-Brand Ambassador</option>
                         </select>
                     </div>
                 </div>
 
-                <label class="lab-label">Primary Vocal DNA (60s Master Sample)</label>
-                <div class="upload-zone" onclick="document.getElementById('file-upload').click()">
-                    <input type="file" id="file-upload" class="hidden" accept=".wav,.flac">
-                    <p class="text-[11px] font-black uppercase tracking-widest text-gray-400">
-                        Drop High-Fidelity WAV/FLAC or <span class="text-black underline cursor-pointer hover:text-cyan-500">Browse Archives</span>
-                    </p>
-                    <p class="text-[9px] mt-4 text-gray-300 font-bold uppercase tracking-widest">Maximum file size: 50MB</p>
+                <div class="protocol-section">
+                    <h5 class="text-[11px] font-black uppercase tracking-[0.5em] mb-8 text-black border-b border-black pb-4">Character Protocol Specs</h5>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="lab-label text-[8px]">Vocal Texture</label>
+                            <input type="text" class="lab-input" placeholder="e.g. Raspy / Silk">
+                        </div>
+                        <div>
+                            <label class="lab-label text-[8px]">Eye Color DNA</label>
+                            <input type="text" class="lab-input" placeholder="e.g. Emerald / Void">
+                        </div>
+                        <div>
+                            <label class="lab-label text-[8px]">Height / Vessel</label>
+                            <input type="text" class="lab-input" placeholder="e.g. 5'11 Athletic">
+                        </div>
+                    </div>
+                    
+                    <label class="lab-label">Temperament & Persona Archetype</label>
+                    <textarea class="lab-input h-24" placeholder="e.g. Stoic, aggressive, futuristic, melancholic..."></textarea>
                 </div>
 
-                <label class="lab-label">Asset Origin Story (Internal Registry Bio)</label>
-                <textarea class="lab-input" placeholder="Describe the synthesis origin, vocal range, and market disruption potential..."></textarea>
+                <label class="lab-label">Voice Sample Archive (WAV/FLAC Only)</label>
+                <div class="upload-zone mb-10">
+                    <p class="text-[11px] font-black uppercase tracking-widest text-gray-400">Initialize Vocal Sync // Drag & Drop</p>
+                </div>
 
-                <div class="nav-buttons">
-                    <button type="button" class="btn-abort" onclick="window.location.href='index.html'">Abort Synthesis</button>
+                <div class="flex justify-between items-center">
+                    <a href="index.html" class="text-[10px] font-black uppercase text-gray-400 hover:text-black">Cancel Session</a>
                     <button type="submit" class="btn-next">Initialize Phase 02</button>
                 </div>
             </form>
-
-            <footer class="mt-24 pt-8 border-t border-gray-200">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-[9px] font-bold text-gray-400 tracking-[0.5em] uppercase">
-                        Solomon Kin Records LLC // Virtual SSN Protocol
-                    </p>
-                    <p class="text-[9px] font-black text-cyan-600 tracking-widest uppercase">
-                        Connection Secure
-                    </p>
-                </div>
-            </footer>
         </div>
     </section>
+
+    <footer class="py-20 bg-black text-center border-t border-white/5">
+        <img src="castaistars.png" class="mx-auto h-[180px] opacity-40" alt="Logo">
+        <h2 class="text-[11px] font-black uppercase tracking-[1em] text-gray-800 mt-10 italic">Securing the Extension of Self</h2>
+    </footer>
 
 </body>
 </html>
