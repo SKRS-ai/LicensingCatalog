@@ -1,156 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTAISTARS | Synthetic Talent Agency | Solomon Kin Records</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
-
-        /* CINEMATIC PULSE INTRO */
-        .intro-axiom {
-            font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8em;
-            color: #00e5ff; text-align: center; padding: 20px 0; border-bottom: 1px solid #1a1a1a;
-            animation: pulseFade 4s infinite;
-        }
-        @keyframes pulseFade { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-
-        /* HEADER */
-        .supreme-header {
-            background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
-            position: sticky; top: 0; z-index: 10000; height: 90px;
-            display: flex; align-items: center; justify-content: space-between; padding: 0 3rem;
-            border-bottom: 1px solid #222;
-        }
-        .supreme-logo { height: 280px; transition: 0.5s; cursor: pointer; }
-
-        /* DUAL GATE HERO */
-        .hero-split {
-            height: 90vh; display: flex; border-bottom: 2px solid #000;
-        }
-        .gate {
-            flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 4rem; position: relative; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden; cursor: pointer; text-decoration: none;
-        }
-        .gate:first-child { border-right: 1px solid #222; background: #050505; }
-        .gate:last-child { background: #080808; }
-        
-        .gate-title { font-size: 10px; font-weight: 900; letter-spacing: 0.6em; color: #555; margin-bottom: 2rem; }
-        .gate-btn { 
-            font-size: 4rem; font-weight: 900; text-transform: uppercase; color: #fff; 
-            line-height: 0.9; transition: 0.4s;
-        }
-        .gate-desc { font-size: 12px; font-weight: 400; color: #444; margin-top: 2rem; max-width: 300px; text-align: center; transition: 0.4s; }
-
-        .gate:hover .gate-btn { color: #00e5ff; transform: scale(1.05); }
-        .gate:hover .gate-desc { color: #fff; }
-        .gate:hover { flex: 1.2; background: #111; }
-
-        /* TALENT RIBBON (THE BACKLOT PREVIEW) */
-        .backlot-preview { background: #F5F5DC; padding: 100px 3rem; color: #000; }
-        .talent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
-        
-        .talent-card {
-            height: 380px; background-size: cover; background-position: center; border: 2px solid #000;
-            position: relative; display: flex; align-items: flex-end; padding: 1.5rem; overflow: hidden;
-            transition: 0.4s;
-        }
-        .talent-card:hover { transform: translateY(-15px); border-color: #00e5ff; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
-        .talent-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, #000 40%, transparent); z-index: 1; }
-        .talent-info { position: relative; z-index: 2; }
-        .talent-name { font-size: 18px; font-weight: 900; color: #00e5ff !important; text-transform: uppercase; }
-        .talent-role { font-size: 9px; font-weight: 700; color: #fff; text-transform: uppercase; opacity: 0.7; }
-
-        /* GATEWAY UTILITY GRID */
-        .utility-grid { background: #F5F5DC; padding: 0 3rem 120px 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .util-card { 
-            background: #fff; border: 2px solid #000; padding: 2.5rem; display: flex; flex-direction: column; 
-            justify-content: space-between; min-height: 350px; 
-        }
-    </style>
-</head>
-<body>
-
-    <div class="intro-axiom">Secure the Identity // Localize the Voice // Anchor the Soul</div>
-
-    <nav class="supreme-header">
-        <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html">
-            <img src="castaistars.png" class="supreme-logo" alt="Castaistars Logo">
-        </a>
-        <div class="flex gap-10 text-[10px] font-black uppercase tracking-widest text-gray-500">
-            <a href="backlot.html" class="hover:text-cyan-400">Registry</a>
-            <a href="dashboard.html" class="hover:text-cyan-400">Terminal</a>
-            <a href="licensing.html" class="hover:text-cyan-400">Shield</a>
-        </div>
-    </nav>
-
-    <section class="hero-split">
-        <a href="backlot.html" class="gate">
-            <span class="gate-title">Executive Access</span>
-            <h2 class="gate-btn">Studios &<br>Directors</h2>
-            <p class="gate-desc">Scout the world's first verified registry of high-fidelity synthetic talent. Acquire the DNA for your next production.</p>
-        </a>
-        <a href="dashboard.html" class="gate">
-            <span class="gate-title">Creator Console</span>
-            <h2 class="gate-btn" style="color:#00e5ff">Synthesis &<br>Creators</h2>
-            <p class="gate-desc">Birth your asset. Secure vSSN compliance. Enter the global marketplace with 80% sovereignty intact.</p>
-        </a>
-    </section>
-
-    <section class="backlot-preview">
-        <div class="mb-16">
-            <h4 class="text-[10px] font-black uppercase tracking-[1em] mb-4 text-gray-400">Registry Preview</h4>
-            <h2 class="text-6xl font-black uppercase tracking-tighter">The <span class="italic">Founding.</span></h2>
+<section class="backlot-preview">
+        <div class="mb-16 flex justify-between items-end">
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-[1em] mb-4 text-gray-400">Registry Preview</h4>
+                <h2 class="text-6xl font-black uppercase tracking-tighter">The <span class="italic text-gray-500">Founding.</span></h2>
+            </div>
+            <div class="hidden md:block text-right">
+                <span class="text-[10px] font-black uppercase tracking-widest text-cyan-500 animate-pulse">● System Live</span>
+                <p class="text-[9px] font-bold text-gray-400 uppercase mt-2">vSSN Protocol 2.0 Active</p>
+            </div>
         </div>
 
         <div class="talent-grid">
             <div class="talent-card" style="background-image: url('DANTE VEX.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Dante Vex</span>
                     <p class="talent-role">Lead Vocalist / RDA Disruption</p>
                 </div>
             </div>
+
+            <div class="talent-card" style="background-image: url('ECHO GREY.png');">
+                <div class="vocal-badge">DNA SECURED</div>
+                <div class="talent-info">
+                    <span class="talent-name">Echo Grey</span>
+                    <p class="talent-role">Lead Guitarist / RDA Disruption</p>
+                </div>
+            </div>
+
+            <div class="talent-card" style="background-image: url('CYPHER GREY.png');">
+                <div class="vocal-badge">DNA SECURED</div>
+                <div class="talent-info">
+                    <span class="talent-name">Cypher Grey</span>
+                    <p class="talent-role">Piano Player / RDA Disruption</p>
+                </div>
+            </div>
+
             <div class="talent-card" style="background-image: url('Eva SKRMG.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Eva</span>
                     <p class="talent-role">The Hunter / Filth Factor</p>
                 </div>
             </div>
+
             <div class="talent-card" style="background-image: url('Hackathon.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">M3 Persona</span>
                     <p class="talent-role">Mixing Artist / DJ Independent</p>
                 </div>
             </div>
+
             <div class="talent-card" style="background-image: url('PRINCE RAZ SKRMG IK.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Prince Raz</span>
                     <p class="talent-role">Island King / SKRMG Artist</p>
                 </div>
             </div>
+
             <div class="talent-card" style="background-image: url('vesper_neo.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Vester Neo</span>
                     <p class="talent-role">Electronic Identity / Indie DJ</p>
                 </div>
             </div>
+
             <div class="talent-card" style="background-image: url('Hana Heat SKRMG.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Hana Heat</span>
                     <p class="talent-role">Cloudy Vision / Filth Factor</p>
                 </div>
             </div>
+
             <div class="talent-card" style="background-image: url('Mr Kenny K.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Mr. Kenny K</span>
                     <p class="talent-role">Captain / Staff of Filth</p>
                 </div>
             </div>
+
             <div class="talent-card" style="background-image: url('YUNGBRO SKRMG.png');">
+                <div class="vocal-badge">DNA SECURED</div>
                 <div class="talent-info">
                     <span class="talent-name">Yungbro</span>
                     <p class="talent-role">"One Night Again" / SKRMG</p>
@@ -159,10 +93,33 @@
         </div>
     </section>
 
-    <footer class="py-20 bg-black text-center border-t border-white/5">
-        <img src="castaistars.png" class="footer-logo mx-auto" alt="Logo">
-        <h2 class="text-[12px] font-black uppercase tracking-[1em] text-gray-700 mt-20">A Division of Solomon Kin Records LLC</h2>
-    </footer>
+    <style>
+        /* NEW ENHANCEMENT: VOCAL DNA BADGE */
+        .vocal-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+            font-size: 8px;
+            font-weight: 900;
+            padding: 4px 8px;
+            letter-spacing: 2px;
+            z-index: 5;
+            backdrop-filter: blur(5px);
+        }
 
-</body>
-</html>
+        /* Update Grid to handle 10 items elegantly */
+        .talent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Smooth hover state for the names */
+        .talent-card:hover .talent-name {
+            letter-spacing: 4px;
+            transition: 0.6s ease;
+        }
+    </style>
