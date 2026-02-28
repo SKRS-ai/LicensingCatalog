@@ -3,161 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTAISTARS | Solomon Kin Records LLC</title>
+    <title>CASTAISTARS | Solomon Kin Records LLC | Media Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
-        /* SECTION 1: HERO (Black Void) */
-        .hero-section {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 4rem;
-            background: linear-gradient(to right, #000 40%, transparent);
+        /* 1. UNIVERSAL PROMO BAR */
+        .promo-bar {
+            background: #00e5ff;
+            color: #000;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        /* SECTION 2: GATEWAY GRID (Linen Workspace) */
-        .linen-zone { background-color: #F5F5DC; padding: 100px 2rem; color: #000; }
+        /* 2. SUPREME HEADER (80px) */
+        .supreme-header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid #1a1a1a;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        .supreme-logo { height: 260px; transition: 0.5s; cursor: pointer; }
+
+        /* 3. HERO: DUAL PORTAL (Casting vs Creators) */
+        .hero-section {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #111 0%, #000 70%);
+            padding: 0 2rem;
+        }
+
+        .portal-btn {
+            border: 2px solid #fff;
+            padding: 2rem 4rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 5px;
+            font-size: 12px;
+            transition: 0.4s;
+            text-decoration: none;
+            color: #fff;
+            width: 100%;
+            max-width: 400px;
+        }
+        .portal-btn:hover { background: #fff; color: #000; border-color: #fff; transform: scale(1.05); }
+        .portal-btn.cyan { border-color: #00e5ff; color: #00e5ff; }
+        .portal-btn.cyan:hover { background: #00e5ff; color: #000; }
+
+        /* 4. THE LINEN WORKSPACE (Gateway Grid) */
+        .linen-workspace { background-color: #F5F5DC; padding: 120px 2rem; color: #000; }
         .gateway-card {
             background: #fff; border: 2px solid #000; padding: 3rem;
-            display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;
+            display: flex; flex-direction: column; justify-content: space-between; min-height: 400px;
             transition: 0.3s;
         }
         .gateway-card:hover { transform: translateY(-10px); border-color: #00e5ff; }
 
-        /* SECTION 3: FILM TREATMENTS (Vibrant Dream Glow) */
-        .btn-vibrant {
-            display: block; background: #000; color: #00e5ff !important; padding: 20px;
-            text-align: center; font-weight: 900; text-transform: uppercase; letter-spacing: 3px;
-            border: 2px solid #00e5ff; box-shadow: 0 0 15px rgba(0,229,255,0.4); text-decoration: none;
-        }
-
-        /* SECTION 4: THE FOUNDING (Backlot Preview - 16 Assets) */
-        .backlot-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            padding: 80px 2rem;
+        /* 5. BACKLOT PREVIEW: THE FOUNDING */
+        .backlot-preview {
             background-color: #F5F5DC;
-            border-top: 2px solid #000;
+            padding: 0 2rem 120px 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
         .star-token {
-            height: 400px; background-size: cover; background-position: center;
-            position: relative; border: 1px solid #000; display: flex; flex-direction: column; justify-content: flex-end;
+            height: 480px; background-size: cover; background-position: center;
+            position: relative; border: 2px solid #000; display: flex; flex-direction: column; justify-content: flex-end;
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .token-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 45%, transparent); }
-        .token-content { position: relative; z-index: 10; padding: 1.5rem; }
-        .token-name { color: #00e5ff !important; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; }
-        .token-desc { color: #fff; font-size: 9px; text-transform: uppercase; font-weight: 700; opacity: 0.8; margin-top: 4px; }
+        .star-token:hover { transform: scale(1.02); border-color: #00e5ff; z-index: 10; }
+        .token-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #000 50%, transparent); }
+        .token-content { position: relative; z-index: 10; padding: 2rem; }
+        .token-name { color: #00e5ff !important; font-weight: 900; font-size: 1.4rem; text-transform: uppercase; }
+        .token-desc { color: #fff; font-size: 11px; text-transform: uppercase; font-weight: 700; opacity: 0.9; margin-top: 8px; }
 
-        /* FOOTER LOGO HOVER */
-        .footer-logo { height: 300px; filter: grayscale(1) opacity(0.3); transition: 0.8s; }
-        .footer-logo:hover { filter: grayscale(0) opacity(1) drop-shadow(0 0 30px #00e5ff); }
+        /* 6. CORPORATE FOOTER */
+        .footer-logo { height: 350px; filter: grayscale(1); transition: 1s; cursor: pointer; }
+        .footer-logo:hover { filter: grayscale(0) drop-shadow(0 0 50px #00e5ff); }
     </style>
 </head>
 <body>
 
+    <div class="promo-bar">Now Entering 2026: The Age of Synthetic Sovereignty</div>
+
+    <nav class="supreme-header">
+        <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html">
+            <img src="castaistars.png" class="supreme-logo" alt="Logo">
+        </a>
+        <div class="hidden lg:flex gap-12 text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
+            <a href="backlot.html" class="hover:text-white transition">Registry</a>
+            <a href="dashboard.html" class="hover:text-white transition">Terminal</a>
+            <a href="licensing.html" class="hover:text-white transition">Protocol</a>
+        </div>
+        <div class="text-[10px] font-black uppercase tracking-widest text-cyan-400">System Active</div>
+    </nav>
+
     <section class="hero-section">
-        <h3 class="text-cyan-400 font-black uppercase tracking-[0.8em] mb-4">Solomon Kin Records LLC</h3>
-        <h1 class="text-9xl font-black uppercase leading-none">CASTAISTARS</h1>
-        <p class="text-xl font-medium max-w-2xl mt-8">The supreme architecture for character world-building. Secure the identity, localize the voice, and anchor the soul.</p>
+        <div class="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-[10px] font-black uppercase tracking-[1em] mb-6 text-gray-500 italic">For Studios & Casting</h2>
+                <a href="backlot.html" class="portal-btn">Acquire Talent</a>
+                <p class="mt-8 text-xs font-bold uppercase tracking-widest text-gray-400">Discover Verified vSSN Assets</p>
+            </div>
+            <div>
+                <h2 class="text-[10px] font-black uppercase tracking-[1em] mb-6 text-cyan-500 italic">For AI Creators</h2>
+                <a href="dashboard.html" class="portal-btn cyan">Birth New Star</a>
+                <p class="mt-8 text-xs font-bold uppercase tracking-widest text-cyan-900">Secure Your Character IP</p>
+            </div>
+        </div>
     </section>
 
-    <section class="linen-zone">
+    <section class="linen-workspace">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="gateway-card">
                 <h3 class="text-3xl font-black uppercase">The Terminal.</h3>
-                <p class="text-xs font-bold my-6">Manage birthed assets and track vSSN status.</p>
-                <a href="dashboard.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Enter Console</a>
+                <p class="text-[11px] font-bold my-8">Creator Console for asset management.</p>
+                <a href="dashboard.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px] tracking-[0.3em]">Launch</a>
             </div>
             <div class="gateway-card">
                 <h3 class="text-3xl font-black uppercase">The Backlot.</h3>
-                <p class="text-xs font-bold my-6">Browse the verified registry of synthetic talent.</p>
-                <a href="backlot.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Explore Registry</a>
+                <p class="text-[11px] font-bold my-8">Global registry for talent scouting.</p>
+                <a href="backlot.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px] tracking-[0.3em]">Explore</a>
             </div>
             <div class="gateway-card">
                 <h3 class="text-3xl font-black uppercase">The Vault.</h3>
-                <p class="text-xs font-bold my-6">Review immutable blockchain hashes.</p>
-                <a href="ip-vault.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Access Vault</a>
+                <p class="text-[11px] font-bold my-8">Securing Vocal DNA and Master Rights.</p>
+                <a href="ip-vault.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px] tracking-[0.3em]">Vault</a>
             </div>
             <div class="gateway-card">
                 <h3 class="text-3xl font-black uppercase">The Shield.</h3>
-                <p class="text-xs font-bold my-6">Codifying the 20/80 split and master rights.</p>
-                <a href="licensing.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px]">Verify Protocol</a>
+                <p class="text-[11px] font-bold my-8">20/80 Royalty & Sovereignty Shield.</p>
+                <a href="licensing.html" class="bg-black text-white p-4 text-center font-black uppercase text-[10px] tracking-[0.3em]">Shield</a>
             </div>
         </div>
     </section>
 
-    <section class="linen-zone" style="padding-top: 0;">
-        <div class="max-w-7xl mx-auto border-t-2 border-black pt-20">
-            <h2 class="text-5xl font-black uppercase mb-12">Movie Treatments</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures" class="btn-vibrant">Mother’s Mercy (Available Now)</a>
-                <a href="https://brneo059.wixsite.com/solomon-kin-records/realm-pictures-1" class="btn-vibrant">Obsidian: Black Box (Available Now)</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="backlot-preview-grid">
-        
-        <div class="star-token" style="background-image: url('3days ahead.jpg');">
-            <div class="token-overlay"></div>
-            <div class="token-content">
-                <span class="token-name">3dayz ahead</span>
-                <p class="token-desc">RDA Disruption Full Band</p>
-            </div>
-        </div>
-
-        <div class="star-token" style="background-image: url('Hackathon.png');">
-            <div class="token-overlay"></div>
-            <div class="token-content">
-                <span class="token-name">DJ M3</span>
-                <p class="token-desc">Independent Mixing Artist</p>
-            </div>
-        </div>
-
+    <section class="backlot-preview">
         <div class="star-token" style="background-image: url('DANTE VEX.png');">
             <div class="token-overlay"></div>
             <div class="token-content">
                 <span class="token-name">Dante Vex</span>
-                <p class="token-desc">Lead Vocalist / RDA Disruption</p>
+                <p class="token-desc">Lead Vocalist // RDA Disruption</p>
             </div>
         </div>
-
         <div class="star-token" style="background-image: url('Eva SKRMG.png');">
             <div class="token-overlay"></div>
             <div class="token-content">
                 <span class="token-name">Eva</span>
-                <p class="token-desc">The Hunter / Filth Factor</p>
+                <p class="token-desc">The Hunter // Filth Factor Tigris</p>
             </div>
         </div>
-
         <div class="star-token" style="background-image: url('YUNGBRO SKRMG.png');">
             <div class="token-overlay"></div>
             <div class="token-content">
                 <span class="token-name">Yungbro</span>
-                <p class="token-desc">"One Night Again" Artist</p>
+                <p class="token-desc">"One Night Again" // SKRMG</p>
             </div>
         </div>
-
         <div class="star-token" style="background-image: url('PRINCE RAZ SKRMG IK.png');">
             <div class="token-overlay"></div>
             <div class="token-content">
                 <span class="token-name">Prince Raz</span>
-                <p class="token-desc">Island King / SKRMG</p>
+                <p class="token-desc">Island King // SKRMG Artist</p>
             </div>
         </div>
+        <div class="star-token" style="background-image: url('Mr Kenny K.png');">
+            <div class="token-overlay"></div>
+            <div class="token-content">
+                <span class="token-name">Mr. Kenny K</span>
+                <p class="token-desc">Leader & Captain // Staff of Filth</p>
+            </div>
+        </div>
+    </section>
 
-        </section>
-
-    <footer class="py-20 bg-black text-center">
+    <footer class="py-40 bg-black text-center border-t border-white/5">
         <a href="https://skrs-ai.github.io/LicensingCatalog/castaistarsmain.html">
             <img src="castaistars.png" class="footer-logo mx-auto" alt="Logo">
         </a>
+        <h2 class="text-[12px] font-black uppercase tracking-[1em] text-gray-700 mt-20">A Division of Solomon Kin Records LLC</h2>
+        <div class="flex justify-center gap-16 text-[9px] font-black uppercase tracking-[0.5em] text-gray-500 mt-12">
+            <a href="compliance.html" class="hover:text-cyan-400 transition">vSSN Compliance</a>
+            <a href="licensing.html" class="hover:text-white transition">IP Legal</a>
+            <a href="contact.html" class="hover:text-white transition">Contact</a>
+        </div>
     </footer>
 
 </body>
