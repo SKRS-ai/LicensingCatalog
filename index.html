@@ -1,69 +1,136 @@
-<section class="backlot-preview">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexilla | Autonomous AI IT Support</title>
+    <style>
+        :root {
+            --bg-black: #000000;
+            --card-bg: #0a0a0a;
+            --vex-blue: #007bff;
+            --vex-cyan: #00f2fe;
+            --text-main: #ffffff;
+            --text-dim: #a8a8a8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('DANTE VEX.png'); background-size: cover;">
-            <span class="token-name">Dante Vex</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Lead // RDA Disruption</span>
-        </div>
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('SLOANE RICHTER.png'); background-size: cover;">
-            <span class="token-name">Sloane Richter</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Lead // RDA Disruption</span>
-        </div>
+        /* HERO AREA */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 50vh;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('CYPHER GREY.png'); background-size: cover;">
-            <span class="token-name">Cypher Grey</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Lead // RDA Disruption</span>
-        </div>
+        /* LOGO FIX: We use a relative path. 
+           Ensure your file is named exactly: vexilla Logo.png
+        */
+        .hero-logo {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            margin-bottom: 40px;
+            display: block;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('ECHO GREY.png'); background-size: cover;">
-            <span class="token-name">Echo Grey</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Digital Identity</span>
-        </div>
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to bottom, #ffffff 60%, #444444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('YUNGBRO SKRMG.png'); background-size: cover;">
-            <span class="token-name">Yungbro</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Music Artist // SKRMG</span>
-        </div>
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 750px;
+            margin: 0 auto 50px;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('PRINCE RAZ SMRMG.png'); background-size: cover;">
-            <span class="token-name">Prince Raz</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Music Artist // SKRMG</span>
-        </div>
+        /* CONTENT CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('Eva SKRMG.png'); background-size: cover;">
-            <span class="token-name">Eva</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Verified Asset // SKRMG</span>
-        </div>
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 30px;
+            transition: 0.3s ease;
+        }
 
-        <div class="star-token relative overflow-hidden">
-            <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
-                <source src="Jorden Johnson SKRMG.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-            <div class="relative z-20 flex flex-col justify-end h-full">
-                <span class="token-name">Jorden Johnson</span>
-                <span class="text-[8px] font-bold uppercase text-cyan-400 mt-1 animate-pulse">Live Video Asset</span>
-            </div>
-        </div>
+        .product-card:hover {
+            border-color: var(--vex-blue);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.1);
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('Hana Heat SKRMG.png'); background-size: cover;">
-            <span class="token-name">Hana Heat</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Verified Identity</span>
-        </div>
+        .tag {
+            color: var(--vex-blue);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 15px;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('Underwear Girl.png'); background-size: cover;">
-            <span class="token-name">Identity Asset 09</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Lifestyle Model</span>
-        </div>
+        .product-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('Mr Kenny K.png'); background-size: cover;">
-            <span class="token-name">Mr. Kenny K</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Verified Asset</span>
-        </div>
+        .feature-list {
+            list-style: none;
+            margin: 30px 0;
+        }
 
-        <div class="star-token" style="background-image: linear-gradient(to top, #000 30%, transparent), url('Dante Vex Young boy.png'); background-size: cover;">
-            <span class="token-name">Dante Vex (Legacy)</span>
-            <span class="text-[8px] font-bold uppercase text-gray-500 mt-1">Archetype Variant</span>
-        </div>
+        .feature-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+            color: var(--text-dim);
+        }
 
-    </section>
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--vex-cyan);
+            font-weight: bold;
+        }
+
+        .feature-list b { color: #fff; }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-blue { background: var(--vex-blue); color: #fff; }
+        .btn-blue:hover {
